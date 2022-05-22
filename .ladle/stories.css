@@ -14,6 +14,10 @@
     @apply shadow-lg shadow-black/40;
   }
 
+  .ladle-aside {
+    @apply capitalize;
+  }
+
   .ladle-addons {
     @apply mt-8;
   }
