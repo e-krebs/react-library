@@ -1,7 +1,7 @@
 export default {
   addons: {
-    theme: {
-      defaultState: 'dark'
-    }
+    theme: { enabled: false },
+    mode: { enabled: false },
+    ladle: { enabled: false }
   }
 }
