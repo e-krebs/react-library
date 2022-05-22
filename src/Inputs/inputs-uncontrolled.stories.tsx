@@ -20,7 +20,6 @@ export const CheckboxStory: Story<StoryParams> = ({
 }) => (
   <Section title="Text Input: Basics" showInfoControls>
     <TextInput
-      autoFocus
       label={label}
       placeholder={placeholder}
       description={description}
