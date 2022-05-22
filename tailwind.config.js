@@ -3,7 +3,7 @@ const typography = require('@tailwindcss/typography');
 
 module.exports = {
   content: ["./{src,.ladle}/**/*.{ts,tsx}"],
-  safelist: ["ladle-addons", 'ladle-wrapper'],
+  safelist: ["ladle-addons", 'ladle-wrapper', 'ladle-controls-table'],
   theme: {
     extend: {
       colors: {

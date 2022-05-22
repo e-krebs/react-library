@@ -3,15 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+  div[data-reach-dialog-overlay] {
+    @apply bg-gray-900/90
+  }
+  div[data-reach-dialog-content] {
+    width: calc(100% - 42px);
+  }
+
+  div[role="dialog"] {
+    @apply shadow-lg shadow-black/40;
+  }
+
+  .ladle-addons {
+    @apply mt-8;
+  }
+
   @media (min-width: 768px) {
     .ladle-wrapper {
       @apply pb-[4.5rem];
     }
+
     .ladle-addons {
-      @apply w-full p-4 m-0 bg-white dark:bg-gray-900 border-t;
+      @apply w-full p-4 m-0 bg-white dark:bg-gray-900 border-t dark:border-gray-800;
     }
+
     div[data-reach-dialog-content] {
-      @apply bottom-16;
+      @apply bottom-16 w-[auto];
     }
   }
 
@@ -23,12 +40,21 @@
       --ladle-color-hover: theme('colors.gray.200');
       --ladle-color-accent: theme('colors.yellow.400');
     }
+
+    pre {
+      @apply !bg-gray-300;
+    }
+
+    .ladle-controls-table select,
+    .ladle-controls-table input {
+      @apply bg-gray-900;
+    }
   }
 
   @media (prefers-color-scheme: light) {
     body {
       --ladle-bg-color-primary: theme('colors.white');
-      --ladle-bg-color-secondary: theme('colors.gray.100');
+      --ladle-bg-color-secondary: theme('colors.gray.200');
       --ladle-color-primary: theme('colors.gray.500');
       --ladle-color-hover: theme('colors.gray.700');
       --ladle-color-accent: theme('colors.yellow.500');
@@ -36,7 +62,7 @@
   }
 
   body {
-    @apply bg-white text-gray-500 text-base;
+    @apply bg-white text-gray-500 text-base min-h-screen;
     @apply dark:bg-gray-900 dark:text-gray-400 dark:fill-gray-400;
   }
 
