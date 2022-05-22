@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  svg {
+    display: initial;
+  }
   div[data-reach-dialog-overlay] {
     @apply bg-gray-900/90
   }
