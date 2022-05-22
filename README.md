@@ -1,6 +1,7 @@
 # description
 
 A collection of components to be reused across personal projects.
+[View live here](https://e-krebs-react-library.vercel.app)
 
 # contributing
 
