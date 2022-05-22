@@ -1,0 +1,53 @@
+{
+  "name": "@e-krebs/react-library",
+  "version": "0.0.1",
+  "description": "A collection of components to be reused across personal projects",
+  "repository": "github.com/e-krebs/react-library",
+  "author": "Emmanuel Krebs <e-krebs@users.noreply.github.com>",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "clean": "rimraf .parcel-cache dist build",
+    "dev:library": "parcel watch",
+    "build:library": "parcel build",
+    "dev:doc": "ladle serve --open none",
+    "build:doc": "ladle build",
+    "dev": "yarn clean && yarn dev:library & yarn dev:doc",
+    "build": "yarn clean && yarn build:library && yarn build:doc",
+    "serve": "serve build"
+  },
+  "peerDependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-feather": "^2.0.9"
+  },
+  "dependencies": {
+    "@react-aria/checkbox": "^3.3.4",
+    "@react-aria/focus": "^3.5.5",
+    "@react-aria/textfield": "^3.5.5",
+    "@react-aria/visually-hidden": "^3.2.8",
+    "@react-stately/toggle": "^3.2.7",
+    "classnames": "^2.3.1"
+  },
+  "devDependencies": {
+    "@ladle/react": "^0.15.1",
+    "@parcel/packager-ts": "2.5.0",
+    "@parcel/transformer-typescript-tsc": "^2.5.0",
+    "@parcel/transformer-typescript-types": "2.5.0",
+    "@tailwindcss/typography": "^0.5.2",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "autoprefixer": "^10.4.7",
+    "parcel": "^2.5.0",
+    "postcss": "^8.4.14",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-feather": "^2.0.9",
+    "rimraf": "^3.0.2",
+    "serve": "^13.0.2",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.4"
+  }
+}

@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @media (min-width: 768px) {
+    .ladle-wrapper {
+      @apply pb-[4.5rem];
+    }
+    .ladle-addons {
+      @apply w-full p-4 m-0 bg-white dark:bg-gray-900 border-t;
+    }
+    div[data-reach-dialog-content] {
+      @apply bottom-16;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      --ladle-bg-color-primary: theme('colors.gray.900');
+      --ladle-bg-color-secondary: theme('colors.gray.800');
+      --ladle-color-primary: theme('colors.gray.400');
+      --ladle-color-hover: theme('colors.gray.200');
+      --ladle-color-accent: theme('colors.yellow.400');
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    body {
+      --ladle-bg-color-primary: theme('colors.white');
+      --ladle-bg-color-secondary: theme('colors.gray.100');
+      --ladle-color-primary: theme('colors.gray.500');
+      --ladle-color-hover: theme('colors.gray.700');
+      --ladle-color-accent: theme('colors.yellow.500');
+    }
+  }
+
+  body {
+    @apply bg-white text-gray-500 text-base;
+    @apply dark:bg-gray-900 dark:text-gray-400 dark:fill-gray-400;
+  }
+
+
+  a {
+    @apply outline-none;
+  }
+}
