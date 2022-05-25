@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '../src/tailwind.css';
 
 @layer base {
   svg {
@@ -66,15 +64,5 @@
       --ladle-color-hover: theme('colors.gray.700');
       --ladle-color-accent: theme('colors.yellow.500');
     }
-  }
-
-  body {
-    @apply bg-white text-gray-500 text-base min-h-screen;
-    @apply dark:bg-gray-900 dark:text-gray-400 dark:fill-gray-400;
-  }
-
-
-  a {
-    @apply outline-none;
   }
 }

@@ -3,6 +3,12 @@
 A collection of components to be reused across personal projects.
 [View live here](https://e-krebs-react-library.vercel.app)
 
+# use (⚠️ not published yet ⚠️)
+
+in addition the the components, you can import the following from the package:
+- `tailwind.css` → a base tailwind css file (uncompiled)
+- `tailwind.config.js` → a base tailwind config file that can be extended
+
 # contributing
 
 start by installing dependencies
@@ -31,6 +37,6 @@ this will:
 - first, build the library & the doc
 - then, serve the doc site
 
-## production
+## publish
 
 TBD

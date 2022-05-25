@@ -10,6 +10,7 @@
   "types": "dist/types.d.ts",
   "exports": {
     ".": "./dist/index.js",
+    "./tailwind.css": "./src/tailwind.css",
     "./tailwind.config.js": "./shared.tailwind.config.js"
   },
   "scripts": {
