@@ -1,9 +1,10 @@
-import type { Story } from "@ladle/react";
+import type { Story } from '@ladle/react';
 import { Section } from 'utils';
+
 import { type InputBorder, TextInput, type InputFlow } from './TextInput';
 
 export default {
-  title: "Components > Text Input",
+  title: 'Components > Text Input',
 };
 
 interface StoryParams {
@@ -16,7 +17,12 @@ interface StoryParams {
 }
 
 export const CheckboxStory: Story<StoryParams> = ({
-  placeholder, label, description, error, border, flow
+  placeholder,
+  label,
+  description,
+  error,
+  border,
+  flow,
 }) => (
   <Section title="Text Input: Basics" showInfoControls>
     <TextInput
@@ -30,22 +36,22 @@ export const CheckboxStory: Story<StoryParams> = ({
     />
   </Section>
 );
-CheckboxStory.storyName = "Uncontrolled";
+CheckboxStory.storyName = 'Uncontrolled';
 CheckboxStory.args = {
   label: 'with a label',
-  placeholder: "and a placeholder",
-  description: "and a description",
-  error: 'and an error'
+  placeholder: 'and a placeholder',
+  description: 'and a description',
+  error: 'and an error',
 } as StoryParams;
 CheckboxStory.argTypes = {
   border: {
     options: ['none', 'bottom', 'rounded'],
     control: { type: 'select' },
-    defaultValue: 'bottom'
+    defaultValue: 'bottom',
   },
   flow: {
     options: ['col', 'row'],
     control: { type: 'radio' },
-    defaultValue: 'col'
-  }
-}
+    defaultValue: 'col',
+  },
+};

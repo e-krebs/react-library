@@ -35,16 +35,21 @@ export const TextInput: FC<TextInputProps> = (props) => {
         className={cx(
           inputClassName,
           className,
-          'p-1 bg-gray-100 dark:bg-gray-800 border-gray-500 dark:border-gray-400 outline-none',
+          'border-gray-500 bg-gray-100 p-1 outline-none dark:border-gray-400 dark:bg-gray-800',
           border === 'bottom' && 'border-b',
-          border === 'rounded' && 'border rounded-md'
+          border === 'rounded' && 'rounded-md border'
         )}
       />
       {props.description && (
-        <div {...descriptionProps} className={cx('leading-9', descriptionClassName)}>{props.description}</div>
+        <div {...descriptionProps} className={cx('leading-9', descriptionClassName)}>
+          {props.description}
+        </div>
       )}
       {props.errorMessage && (
-        <div {...errorMessageProps} className={cx(errorClassName, 'leading-9 text-red-600 dark:text-red-400')}>
+        <div
+          {...errorMessageProps}
+          className={cx(errorClassName, 'leading-9 text-red-600 dark:text-red-400')}
+        >
           {props.errorMessage}
         </div>
       )}

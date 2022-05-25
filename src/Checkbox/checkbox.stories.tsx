@@ -1,7 +1,7 @@
 import { Checkbox } from './index';
 
 export default {
-  title: "Components",
+  title: 'Components',
 };
 
 export const CheckboxStory = () => (
@@ -12,4 +12,4 @@ export const CheckboxStory = () => (
     <Checkbox label="disabled checked" isDisabled={true} defaultSelected={true} />
   </section>
 );
-CheckboxStory.storyName = "Checkbox";
+CheckboxStory.storyName = 'Checkbox';
