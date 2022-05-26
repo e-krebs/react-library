@@ -1,0 +1,6 @@
+*
+!package.json
+!dist/**/*
+!LICENSE
+!README.md
+!*tailwind.config.js

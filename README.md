@@ -6,8 +6,7 @@ A collection of components to be reused across personal projects.
 # use (⚠️ not published yet ⚠️)
 
 in addition the the components, you can import the following from the package:
-- `tailwind.css` → a base tailwind css file (uncompiled)
-- `tailwind.config.js` → a base tailwind config file that can be extended
+- `tailwind.config.js` → a base tailwind config file that can be used as a preset
 
 # contributing
 
