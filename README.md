@@ -3,12 +3,34 @@
 A collection of components to be reused across personal projects.
 [View live here](https://e-krebs-react-library.vercel.app)
 
-# use (⚠️ not published yet ⚠️)
+# how to use (⚠️ alpha version ⚠️)
+```
+yarn add @e-krebs/react-library
+```
+**Typescript** types are included with the package.
 
-in addition the the components, you can import the following from the package:
-- `tailwind.config.js` → a base tailwind config file that can be used as a preset
+The components can then be imported from the root of the package:
+```ts
+import { Checkbox, TextInput } from '@e-krebs/react-library'
+```
 
-# contributing
+in addition the the components, you can import the tailwindcss preset from the package:
+- `tailwind.config.js`
+- in which case, don't forget to include this package files in your tailwind content declaration
+
+```js
+// tailwind.config.js
+const shared = require('@e-krebs/react-library/tailwind.config.js');
+module.exports = {
+  presets: [shared],
+  content: ["./src/**/*.{html,ts,tsx}", "./node_modules/@e-krebs/react-library/dist/**/*.js"],
+  theme: {
+    extend: {}
+  }
+}
+```
+
+# how to contribute
 
 start by installing dependencies
 ```
@@ -27,7 +49,7 @@ this will:
 
 ## production
 
-to run in production:
+to run in production mode:
 ```
 yarn build
 yarn serve
@@ -38,4 +60,11 @@ this will:
 
 ## publish
 
-TBD
+to publish a new _documentation_:
+- push to **main**
+- 🪄 the **Vercel for Github** app  will do the rest!
+
+to publish a new _package_:
+- update the **package.json** version on **main** (ex: 1.0.0)
+- create a new **tag & release** on github with the same version (ex: v1.0.0)
+- 🪄 the GitHub **publish** workflow will do the rest!
