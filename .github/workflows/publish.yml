@@ -8,6 +8,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -32,8 +34,6 @@ jobs:
           key: yarn-${{ hashFiles('**/yarn.lock') }}
       - run: yarn --frozen-lockfile
       - run: yarn build
-      - env:
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: create .npmrc file
         run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
       - run: yarn publish
