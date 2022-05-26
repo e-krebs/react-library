@@ -1,6 +1,6 @@
 {
   "name": "@e-krebs/react-library",
-  "version": "0.0.8",
+  "version": "0.0.12",
   "description": "A collection of components to be reused across personal projects",
   "repository": "github.com/e-krebs/react-library",
   "author": "Emmanuel Krebs <e-krebs@users.noreply.github.com>",
@@ -13,7 +13,6 @@
     "./tailwind.config.js": "./shared.tailwind.config.js"
   },
   "scripts": {
-    "publish": "npm publish --access public --tag alpha",
     "clean": "rimraf .parcel-cache dist build",
     "dev:library": "parcel watch",
     "build:library": "parcel build",
