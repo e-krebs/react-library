@@ -13,7 +13,7 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
   children,
 }) => (
   <section className="space-y-6">
-    <h1>{title}</h1>
+    <h2>{title}</h2>
     {infoControls && <InfoControls />}
     {children}
   </section>
