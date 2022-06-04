@@ -15,6 +15,14 @@
     @apply shadow-lg shadow-black/40;
   }
 
+  .ladle-wrapper {
+    @apply prose dark:prose-invert max-w-full;
+  }
+
+  .ladle-main {
+    @apply flex flex-col;
+  }
+
   .ladle-aside {
     @apply capitalize;
   }
