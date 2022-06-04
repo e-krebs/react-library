@@ -6,7 +6,7 @@ export default {
 
 export const CheckboxStory = () => (
   <section className="space-y-6">
-    <h1>Checkbox</h1>
+    <h2>Checkbox</h2>
     <Checkbox label="enabled" />
     <Checkbox label="disabled unchecked" isDisabled={true} />
     <Checkbox label="disabled checked" isDisabled={true} defaultSelected={true} />
