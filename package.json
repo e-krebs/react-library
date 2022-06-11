@@ -1,6 +1,6 @@
 {
   "name": "@e-krebs/react-library",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "A collection of components to be reused across personal projects",
   "repository": "github.com/e-krebs/react-library",
   "author": "Emmanuel Krebs <e-krebs@users.noreply.github.com>",
@@ -27,7 +27,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-feather": "^2.0.9"
+    "react-feather": "^2.0.10"
   },
   "dependencies": {
     "@react-aria/checkbox": "^3.4.0",
@@ -43,11 +43,11 @@
     "@parcel/transformer-typescript-tsc": "^2.6.0",
     "@parcel/transformer-typescript-types": "2.6.0",
     "@tailwindcss/typography": "^0.5.2",
-    "@types/react": "^18.0.11",
+    "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
     "@types/tailwindcss": "^3.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "@typescript-eslint/parser": "^5.27.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
     "autoprefixer": "^10.4.7",
     "eslint": "^8.17.0",
     "eslint-plugin-import": "^2.26.0",
@@ -63,7 +63,7 @@
     "react-feather": "^2.0.10",
     "rimraf": "^3.0.2",
     "serve": "^13.0.2",
-    "tailwindcss": "^3.0.24",
+    "tailwindcss": "^3.1.2",
     "typescript": "^4.7.3"
   },
   "alias": {
