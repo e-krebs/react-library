@@ -30,10 +30,11 @@
     "react-feather": "^2.0.10"
   },
   "dependencies": {
-    "@react-aria/checkbox": "^3.4.0",
-    "@react-aria/focus": "^3.6.0",
-    "@react-aria/textfield": "^3.6.0",
-    "@react-aria/visually-hidden": "^3.3.0",
+    "@react-aria/checkbox": "^3.4.1",
+    "@react-aria/focus": "^3.6.1",
+    "@react-aria/textfield": "^3.6.1",
+    "@react-aria/utils": "^3.13.1",
+    "@react-aria/visually-hidden": "^3.3.1",
     "@react-stately/toggle": "^3.3.0",
     "classnames": "^2.3.1"
   },
