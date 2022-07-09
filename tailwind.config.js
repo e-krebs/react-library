@@ -1,6 +1,6 @@
 const shared = require('./shared.tailwind.config');
 
-/** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
+/** @type {import("import('tailwindcss').Config").TailwindConfig } */
 module.exports = {
   presets: [shared],
   content: ['./{src,.ladle}/**/*.{ts,tsx}'],
