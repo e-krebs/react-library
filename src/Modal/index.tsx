@@ -92,7 +92,7 @@ export const Modal = forwardRef<ModalRef, PropsWithChildren<ModalProps>>(
     return (
       <dialog
         ref={modalRef}
-        className="m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-sm"
+        className="!m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-sm"
         onClick={(e) => e.stopPropagation()}
       >
         <div
@@ -100,7 +100,7 @@ export const Modal = forwardRef<ModalRef, PropsWithChildren<ModalProps>>(
           role="dialog"
           aria-labelledby={titleId}
           className={cx(
-            'relative flex flex-col overflow-y-auto rounded-2xl p-8',
+            'relative flex flex-col rounded-2xl p-8',
             'bg-white text-base text-gray-500',
             'dark:bg-gray-900 dark:fill-gray-400 dark:text-gray-400',
             closing ? 'animate-modal-shrink opacity-0' : 'animate-modal-grow',
