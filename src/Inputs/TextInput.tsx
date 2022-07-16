@@ -25,7 +25,7 @@ export const TextInput: FC<TextInputProps> = (props) => {
   } = useTextField(props, ref);
 
   return (
-    <div className={cx('flex', flow === 'row' ? 'flex-row space-x-2' : 'flex-col', flowClassName)}>
+    <div className={cx('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}>
       <label {...labelProps} className={cx('leading-9', labelClassName)}>
         {label}
       </label>
