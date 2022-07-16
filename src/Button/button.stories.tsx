@@ -23,6 +23,9 @@ export const ModalStory = () => {
         <Button iconStart={Anchor} iconEnd={Aperture}>
           With both icons 🤷
         </Button>
+        <p>
+          <Button iconStart={Anchor} /> ← button with no text
+        </p>
       </div>
     </section>
   );
