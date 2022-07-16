@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { X } from 'react-feather';
 
+import { Button } from '../Button';
 import { Modal, type ModalRef } from './index';
 
 export default {
@@ -20,14 +21,14 @@ export const ModalStory = () => {
   return (
     <section className="space-y-6">
       <h2>Modal</h2>
-      <button className="h-9 rounded-md border px-2" onClick={openModal}>
+      <Button className="h-9 rounded-md border px-2" onPress={openModal}>
         Open modal
-      </button>
+      </Button>
       <p>
         The modal has been close {nb} times.
-        <button className="ml-2 h-9 rounded-md border px-2" onClick={() => setNb(0)}>
+        <Button className="ml-2 h-9 rounded-md border px-2" onPress={() => setNb(0)}>
           reset counter
-        </button>
+        </Button>
       </p>
 
       <Modal ref={modalRef} title="Example modal" onClosed={() => setNb((nb) => nb + 1)}>
@@ -43,9 +44,9 @@ export const ModalStory = () => {
           </li>
           <li>Clicking the button below.</li>
         </ol>
-        <button className="h-9 rounded-md border px-2" onClick={closeModal}>
+        <Button className="h-9 rounded-md border px-2" onPress={closeModal}>
           Close Modal
-        </button>
+        </Button>
       </Modal>
     </section>
   );
