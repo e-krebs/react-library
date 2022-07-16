@@ -1,6 +1,8 @@
 import { useCallback, useState } from 'react';
+import { Minus, Plus } from 'react-feather';
 import { Section } from 'utils';
 
+import { Button } from '../Button';
 import { TextInput } from './TextInput';
 
 export default {
@@ -34,12 +36,8 @@ export const CheckboxStory = () => {
   return (
     <Section title="Text Input: Controlled">
       <section className="flex flex-row space-x-3">
-        <button className="h-9 w-9 rounded-md border" onClick={minusOne}>
-          -
-        </button>
-        <button className="h-9 w-9 rounded-md border" onClick={plusOne}>
-          +
-        </button>
+        <Button iconStart={Plus} onPress={minusOne} />
+        <Button iconStart={Minus} onPress={plusOne} />
       </section>
       <TextInput
         label="controlled input"
