@@ -21,7 +21,10 @@ export const Checkbox: FC<CheckboxProps> = ({ label, ...props }) => {
 
   return (
     <label
-      className={cx('flex items-center gap-x-2', props.isDisabled && 'cursor-not-allowed opacity-40')}
+      className={cx(
+        'flex w-fit items-center gap-x-2',
+        props.isDisabled && 'cursor-not-allowed opacity-40'
+      )}
     >
       <VisuallyHidden>
         <input {...inputProps} {...focusProps} aria-label={label} ref={ref} />

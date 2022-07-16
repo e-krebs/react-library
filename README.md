@@ -68,3 +68,17 @@ to publish a new _package_:
 - update the **package.json** version on **main** (ex: 1.0.0)
 - create a new **tag & release** on github with the same version (ex: v1.0.0)
 - 🪄 the GitHub **publish** workflow will do the rest!
+
+# TODO
+- [ ] add more components
+  - [x] [Button](https://github.com/e-krebs/amaze/blob/main/components/elements/Button.tsx) v0.0.18
+  - [ ] [Card](https://github.com/e-krebs/amaze/blob/main/components/elements/Card.tsx)
+  - [ ] [DropDown](https://github.com/e-krebs/amaze/blob/main/components/elements/DropDown.tsx)
+  - [ ] [KeyCap](https://github.com/e-krebs/amaze/blob/main/components/elements/KeyCap.tsx)
+  - [ ] [(external) Link](https://github.com/e-krebs/amaze/blob/main/components/elements/ExternalLink.tsx)
+- [ ] reuse those components in:
+  - [ ] [pile](https://github.com/e-krebs/pile)
+  - [ ] [amaze](https://github.com/e-krebs/amaze)
+- [ ] publish beta
+- [ ] tests
+- [ ] publish stable
