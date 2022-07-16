@@ -1857,6 +1857,18 @@
     chrome-trace-event "^1.0.2"
     nullthrows "^1.1.1"
 
+"@react-aria/button@^3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/button/-/button-3.5.1.tgz#8084a50d4f7daa34dfd7b6d41b90f40dcf15e15e"
+  integrity sha512-M0AaDeJoM4wu2xkv1FvbhuvWB78yF8yNE91KkyEW+TMBiEjSaij61jyov95m08DT2EXSxuXnch3BoP8s3XHj4g==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-aria/focus" "^3.6.1"
+    "@react-aria/interactions" "^3.9.1"
+    "@react-aria/utils" "^3.13.1"
+    "@react-stately/toggle" "^3.3.1"
+    "@react-types/button" "^3.5.1"
+
 "@react-aria/checkbox@^3.4.1":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@react-aria/checkbox/-/checkbox-3.4.1.tgz#f4d11f8f2d8758590eeac7918edee09ed09b21af"
@@ -1980,6 +1992,13 @@
   integrity sha512-WzzwlQtJrf7egaN+lt02/f/wkFKbcscsbinmXs9pL7QyYm+BCQ9xXj01w0juzt93piZgB/kfIYJqInEdpudh1A==
   dependencies:
     "@babel/runtime" "^7.6.2"
+
+"@react-types/button@^3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@react-types/button/-/button-3.5.1.tgz#152113ea1ca0f4dadf16130dcb7043385e8a29c9"
+  integrity sha512-GxTikDKfuztu1r0LWHmqG1AD5yM9F6WFzwAYgLltn8B7RshzpJcYSfpYsh1e64z84YJpEoj+DD8XGGSc0p/rvw==
+  dependencies:
+    "@react-types/shared" "^3.13.1"
 
 "@react-types/checkbox@^3.3.1":
   version "3.3.1"
