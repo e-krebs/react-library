@@ -20,7 +20,9 @@ export const Checkbox: FC<CheckboxProps> = ({ label, ...props }) => {
   const CheckIcon: Icon = useMemo(() => (state.isSelected ? CheckSquare : Square), [state]);
 
   return (
-    <label className={cx('flex items-center gap-x-2', props.isDisabled && 'opacity-40')}>
+    <label
+      className={cx('flex items-center gap-x-2', props.isDisabled && 'cursor-not-allowed opacity-40')}
+    >
       <VisuallyHidden>
         <input {...inputProps} {...focusProps} aria-label={label} ref={ref} />
       </VisuallyHidden>
