@@ -74,18 +74,18 @@ export const Modal = forwardRef<ModalRef, PropsWithChildren<ModalProps>>(
       };
 
       const onModalKeyDown = (event: KeyboardEvent) => {
-        if (event.key !== 'Escape') return;
+        if (event.key !== 'Escape' || !currentModalRef.open) return;
         // the default behavior is to close the dialog but without animation
         event.preventDefault();
         closeModal();
       };
 
       currentModalRef.addEventListener('click', onModalBackdropClick);
-      currentModalRef.addEventListener('keydown', onModalKeyDown);
+      document.addEventListener('keydown', onModalKeyDown);
 
       return () => {
         currentModalRef.removeEventListener('click', onModalBackdropClick);
-        currentModalRef.removeEventListener('keydown', onModalKeyDown);
+        document.removeEventListener('keydown', onModalKeyDown);
       };
     }, [closeModal, modalRef]);
 
