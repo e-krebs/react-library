@@ -1,6 +1,6 @@
 {
   "name": "@e-krebs/react-library",
-  "version": "fix/modal-close",
+  "version": "0.0.19",
   "description": "A collection of components to be reused across personal projects",
   "repository": "github.com/e-krebs/react-library",
   "author": "Emmanuel Krebs <e-krebs@users.noreply.github.com>",
