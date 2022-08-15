@@ -16,8 +16,8 @@ export const Provider: GlobalProvider = ({ children }) => (
         <GitHub className="w-6 h-6" />
       </a>
     </header>
-    <main>
+    <section>
       {children}
-    </main>
+    </section>
   </>
 );

@@ -27,6 +27,10 @@
     @apply capitalize;
   }
 
+  .ladle-aside, .ladle-aside input {
+    @apply bg-[color:var(--ladle-bg-color-secondary)];
+  }
+
   .ladle-addons {
     @apply mt-8;
   }
@@ -43,6 +47,10 @@
     div[data-reach-dialog-content] {
       @apply bottom-16 w-[auto];
     }
+  }
+
+  body {
+    --ladle-main-padding-mobile: 2rem;
   }
 
   @media (prefers-color-scheme: dark) {
