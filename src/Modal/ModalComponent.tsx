@@ -9,12 +9,15 @@ import {
   useState,
   useImperativeHandle,
   useEffect,
+  FC,
+  RefAttributes,
 } from 'react';
 import { X } from 'react-feather';
 
-interface ModalProps {
+interface ModalFCProps {
   title: string;
   titleProps?: HTMLAttributes<HTMLHeadingElement>;
+  headerProps?: HTMLAttributes<HTMLHeadElement>;
   contentProps?: Omit<HTMLAttributes<HTMLDivElement>, 'role' | 'aria-labelledby'>;
   onClosed?: () => void;
 }
@@ -24,7 +27,9 @@ export interface ModalRef {
   closeModal: () => void;
 }
 
-export const Modal = forwardRef<ModalRef, PropsWithChildren<ModalProps>>(
+export type ModalComponentProps = FC<PropsWithChildren<ModalFCProps> & RefAttributes<ModalRef>>;
+
+export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWithChildren<ModalFCProps>>(
   (
     {
       title,
@@ -32,6 +37,7 @@ export const Modal = forwardRef<ModalRef, PropsWithChildren<ModalProps>>(
       onClosed,
       contentProps: { className: contentClassName, ...contentProps } = {},
       titleProps: { id, className: titleClassName, ...titleProps } = {},
+      headerProps: { className: headerClassName, ...headerProps } = {},
     },
     ref
   ) => {
@@ -100,29 +106,30 @@ export const Modal = forwardRef<ModalRef, PropsWithChildren<ModalProps>>(
           role="dialog"
           aria-labelledby={titleId}
           className={cx(
-            'relative flex flex-col rounded-2xl p-8',
+            'relative flex flex-col rounded-xl p-6',
             'bg-white text-base text-gray-500',
             'dark:bg-gray-900 dark:fill-gray-400 dark:text-gray-400',
             closing ? 'animate-modal-shrink opacity-0' : 'animate-modal-grow',
             contentClassName
           )}
         >
-          <X
-            className="absolute top-0 right-0 h-8 w-8 cursor-pointer rounded-full p-1 hover:bg-gray-200 dark:hover:bg-gray-700"
-            onClick={closeModal}
-          />
-          <h3
-            {...titleProps}
-            id={titleId}
-            className={cx('m-0 mb-6 text-xl font-bold capitalize', titleClassName)}
-          >
-            {title}
-          </h3>
+          <header {...headerProps} className={cx('flex items-center space-x-1', headerClassName)}>
+            <h1
+              {...titleProps}
+              id={titleId}
+              className={cx('m-0 grow truncate text-xl font-bold capitalize', titleClassName)}
+            >
+              {title}
+            </h1>
+            <X
+              className="h-8 w-8 shrink-0 cursor-pointer rounded-full p-1 hover:bg-gray-200 dark:hover:bg-gray-700"
+              onClick={closeModal}
+            />
+          </header>
           {children}
         </div>
       </dialog>
     );
   }
 );
-
-Modal.displayName = 'Modal';
+ModalComponent.displayName = 'Modal';
