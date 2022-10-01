@@ -126,7 +126,10 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
             <h1
               {...titleProps}
               id={titleId}
-              className={cx('m-0 grow truncate text-xl font-bold capitalize', titleClassName)}
+              className={cx(
+                'm-0 grow truncate text-xl font-bold capitalize leading-8 text-black dark:text-white',
+                titleClassName
+              )}
             >
               {title}
             </h1>
