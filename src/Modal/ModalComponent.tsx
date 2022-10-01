@@ -19,6 +19,7 @@ interface ModalFCProps {
   titleProps?: HTMLAttributes<HTMLHeadingElement>;
   headerProps?: HTMLAttributes<HTMLHeadElement>;
   contentProps?: Omit<HTMLAttributes<HTMLDivElement>, 'role' | 'aria-labelledby'>;
+  dialogProps?: HTMLAttributes<HTMLDialogElement>;
   onClosed?: () => void;
 }
 
@@ -38,6 +39,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
       contentProps: { className: contentClassName, ...contentProps } = {},
       titleProps: { id, className: titleClassName, ...titleProps } = {},
       headerProps: { className: headerClassName, ...headerProps } = {},
+      dialogProps: { className: dialogClassName, ...dialogProps } = {},
     },
     ref
   ) => {
@@ -97,8 +99,12 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
 
     return (
       <dialog
+        {...dialogProps}
         ref={modalRef}
-        className="!m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-sm"
+        className={cx(
+          '!m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-sm',
+          dialogClassName
+        )}
         onClick={(e) => e.stopPropagation()}
       >
         <div
