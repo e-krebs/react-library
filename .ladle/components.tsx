@@ -1,6 +1,10 @@
 import type { GlobalProvider } from "@ladle/react";
+import React from 'react';
 import { GitHub } from 'react-feather';
+import shadow from 'react-shadow';
 
+
+import tailwindCss from '../src/tailwind.css';
 import './stories.css';
 
 export const Provider: GlobalProvider = ({ children }) => (
@@ -16,8 +20,9 @@ export const Provider: GlobalProvider = ({ children }) => (
         <GitHub className="w-6 h-6" />
       </a>
     </header>
-    <section>
+    <shadow.section>
+      <style type="text/css">{tailwindCss}</style>
       {children}
-    </section>
+    </shadow.section>
   </>
 );
