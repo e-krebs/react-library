@@ -57,8 +57,10 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
     }, [modalRef, onClosed]);
 
     const openModal = useCallback(() => {
-      setClosing(false);
-      modalRef.current?.showModal();
+      if (modalRef.current?.open === false) {
+        setClosing(false);
+        modalRef.current?.showModal();
+      }
     }, []);
 
     useImperativeHandle(ref, () => ({ openModal, closeModal }));
