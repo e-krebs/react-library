@@ -17,6 +17,7 @@ export const Button: FC<ButtonProps> = ({
   className,
   iconStart: IconStart,
   iconEnd: IconEnd,
+  formMethod,
   variant = 'regular',
   ...props
 }) => {
@@ -26,6 +27,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       {...buttonProps}
+      formMethod={formMethod}
       ref={ref}
       className={cx(
         variant !== 'unstyled' &&
