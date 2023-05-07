@@ -4,7 +4,7 @@ import { GitHub } from 'react-feather';
 import shadow from 'react-shadow';
 
 
-import tailwindCss from '../src/tailwind.css';
+import tailwindCss from '../src/tailwind.css?inline';
 import './stories.css';
 
 export const Provider: GlobalProvider = ({ children }) => (
