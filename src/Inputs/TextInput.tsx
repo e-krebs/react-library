@@ -36,8 +36,9 @@ export const TextInput: FC<TextInputProps> = (props) => {
           inputClassName,
           className,
           'border-gray-500 bg-gray-100 p-1 outline-none dark:border-gray-400 dark:bg-gray-800',
+          border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
           border === 'bottom' && 'border-b',
-          border === 'rounded' && 'rounded-md border'
+          border === 'rounded' && 'border'
         )}
       />
       {props.description && (
