@@ -14,6 +14,8 @@ import {
 } from 'react';
 import { X } from 'react-feather';
 
+import { ModalCloseButton } from './ModalCloseButton';
+
 interface ModalFCProps {
   title: string;
   titleProps?: HTMLAttributes<HTMLHeadingElement>;
@@ -135,10 +137,12 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
             >
               {title}
             </h1>
-            <X
-              className="h-8 w-8 shrink-0 cursor-pointer rounded-full p-1 hover:bg-gray-200 dark:hover:bg-gray-700"
-              onClick={closeModal}
-            />
+            <ModalCloseButton
+              variant="unstyled"
+              className="h-8 w-8 shrink-0 rounded-full p-1 outline-none hover:bg-gray-200 dark:hover:bg-gray-700"
+            >
+              <X />
+            </ModalCloseButton>
           </header>
           {children}
         </form>
