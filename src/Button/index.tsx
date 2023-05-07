@@ -8,6 +8,7 @@ interface ButtonProps extends AriaButtonProps<'button'> {
   className?: string;
   iconStart?: Icon;
   iconEnd?: Icon;
+  formMethod?: string | undefined;
 }
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
