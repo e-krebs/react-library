@@ -18,7 +18,7 @@ interface ModalFCProps {
   title: string;
   titleProps?: HTMLAttributes<HTMLHeadingElement>;
   headerProps?: HTMLAttributes<HTMLHeadElement>;
-  contentProps?: Omit<HTMLAttributes<HTMLDivElement>, 'role' | 'aria-labelledby'>;
+  contentProps?: Omit<HTMLAttributes<HTMLFormElement>, 'role' | 'aria-labelledby'>;
   dialogProps?: HTMLAttributes<HTMLDialogElement>;
   onClosed?: () => void;
 }
@@ -109,7 +109,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
         )}
         onClick={(e) => e.stopPropagation()}
       >
-        <div
+        <form
           {...contentProps}
           role="dialog"
           aria-labelledby={titleId}
@@ -141,7 +141,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
             />
           </header>
           {children}
-        </div>
+        </form>
       </dialog>
     );
   }
