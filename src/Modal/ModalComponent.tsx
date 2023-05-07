@@ -15,6 +15,7 @@ import {
 import { X } from 'react-feather';
 
 import { ModalCloseButton } from './ModalCloseButton';
+import { ModalContext } from './useModal';
 
 interface ModalFCProps {
   title: string;
@@ -102,51 +103,53 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
     }, [closeModal, modalRef]);
 
     return (
-      <dialog
-        {...dialogProps}
-        ref={modalRef}
-        className={cx(
-          '!m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-sm',
-          dialogClassName
-        )}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <form
-          {...contentProps}
-          role="dialog"
-          aria-labelledby={titleId}
+      <ModalContext.Provider value={{ openModal, closeModal }}>
+        <dialog
+          {...dialogProps}
+          ref={modalRef}
           className={cx(
-            'relative flex flex-col rounded-xl p-6',
-            'bg-white text-base text-gray-500',
-            'dark:bg-gray-900 dark:fill-gray-400 dark:text-gray-400',
-            closing ? 'animate-modal-shrink opacity-0' : 'animate-modal-grow',
-            contentClassName
+            '!m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-sm',
+            dialogClassName
           )}
+          onClick={(e) => e.stopPropagation()}
         >
-          <header
-            {...headerProps}
-            className={cx('flex w-full items-center justify-between space-x-8', headerClassName)}
+          <form
+            {...contentProps}
+            role="dialog"
+            aria-labelledby={titleId}
+            className={cx(
+              'relative flex flex-col rounded-xl p-6',
+              'bg-white text-base text-gray-500',
+              'dark:bg-gray-900 dark:fill-gray-400 dark:text-gray-400',
+              closing ? 'animate-modal-shrink opacity-0' : 'animate-modal-grow',
+              contentClassName
+            )}
           >
-            <h1
-              {...titleProps}
-              id={titleId}
-              className={cx(
-                'm-0 grow truncate text-xl font-bold capitalize leading-8 text-black dark:text-white',
-                titleClassName
-              )}
+            <header
+              {...headerProps}
+              className={cx('flex w-full items-center justify-between space-x-8', headerClassName)}
             >
-              {title}
-            </h1>
-            <ModalCloseButton
-              variant="unstyled"
-              className="h-8 w-8 shrink-0 rounded-full p-1 outline-none hover:bg-gray-200 dark:hover:bg-gray-700"
-            >
-              <X />
-            </ModalCloseButton>
-          </header>
-          {children}
-        </form>
-      </dialog>
+              <h1
+                {...titleProps}
+                id={titleId}
+                className={cx(
+                  'm-0 grow truncate text-xl font-bold capitalize leading-8 text-black dark:text-white',
+                  titleClassName
+                )}
+              >
+                {title}
+              </h1>
+              <ModalCloseButton
+                variant="unstyled"
+                className="h-8 w-8 shrink-0 rounded-full p-1 outline-none hover:bg-gray-200 dark:hover:bg-gray-700"
+              >
+                <X />
+              </ModalCloseButton>
+            </header>
+            {children}
+          </form>
+        </dialog>
+      </ModalContext.Provider>
     );
   }
 );
