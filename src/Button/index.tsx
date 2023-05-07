@@ -4,17 +4,21 @@ import cx from 'classnames';
 import { FC, PropsWithChildren, useRef } from 'react';
 import { Icon } from 'react-feather';
 
-interface ButtonProps extends AriaButtonProps<'button'> {
+export interface ButtonProps extends PropsWithChildren<AriaButtonProps<'button'>> {
   className?: string;
   iconStart?: Icon;
   iconEnd?: Icon;
+  formMethod?: string | undefined;
+  variant?: 'regular' | 'unstyled';
 }
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({
+export const Button: FC<ButtonProps> = ({
   children,
   className,
   iconStart: IconStart,
   iconEnd: IconEnd,
+  formMethod,
+  variant = 'regular',
   ...props
 }) => {
   const ref = useRef(null);
@@ -23,14 +27,16 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   return (
     <button
       {...buttonProps}
+      formMethod={formMethod}
       ref={ref}
       className={cx(
-        `inline-flex h-9 w-fit items-center space-x-2
-        rounded-md border border-gray-500 bg-gray-100
-        px-2 outline-none
-        dark:border-gray-400 dark:bg-gray-800 `,
+        variant !== 'unstyled' &&
+          `inline-flex h-9 w-fit items-center space-x-2
+          rounded-md border border-gray-500 bg-gray-100
+          px-2 outline-none
+          dark:border-gray-400 dark:bg-gray-800 `,
         buttonProps.disabled && 'cursor-not-allowed opacity-40',
-        !buttonProps.disabled && 'hover:bg-gray-200 hover:dark:bg-gray-700',
+        !buttonProps.disabled && variant !== 'unstyled' && 'hover:bg-gray-200 hover:dark:bg-gray-700',
         className
       )}
     >

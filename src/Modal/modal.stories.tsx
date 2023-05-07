@@ -45,15 +45,22 @@ export const ModalStory = () => {
             </li>
             <li>Clicking outside of the modal,</li>
             <li>
-              Clicking the <X /> Icon at the top-right of the modal,
+              Clicking the <X /> Button at the top-right of the modal,
             </li>
-            <li>Clicking the button below.</li>
+            <li>Clicking either button below.</li>
           </ol>
         </Modal.Content>
-        <Modal.Footer>
-          <Button className="h-9 rounded-md border px-2" onPress={closeModal}>
-            Close Modal
-          </Button>
+        <Modal.Footer className="flex-col items-end space-y-2">
+          <div className="space-x-2">
+            <span className="italic">regular Button calling closeModal →</span>
+            <Button className="h-9 rounded-md border px-2" onPress={closeModal}>
+              Close Modal
+            </Button>
+          </div>
+          <div className="space-x-2">
+            <span className="italic">Modal.CloseButton →</span>
+            <Modal.CloseButton>Close Modal</Modal.CloseButton>
+          </div>
         </Modal.Footer>
       </Modal>
     </section>
