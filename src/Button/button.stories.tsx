@@ -26,6 +26,9 @@ export const ModalStory = () => {
         <p>
           <Button iconStart={Anchor} /> ← button with no text
         </p>
+        <p>
+          <Button variant="unstyled">Unstyled Button</Button>
+        </p>
       </div>
     </section>
   );
