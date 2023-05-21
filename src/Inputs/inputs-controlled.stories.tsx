@@ -36,8 +36,8 @@ export const CheckboxStory = () => {
   return (
     <Section title="Text Input: Controlled">
       <section className="flex flex-row space-x-3">
-        <Button iconStart={Minus} onPress={plusOne} />
-        <Button iconStart={Plus} onPress={minusOne} />
+        <Button iconStart={Minus} onPress={minusOne} />
+        <Button iconStart={Plus} onPress={plusOne} />
       </section>
       <TextInput
         label="controlled input"
