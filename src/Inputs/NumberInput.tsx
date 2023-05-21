@@ -56,7 +56,10 @@ export const NumberInput = ({
           -
         </Button>
         <Input
-          className={cx(className, 'bg-gray-100 p-1 outline-none dark:border-gray-400 dark:bg-gray-800')}
+          className={cx(
+            className,
+            'bg-gray-100  px-3 py-1 outline-none dark:border-gray-400 dark:bg-gray-800'
+          )}
         />
         <Button
           slot="increment"
