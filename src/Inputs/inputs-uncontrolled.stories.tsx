@@ -1,7 +1,8 @@
 import type { Story } from '@ladle/react';
 import { Section } from 'utils';
 
-import { type InputBorder, TextInput, type InputFlow } from './TextInput';
+import { TextInput } from './TextInput';
+import type { InputBorder, InputFlow } from './types';
 
 export default {
   title: 'Components > Text Input',
