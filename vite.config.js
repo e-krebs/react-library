@@ -14,6 +14,7 @@ export default defineConfig({
       classnames: resolve(projectRootDir, 'node_modules/classnames'),
       react: resolve(projectRootDir, 'node_modules/react'),
       'react-feather': resolve(projectRootDir, 'node_modules/react-feather'),
+      'react-aria-components': resolve(projectRootDir, 'node_modules/react-aria-components'),
     },
   },
 });
