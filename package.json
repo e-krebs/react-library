@@ -1,6 +1,6 @@
 {
   "name": "@e-krebs/react-library",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "A collection of components to be reused across personal projects",
   "repository": "github.com/e-krebs/react-library",
   "author": "Emmanuel Krebs <e-krebs@users.noreply.github.com>",
@@ -37,7 +37,8 @@
     "@react-aria/utils": "^3.16.0",
     "@react-aria/visually-hidden": "^3.8.0",
     "@react-stately/toggle": "^3.5.1",
-    "classnames": "^2.3.2"
+    "classnames": "^2.3.2",
+    "react-aria-components": "^1.0.0-alpha.3"
   },
   "devDependencies": {
     "@ladle/react": "^2.12.3",
@@ -47,10 +48,10 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
-    "@typescript-eslint/eslint-plugin": "^5.59.2",
-    "@typescript-eslint/parser": "^5.59.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.40.0",
+    "eslint": "^8.41.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
@@ -58,12 +59,12 @@
     "parcel": "^2.8.3",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-shadow": "^20.0.0",
-    "rimraf": "^5.0.0",
+    "rimraf": "^5.0.1",
     "serve": "^14.2.0",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4"
