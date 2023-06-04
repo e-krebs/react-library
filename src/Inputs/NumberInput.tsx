@@ -2,7 +2,7 @@ import cx from 'classnames';
 import { Button, Group, Input, Label, NumberField, NumberFieldProps } from 'react-aria-components';
 import { Text } from 'react-aria-components';
 
-import { InputBorder, InputFlow } from './types';
+import { InputBorder, InputFlow } from '../types';
 
 interface NumberInputProps extends NumberFieldProps {
   label?: string;

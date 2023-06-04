@@ -2,7 +2,7 @@ import cx from 'classnames';
 import { FC, useRef } from 'react';
 import { AriaTextFieldOptions, useTextField } from '@react-aria/textfield';
 
-import { InputBorder, InputFlow } from './types';
+import { InputBorder, InputFlow } from '../types';
 
 export interface TextInputProps extends AriaTextFieldOptions<'input'> {
   className?: string;

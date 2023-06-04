@@ -2,7 +2,7 @@ import type { Story } from '@ladle/react';
 import { Section } from 'utils';
 
 import { NumberInput } from './NumberInput';
-import type { InputBorder, InputFlow } from './types';
+import type { InputBorder, InputFlow } from '../types';
 
 export default {
   title: 'Components > Number Input',
