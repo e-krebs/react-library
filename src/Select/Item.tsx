@@ -10,7 +10,7 @@ export function Item<T>({ children, value, childItems, ...props }: ItemProps<T>)
     <AriaItem
       {...props}
       value={{ value }}
-      className="flex items-center px-3 py-1 hover:bg-gray-200 hover:dark:bg-gray-700"
+      className="flex items-center px-3 py-1 text-gray-500 hover:bg-gray-200 dark:text-gray-400 hover:dark:bg-gray-700"
     >
       {({ isSelected }) => (
         <>
