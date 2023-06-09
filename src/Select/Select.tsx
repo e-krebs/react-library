@@ -55,7 +55,8 @@ export const Select = <T extends object>({
       <Label className={cx('leading-9', labelClassName)}>{label}</Label>
       <Button
         className={cx(
-          'flex items-center border-gray-500 bg-gray-100 leading-7 hover:bg-gray-200 dark:bg-gray-800 hover:dark:bg-gray-700',
+          `flex items-center border-gray-500 bg-gray-100 leading-7
+          hover:bg-gray-200 dark:bg-gray-800 hover:dark:bg-gray-700`,
           border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
           border === 'bottom' && 'border-b',
           border === 'rounded' && 'border'
@@ -85,7 +86,8 @@ export const Select = <T extends object>({
       )}
       <Popover
         className={cx(
-          'rounded-md border border-gray-500 bg-gray-100 leading-7 dark:border-gray-400 dark:bg-gray-800',
+          `rounded-md border border-gray-500 bg-gray-100 leading-7 shadow-lg
+          dark:border-gray-400 dark:bg-gray-800 dark:shadow-gray-700`,
           popoverClassName
         )}
       >
