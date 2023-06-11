@@ -36,4 +36,5 @@ jobs:
       - run: yarn build
       - name: create .npmrc file
         run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
-      - run: npm publish --access public --tag alpha --tag latest
+      - run: npm publish --access public
+      - run: npm dist-tag add example-package@${{env.new_release_version}} alpha
