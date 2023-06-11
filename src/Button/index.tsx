@@ -1,14 +1,13 @@
-import { useButton } from '@react-aria/button';
-import { type AriaButtonProps } from '@react-types/button';
+import { Button as AriaButton, ButtonProps as AriaButtonProps } from 'react-aria-components';
 import cx from 'classnames';
-import { FC, PropsWithChildren, useRef } from 'react';
+import type { FC, PropsWithChildren, RefAttributes } from 'react';
 import { Icon } from 'react-feather';
 
-export interface ButtonProps extends PropsWithChildren<AriaButtonProps<'button'>> {
+export interface ButtonProps
+  extends PropsWithChildren<AriaButtonProps & RefAttributes<HTMLButtonElement>> {
   className?: string;
   iconStart?: Icon;
   iconEnd?: Icon;
-  formMethod?: string | undefined;
   variant?: 'regular' | 'unstyled';
 }
 
@@ -17,32 +16,25 @@ export const Button: FC<ButtonProps> = ({
   className,
   iconStart: IconStart,
   iconEnd: IconEnd,
-  formMethod,
   variant = 'regular',
   ...props
-}) => {
-  const ref = useRef(null);
-  const { buttonProps } = useButton(props, ref);
-
-  return (
-    <button
-      {...buttonProps}
-      formMethod={formMethod}
-      ref={ref}
-      className={cx(
+}) => (
+  <AriaButton
+    {...props}
+    className={({ isDisabled }) =>
+      cx(
         variant !== 'unstyled' &&
           `inline-flex h-9 w-fit items-center space-x-2
-          rounded-md border border-gray-500 bg-gray-100
-          px-2 outline-none
+          rounded-md border border-gray-500 bg-gray-100 px-2
           dark:border-gray-400 dark:bg-gray-800 `,
-        buttonProps.disabled && 'cursor-not-allowed opacity-40',
-        !buttonProps.disabled && variant !== 'unstyled' && 'hover:bg-gray-200 hover:dark:bg-gray-700',
+        isDisabled && 'cursor-not-allowed opacity-40',
+        !isDisabled && variant !== 'unstyled' && 'hover:bg-gray-200 hover:dark:bg-gray-700',
         className
-      )}
-    >
-      {IconStart !== undefined && <IconStart className="h-4 w-4" />}
-      {children != null && <span>{children}</span>}
-      {IconEnd !== undefined && <IconEnd className="h-4 w-4" />}
-    </button>
-  );
-};
+      )
+    }
+  >
+    {IconStart !== undefined && <IconStart className="h-4 w-4" />}
+    {children && <span>{children}</span>}
+    {IconEnd !== undefined && <IconEnd className="h-4 w-4" />}
+  </AriaButton>
+);
