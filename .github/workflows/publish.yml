@@ -37,4 +37,4 @@ jobs:
       - name: create .npmrc file
         run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
       - run: npm publish --access public
-      - run: npm dist-tag add example-package@${{env.new_release_version}} alpha
+      - run: npm dist-tag add @e-krebs/react-library@${{env.new_release_version}} alpha
