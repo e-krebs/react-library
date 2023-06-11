@@ -1,6 +1,6 @@
 {
   "name": "@e-krebs/react-library",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "A collection of components to be reused across personal projects",
   "repository": "github.com/e-krebs/react-library",
   "author": "Emmanuel Krebs <e-krebs@users.noreply.github.com>",
@@ -30,13 +30,7 @@
     "react-feather": "^2.0.10"
   },
   "dependencies": {
-    "@react-aria/button": "^3.7.2",
-    "@react-aria/checkbox": "^3.9.1",
-    "@react-aria/focus": "^3.12.1",
-    "@react-aria/textfield": "^3.9.2",
     "@react-aria/utils": "^3.17.0",
-    "@react-aria/visually-hidden": "^3.8.1",
-    "@react-stately/toggle": "^3.5.2",
     "classnames": "^2.3.2",
     "react-aria-components": "1.0.0-alpha.4"
   },

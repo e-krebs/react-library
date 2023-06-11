@@ -1,10 +1,14 @@
 import cx from 'classnames';
-import { FC, useRef } from 'react';
-import { AriaTextFieldOptions, useTextField } from '@react-aria/textfield';
+import { FC, type RefAttributes } from 'react';
+import { Input, Label, Text, TextField, type TextFieldProps } from 'react-aria-components';
 
 import { InputBorder, InputFlow } from '../types';
 
-export interface TextInputProps extends AriaTextFieldOptions<'input'> {
+export interface TextInputProps extends TextFieldProps, RefAttributes<HTMLDivElement> {
+  label?: string;
+  placeholder?: string;
+  description?: string;
+  errorMessage?: string;
   className?: string;
   labelClassName?: string;
   flow?: InputFlow;
@@ -12,47 +16,43 @@ export interface TextInputProps extends AriaTextFieldOptions<'input'> {
   border?: InputBorder;
 }
 
-export const TextInput: FC<TextInputProps> = (props) => {
-  const { label, className, labelClassName, flow, flowClassName } = props;
-  const border = props.border ?? 'bottom';
-  const ref = useRef(null);
-  const {
-    labelProps,
-    inputProps: { className: inputClassName, ...inputProps },
-    descriptionProps: { className: descriptionClassName, ...descriptionProps },
-    errorMessageProps: { className: errorClassName, ...errorMessageProps },
-  } = useTextField(props, ref);
+export const TextInput: FC<TextInputProps> = ({
+  label,
+  className,
+  labelClassName,
+  flow,
+  flowClassName,
+  description,
+  errorMessage,
+  ...props
+}) => {
+  const { border = 'bottom', ...textFieldProps } = props;
 
   return (
-    <div className={cx('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}>
-      <label {...labelProps} className={cx('leading-9', labelClassName)}>
-        {label}
-      </label>
-      <input
-        {...inputProps}
-        ref={ref}
+    <TextField
+      {...textFieldProps}
+      className={cx('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}
+    >
+      <Label className={cx('leading-9', labelClassName)}>{label}</Label>
+      <Input
         className={cx(
-          inputClassName,
           className,
-          'border-gray-500 bg-gray-100 p-1 outline-none dark:border-gray-400 dark:bg-gray-800',
+          'border-gray-500 bg-gray-100 p-1 dark:border-gray-400 dark:bg-gray-800',
           border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
           border === 'bottom' && 'border-b',
           border === 'rounded' && 'border'
         )}
       />
-      {props.description && (
-        <div {...descriptionProps} className={cx('leading-9', descriptionClassName)}>
-          {props.description}
-        </div>
+      {description && (
+        <Text slot="description" className="leading-9">
+          {description}
+        </Text>
       )}
-      {props.errorMessage && (
-        <div
-          {...errorMessageProps}
-          className={cx(errorClassName, 'leading-9 text-red-600 dark:text-red-400')}
-        >
-          {props.errorMessage}
-        </div>
+      {errorMessage && (
+        <Text slot="errorMessage" className="leading-9 text-red-600 dark:text-red-400">
+          {errorMessage}
+        </Text>
       )}
-    </div>
+    </TextField>
   );
 };

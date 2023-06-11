@@ -141,7 +141,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
               </h1>
               <ModalCloseButton
                 variant="unstyled"
-                className="h-8 w-8 shrink-0 rounded-full p-1 outline-none hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="h-8 w-8 shrink-0 rounded-full p-1 hover:bg-gray-200 dark:hover:bg-gray-700"
               >
                 <X />
               </ModalCloseButton>

@@ -10,7 +10,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@react-aria': resolve(projectRootDir, 'node_modules/@react-aria'),
-      '@react-stately': resolve(projectRootDir, 'node_modules/@react-stately'),
       classnames: resolve(projectRootDir, 'node_modules/classnames'),
       react: resolve(projectRootDir, 'node_modules/react'),
       'react-feather': resolve(projectRootDir, 'node_modules/react-feather'),
