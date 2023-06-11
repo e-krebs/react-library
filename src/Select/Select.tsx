@@ -62,7 +62,7 @@ export const Select = <T extends object>({
           border === 'rounded' && 'border'
         )}
       >
-        <SelectValue className={cx(className, 'grow px-3 py-1 outline-none dark:border-gray-400 ')} />
+        <SelectValue className={cx(className, 'grow px-3 py-1 dark:border-gray-400 ')} />
         <ChevronDown
           aria-hidden="true"
           className={cx(

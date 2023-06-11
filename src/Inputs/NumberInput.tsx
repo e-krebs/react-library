@@ -1,11 +1,12 @@
 import cx from 'classnames';
-import { Button, Group, Input, Label, NumberField, NumberFieldProps } from 'react-aria-components';
-import { Text } from 'react-aria-components';
+import { RefAttributes } from 'react';
+import { Group, Input, Label, NumberField, type NumberFieldProps, Text } from 'react-aria-components';
 import { Minus, Plus } from 'react-feather';
 
+import { Button } from '../Button';
 import { InputBorder, InputFlow } from '../types';
 
-interface NumberInputProps extends NumberFieldProps {
+interface NumberInputProps extends NumberFieldProps, RefAttributes<HTMLDivElement> {
   label?: string;
   description?: string;
   errorMessage?: string;
@@ -26,7 +27,7 @@ export const NumberInput = ({
   errorMessage,
   ...props
 }: NumberInputProps) => {
-  const border = props.border ?? 'bottom';
+  const { border = 'bottom', ...numberFieldProps } = props;
 
   const buttonClassName =
     'px-3 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 hover:dark:bg-gray-700 w-9 h-9';
@@ -34,7 +35,7 @@ export const NumberInput = ({
 
   return (
     <NumberField
-      {...props}
+      {...numberFieldProps}
       className={cx('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}
     >
       <Label className={cx('leading-9', labelClassName)}>{label}</Label>
@@ -47,6 +48,7 @@ export const NumberInput = ({
         )}
       >
         <Button
+          variant="unstyled"
           slot="decrement"
           className={cx(
             'border-r',
@@ -59,12 +61,10 @@ export const NumberInput = ({
           <Minus className={iconClassName} />
         </Button>
         <Input
-          className={cx(
-            className,
-            'bg-gray-100  px-3 py-1 outline-none dark:border-gray-400 dark:bg-gray-800'
-          )}
+          className={cx(className, 'z-10 bg-gray-100  px-3 py-1 dark:border-gray-400 dark:bg-gray-800')}
         />
         <Button
+          variant="unstyled"
           slot="increment"
           className={cx(
             'border-l',
