@@ -12,9 +12,9 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: '16'
+          bun-version: 'latest'
       - name: get semantic release info
         run: echo new_release_version=${GITHUB_REF:11} >> $GITHUB_ENV
       - name: get package version
@@ -28,12 +28,8 @@ jobs:
         run: |
           echo "invalid package version, expected: ${{env.new_release_version}}, got: ${{steps.package.outputs.prop}}"
           exit 1
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: yarn-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn --frozen-lockfile
-      - run: yarn build
+      - run: bun install --no-save
+      - run: bun run build
       - name: create .npmrc file
         run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
       - run: npm publish --access public
