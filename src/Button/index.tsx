@@ -29,7 +29,7 @@ export const Button: FC<ButtonProps> = ({
           dark:border-gray-400 dark:bg-gray-800 `,
         isDisabled && 'cursor-not-allowed opacity-40',
         !isDisabled && variant !== 'unstyled' && 'hover:bg-gray-200 hover:dark:bg-gray-700',
-        className
+        className,
       )
     }
   >

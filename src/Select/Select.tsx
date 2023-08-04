@@ -59,7 +59,7 @@ export const Select = <T extends object>({
           hover:bg-gray-200 dark:bg-gray-800 hover:dark:bg-gray-700`,
           border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
           border === 'bottom' && 'border-b',
-          border === 'rounded' && 'border'
+          border === 'rounded' && 'border',
         )}
       >
         <SelectValue className={cx(className, 'grow px-3 py-1 dark:border-gray-400 ')} />
@@ -70,7 +70,7 @@ export const Select = <T extends object>({
               ? 'border-gray-500 dark:border-gray-400'
               : 'border-white dark:border-gray-900',
             'border-l',
-            buttonClassName
+            buttonClassName,
           )}
         />
       </Button>
@@ -88,7 +88,7 @@ export const Select = <T extends object>({
         className={cx(
           `rounded-md border border-gray-500 bg-gray-100 leading-7 shadow-lg
           dark:border-gray-400 dark:bg-gray-800 dark:shadow-gray-700`,
-          popoverClassName
+          popoverClassName,
         )}
       >
         <ListBox>{children}</ListBox>

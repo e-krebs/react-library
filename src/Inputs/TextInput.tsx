@@ -40,7 +40,7 @@ export const TextInput: FC<TextInputProps> = ({
           'border-gray-500 bg-gray-100 p-1 dark:border-gray-400 dark:bg-gray-800',
           border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
           border === 'bottom' && 'border-b',
-          border === 'rounded' && 'border'
+          border === 'rounded' && 'border',
         )}
       />
       {description && (

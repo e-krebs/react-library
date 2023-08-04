@@ -44,7 +44,7 @@ export const NumberInput = ({
           'flex border-gray-500 leading-7',
           border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
           border === 'bottom' && 'border-b',
-          border === 'rounded' && 'border'
+          border === 'rounded' && 'border',
         )}
       >
         <Button
@@ -55,7 +55,7 @@ export const NumberInput = ({
             border === 'rounded'
               ? 'rounded-l-md border-gray-500 dark:border-gray-400'
               : 'rounded-l-none border-white dark:border-gray-900',
-            buttonClassName
+            buttonClassName,
           )}
         >
           <Minus className={iconClassName} />
@@ -71,7 +71,7 @@ export const NumberInput = ({
             border === 'rounded'
               ? 'rounded-r-md border-gray-500 dark:border-gray-400'
               : 'rounded-r-none border-white dark:border-gray-900',
-            buttonClassName
+            buttonClassName,
           )}
         >
           <Plus className={iconClassName} />

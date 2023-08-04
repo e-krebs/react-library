@@ -44,7 +44,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
       headerProps: { className: headerClassName, ...headerProps } = {},
       dialogProps: { className: dialogClassName, ...dialogProps } = {},
     },
-    ref
+    ref,
   ) => {
     const titleId = useId(id);
     const modalRef = useRef<HTMLDialogElement>(null);
@@ -109,7 +109,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
           ref={modalRef}
           className={cx(
             '!m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-sm',
-            dialogClassName
+            dialogClassName,
           )}
           onClick={(e) => e.stopPropagation()}
         >
@@ -122,7 +122,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
               'bg-white text-base text-gray-500',
               'dark:bg-gray-900 dark:fill-gray-400 dark:text-gray-400',
               closing ? 'animate-modal-shrink opacity-0' : 'animate-modal-grow',
-              contentClassName
+              contentClassName,
             )}
           >
             <header
@@ -134,7 +134,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
                 id={titleId}
                 className={cx(
                   'm-0 grow truncate text-xl font-bold capitalize leading-8 text-black dark:text-white',
-                  titleClassName
+                  titleClassName,
                 )}
               >
                 {title}
@@ -151,6 +151,6 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
         </dialog>
       </ModalContext.Provider>
     );
-  }
+  },
 );
 ModalComponent.displayName = 'Modal';
