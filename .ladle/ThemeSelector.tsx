@@ -1,4 +1,4 @@
-import React, { FC, Key, useEffect, useState } from 'react';
+import React, { FC, Key, useEffect, useMemo, useState } from 'react';
 
 import { Select } from '../src/Select';
 
@@ -21,12 +21,15 @@ const itemClassName: Record<Theme, string> = {
 export const ThemeSelector: FC = () => {
   const [value, setValue] = useState<Key>('yellow' as Theme);
 
+  const theme = useMemo(() => themes.includes(value as Theme) ? value as Theme : undefined, [value])
+
   useEffect(() => {
-    const theme = themes.includes(value as Theme)
-    ? value as Theme
-    : '';
-    document.body.setAttribute('data-theme', theme)
-  }, [value]);
+    if (theme) {
+      document.body.setAttribute('data-theme', theme);
+    } else {
+      document.body.removeAttribute('data-theme');
+    }
+  }, [theme]);
 
   return (
     <Select
@@ -36,6 +39,7 @@ export const ThemeSelector: FC = () => {
       items={items}
       selectedKey={value}
       onSelectionChange={setValue}
+      className={theme && itemClassName[theme]}
     >
     {(item: ThemeItem) => (
       <Select.Item
