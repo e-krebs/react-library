@@ -31,6 +31,8 @@ module.exports = {
         'th-dark-border': colors.gray[300],
         'th-dark-primary': primary[300],
       },
+      strokeWidth: {
+        '3': '3px',
       },
       keyframes: {
         'modal-grow': {
@@ -47,6 +49,11 @@ module.exports = {
         'modal-shrink': 'modal-shrink 150ms cubic-bezier(0.4, 0, 0.2, 1)'
       }
     },
+    data: {
+      disabled: 'disabled',
+      focused: 'focused',
+      selected: 'selected',
+    }
   },
   plugins: [typography],
 };
