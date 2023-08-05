@@ -2,6 +2,8 @@ import type { GlobalProvider } from '@ladle/react';
 import React from 'react';
 import { GitHub } from 'react-feather';
 
+import { ThemeSelector } from './ThemeSelector';
+
 import '../src/tailwind.css';
 import './stories.css';
 
@@ -18,6 +20,9 @@ export const Provider: GlobalProvider = ({ children }) => (
         <GitHub className="h-6 w-6" />
       </a>
     </header>
+
+    <section className="flex justify-end"><ThemeSelector /></section>
+
     <section>{children}</section>
   </>
 );
