@@ -22,6 +22,15 @@ module.exports = {
       colors: {
         'gray': colors.zinc,
         primary,
+        'th-bg': colors.white,
+        'th-text': colors.gray[500],
+        'th-border': colors.gray[700],
+        'th-primary': primary[500],
+        'th-dark-bg': colors.zinc[900],
+        'th-dark-text': colors.gray[400],
+        'th-dark-border': colors.gray[300],
+        'th-dark-primary': primary[300],
+      },
       },
       keyframes: {
         'modal-grow': {

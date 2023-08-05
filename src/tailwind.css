@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-500 text-base min-h-screen;
-    @apply dark:bg-gray-900 dark:text-gray-400 dark:fill-gray-400;
+    @apply bg-th-bg text-th-text text-base min-h-screen;
+    @apply dark:bg-th-dark-bg dark:text-th-dark-text dark:fill-th-dark-text;
   }
 }

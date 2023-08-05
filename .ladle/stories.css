@@ -41,7 +41,7 @@
     }
 
     .ladle-addons {
-      @apply w-full p-4 m-0 bg-white dark:bg-gray-900 border-t dark:border-gray-800;
+      @apply w-full p-4 m-0 bg-th-bg dark:bg-th-dark-bg border-t border-th-dark-border dark:border-th-border;
     }
 
     div[data-reach-dialog-content] {
@@ -55,11 +55,11 @@
 
   @media (prefers-color-scheme: dark) {
     body {
-      --ladle-bg-color-primary: theme('colors.gray.900');
+      --ladle-bg-color-primary: theme('colors.th-dark-bg');
       --ladle-bg-color-secondary: theme('colors.gray.800');
-      --ladle-color-primary: theme('colors.gray.400');
+      --ladle-color-primary: theme('colors.th-dark-text');
       --ladle-color-hover: theme('colors.gray.200');
-      --ladle-color-accent: theme('colors.yellow.400');
+      --ladle-color-accent: theme('colors.th-dark-primary');
     }
 
     pre {
@@ -68,17 +68,17 @@
 
     .ladle-controls-table select,
     .ladle-controls-table input {
-      @apply bg-gray-900;
+      @apply bg-th-dark-bg;
     }
   }
 
   @media (prefers-color-scheme: light) {
     body {
-      --ladle-bg-color-primary: theme('colors.white');
+      --ladle-bg-color-primary: theme('colors.th-bg');
       --ladle-bg-color-secondary: theme('colors.gray.200');
-      --ladle-color-primary: theme('colors.gray.500');
+      --ladle-color-primary: theme('colors.th-text');
       --ladle-color-hover: theme('colors.gray.700');
-      --ladle-color-accent: theme('colors.yellow.500');
+      --ladle-color-accent: theme('colors.th-primary');
     }
   }
 }
