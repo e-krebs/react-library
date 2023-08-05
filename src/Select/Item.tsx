@@ -1,16 +1,21 @@
 import { Item as AriaItem, type ItemProps as AriaItemProps } from 'react-aria-components';
 import { Check } from 'react-feather';
+import { twMerge } from 'tailwind-merge';
 
 interface ItemProps<T> extends Omit<AriaItemProps<{ value: T }>, 'value'> {
   value?: T;
+  className?: string;
 }
 
-export function Item<T>({ children, value, childItems, ...props }: ItemProps<T>) {
+export function Item<T>({ children, value, childItems, className, ...props }: ItemProps<T>) {
   return (
     <AriaItem
       {...props}
       value={{ value }}
-      className="flex items-center px-3 py-1 text-gray-500 hover:bg-gray-200 dark:text-gray-400 hover:dark:bg-gray-700"
+      className={twMerge(
+        'flex items-center px-3 py-1 text-gray-500 hover:bg-gray-200 dark:text-gray-400 hover:dark:bg-gray-700',
+        className,
+      )}
     >
       {({ isSelected }) => (
         <>
