@@ -1,6 +1,10 @@
 const { opacity, spacing } = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 const typography = require('@tailwindcss/typography');
+const { parseColor } = require('tailwindcss/lib/util/color');
+
+// Converts HEX color to RGB values
+const toRGB = (value) => parseColor(value).color.join(' ');
 
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
@@ -9,20 +13,20 @@ module.exports = {
       colors: {
         gray: colors.zinc,
         primary: {
-          50: `rgb(var(--primary-50,  ${colors.zinc[50]}) / <alpha-value>)`,
-          100: `rgb(var(--primary-100, ${colors.zinc[100]}) / <alpha-value>)`,
-          200: `rgb(var(--primary-200, ${colors.zinc[200]}) / <alpha-value>)`,
-          300: `rgb(var(--primary-300, ${colors.zinc[300]}) / <alpha-value>)`,
-          400: `rgb(var(--primary-400, ${colors.zinc[400]}) / <alpha-value>)`,
-          500: `rgb(var(--primary-500, ${colors.zinc[500]}) / <alpha-value>)`,
-          600: `rgb(var(--primary-600, ${colors.zinc[600]}) / <alpha-value>)`,
-          700: `rgb(var(--primary-700, ${colors.zinc[700]}) / <alpha-value>)`,
-          800: `rgb(var(--primary-800, ${colors.zinc[800]}) / <alpha-value>)`,
-          900: `rgb(var(--primary-900, ${colors.zinc[900]}) / <alpha-value>)`,
-          950: `rgb(var(--primary-950, ${colors.zinc[950]}) / <alpha-value>)`,
+          50: `rgb(var(--primary-50,   ${toRGB(colors.zinc[50])}) / <alpha-value>)`,
+          100: `rgb(var(--primary-100, ${toRGB(colors.zinc[100])}) / <alpha-value>)`,
+          200: `rgb(var(--primary-200, ${toRGB(colors.zinc[200])}) / <alpha-value>)`,
+          300: `rgb(var(--primary-300, ${toRGB(colors.zinc[300])}) / <alpha-value>)`,
+          400: `rgb(var(--primary-400, ${toRGB(colors.zinc[400])}) / <alpha-value>)`,
+          500: `rgb(var(--primary-500, ${toRGB(colors.zinc[500])}) / <alpha-value>)`,
+          600: `rgb(var(--primary-600, ${toRGB(colors.zinc[600])}) / <alpha-value>)`,
+          700: `rgb(var(--primary-700, ${toRGB(colors.zinc[700])}) / <alpha-value>)`,
+          800: `rgb(var(--primary-800, ${toRGB(colors.zinc[800])}) / <alpha-value>)`,
+          900: `rgb(var(--primary-900, ${toRGB(colors.zinc[900])}) / <alpha-value>)`,
+          950: `rgb(var(--primary-950, ${toRGB(colors.zinc[950])}) / <alpha-value>)`,
         },
-        'th-primary': `rgb(var(--primary-500, ${colors.zinc[500]}) / <alpha-value>)`,
-        'th-dark-primary': `rgb(var(--primary-500, ${colors.zinc[500]}) / <alpha-value>)`,
+        'th-primary': `rgb(var(--primary-500, ${toRGB(colors.zinc[500])}) / <alpha-value>)`,
+        'th-dark-primary': `rgb(var(--primary-500, ${toRGB(colors.zinc[100])}) / <alpha-value>)`,
         'th-destructive': colors.red[600],
         'th-dark-destructive': colors.red[600],
       },
