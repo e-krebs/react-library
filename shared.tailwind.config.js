@@ -25,8 +25,8 @@ module.exports = {
         'th-dark-primary': `rgb(var(--primary-400, ${colors.zinc[400]}) / <alpha-value>)`,
       },
       backgroundColor: {
-        th: colors.white,
-        'th-hover': colors.zinc[200],
+        th: colors.zinc[50],
+        'th-hover': colors.zinc[100],
         'th-dark': colors.zinc[900],
         'th-dark-hover': colors.zinc[700],
       },
