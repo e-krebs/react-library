@@ -27,7 +27,9 @@ module.exports = {
       },
       backgroundColor: {
         th: colors.white,
+        'th-hover': colors.zinc[100],
         'th-dark': colors.zinc[900],
+        'th-dark-hover': colors.zinc[800],
       },
       ringOffsetColor: {
         th: colors.white,

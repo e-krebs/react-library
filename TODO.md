@@ -18,8 +18,8 @@
   - don't hesitate to override the `className` property provided by `react-aria-component` with `className?: string` as with `tailwindCss` & react-aria's `data-...` attributes we shouldn't  need state-dependant classNames
 - don't use the ~~`zinc`~~ color but `gray` instead
 - for background colors:
-  - replace ~~`white`~~ by `bg-th`
-  - replace ~~`dark:bg-gray-900`~~ by `dark:bg-th-dark`
+  - replace ~~`white`~~ by `bg-th` (and `hover:bg-th-hover` when needed)
+  - replace ~~`dark:bg-gray-900`~~ by `dark:bg-th-dark` (and `dark:hover:bg-th-dark-hover` when needed)
 - for text colors:
   - replace ~~`text-gray-500`~~ by `text-th`
   - replace ~~`dark:text-gray-400`~~ by `dark:text-th-dark`
