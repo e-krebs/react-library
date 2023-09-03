@@ -5,13 +5,13 @@
     display: initial;
   }
   div[data-reach-dialog-overlay] {
-    @apply bg-gray-900/90
+    @apply bg-gray-900/90;
   }
   div[data-reach-dialog-content] {
     width: calc(100% - 42px);
   }
 
-  div[role="dialog"] {
+  div[role='dialog'] {
     @apply shadow-lg shadow-black/40;
   }
 
@@ -27,7 +27,8 @@
     @apply capitalize;
   }
 
-  .ladle-aside, .ladle-aside input {
+  .ladle-aside,
+  .ladle-aside input {
     @apply bg-[color:var(--ladle-bg-color-secondary)];
   }
 
@@ -53,32 +54,32 @@
     --ladle-main-padding-mobile: 2rem;
   }
 
-  body[data-theme="yellow"] {
-    --primary-50:  theme('colors.yellow.50');
-    --primary-100: theme('colors.yellow.100');
-    --primary-200: theme('colors.yellow.200');
-    --primary-300: theme('colors.yellow.300');
-    --primary-400: theme('colors.yellow.400');
-    --primary-500: theme('colors.yellow.500');
-    --primary-600: theme('colors.yellow.600');
-    --primary-700: theme('colors.yellow.700');
-    --primary-800: theme('colors.yellow.800');
-    --primary-900: theme('colors.yellow.900');
-    --primary-950: theme('colors.yellow.950');
+  body[data-theme='yellow'] {
+    --primary-50: 254 252 232; /* yellow-50 rgb values */
+    --primary-100: 254 249 195; /* yellow-100 rgb values */
+    --primary-200: 254 240 138; /* yellow-200 rgb values */
+    --primary-300: 253 224 71; /* yellow-300 rgb values */
+    --primary-400: 250 204 21; /* yellow-400 rgb values */
+    --primary-500: 234 179 8; /* yellow-500 rgb values */
+    --primary-600: 202 138 4; /* yellow-600 rgb values */
+    --primary-700: 161 98 7; /* yellow-700 rgb values */
+    --primary-800: 133 77 14; /* yellow-800 rgb values */
+    --primary-900: 113 63 18; /* yellow-900 rgb values */
+    --primary-950: 66 32 6; /* yellow-950 rgb values */
   }
 
-  body[data-theme="blue"] {
-    --primary-50:  theme('colors.sky.50');
-    --primary-100: theme('colors.sky.100');
-    --primary-200: theme('colors.sky.200');
-    --primary-300: theme('colors.sky.300');
-    --primary-400: theme('colors.sky.400');
-    --primary-500: theme('colors.sky.500');
-    --primary-600: theme('colors.sky.600');
-    --primary-700: theme('colors.sky.700');
-    --primary-800: theme('colors.sky.800');
-    --primary-900: theme('colors.sky.900');
-    --primary-950: theme('colors.sky.950');
+  body[data-theme='blue'] {
+    --primary-50: 240 249 255; /* sky-50 rgb values */
+    --primary-100: 224 242 254; /* sky-100 rgb values */
+    --primary-200: 186 230 253; /* sky-200 rgb values */
+    --primary-300: 125 211 252; /* sky-300 rgb values */
+    --primary-400: 56 189 248; /* sky-400 rgb values */
+    --primary-500: 14 165 233; /* sky-500 rgb values */
+    --primary-600: 2 132 199; /* sky-600 rgb values */
+    --primary-700: 3 105 161; /* sky-700 rgb values */
+    --primary-800: 7 89 133; /* sky-800 rgb values */
+    --primary-900: 12 74 110; /* sky-900 rgb values */
+    --primary-950: 8 47 73; /* sky-950 rgb values */
   }
 
   @media (prefers-color-scheme: dark) {
