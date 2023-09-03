@@ -1,27 +1,11 @@
-import React, { FC, Key, useEffect, useMemo, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+
+import { type Theme, items, getThemeClassName } from './Theme';
 
 import { Select } from '../src/Select';
 
-const themes = ['yellow', 'blue'] as const;
-type Theme = typeof themes[number];
-interface ThemeItem {
-  value: string;
-  name: Theme | null;
-}
-const items: ThemeItem[] = [
-  { value: 'black & white', name: null },
-  ...themes.map(theme => ({ value: theme, name: theme }))
-]
-
-const itemClassName: Record<Theme, string> = {
-  yellow: 'text-yellow-500 dark:text-yellow-300',
-  blue: 'text-sky-500 dark:text-sky-300',
-}
-
 export const ThemeSelector: FC = () => {
-  const [value, setValue] = useState<Key>('yellow' as Theme);
-
-  const theme = useMemo(() => themes.includes(value as Theme) ? value as Theme : undefined, [value])
+  const [theme, setTheme] = useState<Theme | null>('yellow' as Theme);
 
   useEffect(() => {
     if (theme) {
@@ -37,20 +21,20 @@ export const ThemeSelector: FC = () => {
       border="rounded"
       flow="row"
       items={items}
-      selectedKey={value}
-      onSelectionChange={setValue}
-      className={theme && itemClassName[theme]}
+      selectedKey={theme}
+      onSelectionChange={(value) => setTheme((value as unknown as (typeof items)[number]).name)}
+      className={getThemeClassName(theme)}
     >
-    {(item: ThemeItem) => (
-      <Select.Item
-        id={item.value}
-        value={item.name}
-        textValue={item.value}
-        className={item.name ? itemClassName[item.name] : undefined}
-      >
-        {item.value}
-      </Select.Item>
-    )}
+      {(item) => (
+        <Select.Item
+          id={item.value}
+          value={item.name}
+          textValue={item.value}
+          className={getThemeClassName(item.name)}
+        >
+          {item.value}
+        </Select.Item>
+      )}
     </Select>
-  )
-}
+  );
+};
