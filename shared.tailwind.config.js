@@ -48,6 +48,7 @@ module.exports = {
         th: colors.zinc[500],
         'th-dark': colors.zinc[400],
         'th-reversed': colors.zinc[50],
+        'th-dark-reversed': colors.zinc[900],
       },
       fill: {
         th: colors.zinc[500],

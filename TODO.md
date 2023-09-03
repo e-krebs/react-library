@@ -28,6 +28,7 @@
 - for text colors:
   - replace ~~`text-gray-500`~~ by `text-th`
   - replace ~~`dark:text-gray-400`~~ by `dark:text-th-dark`
+  - also available: `text-th-reversed` & `text-th-dark-reversed`
 - for border colors:
   - replace ~~`border-gray-700`~~ by `border-th`
   - replace ~~`dark:border-gray-300`~~ by `dark:border-th-dark`
