@@ -22,7 +22,9 @@ module.exports = {
           950: `rgb(var(--primary-950, ${colors.zinc[950]}) / <alpha-value>)`,
         },
         'th-primary': `rgb(var(--primary-500, ${colors.zinc[500]}) / <alpha-value>)`,
-        'th-dark-primary': `rgb(var(--primary-400, ${colors.zinc[400]}) / <alpha-value>)`,
+        'th-dark-primary': `rgb(var(--primary-500, ${colors.zinc[500]}) / <alpha-value>)`,
+        'th-destructive': colors.red[600],
+        'th-dark-destructive': colors.red[600],
       },
       backgroundColor: {
         th: colors.zinc[50],
@@ -41,6 +43,7 @@ module.exports = {
       textColor: {
         th: colors.zinc[500],
         'th-dark': colors.zinc[400],
+        'th-reversed': colors.zinc[50],
       },
       fill: {
         th: colors.zinc[500],
