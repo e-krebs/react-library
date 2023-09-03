@@ -8,7 +8,7 @@ export interface ButtonProps
   className?: string;
   iconStart?: Icon;
   iconEnd?: Icon;
-  variant?: 'regular' | 'unstyled';
+  variant?: 'regular' | 'primary' | 'destructive' | 'unstyled';
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -22,15 +22,32 @@ export const Button: FC<ButtonProps> = ({
   <AriaButton
     {...props}
     className={twMerge(
-      `disabled:cursor-not-allowed disabled:opacity-disabled
-      data-focused:ring-2 ring-th dark:ring-th-dark
+      `inline-flex items-center h-input w-fit
+      px-2 space-x-2 rounded-md
+      disabled:cursor-not-allowed disabled:opacity-disabled
+      outline-0 data-focused:ring-2
       ring-offset-2 ring-offset-th dark:ring-offset-th-dark`,
-      variant !== 'unstyled' &&
-        `inline-flex items-center h-input w-fit px-2 space-x-2
-        text-th-primary dark:text-th-dark-primary
-        border rounded-md border-th-primary dark:border-th-dark-primary
+      variant !== 'unstyled' && `border`,
+      variant === 'regular' &&
+        `text-th-primary dark:text-th-dark-primary
+        border-th-primary dark:border-th-dark-primary
         bg-th hover:enabled:bg-th-primary/5
-        dark:bg-th-dark dark:hover:enabled:bg-th-dark-primary/5`,
+        dark:bg-th-dark dark:hover:enabled:bg-th-dark-primary/5
+        ring-th-primary dark:ring-th-dark-primary`,
+      variant === 'primary' &&
+        `text-th-reversed font-medium
+        border-th-primary hover:enabled:border-th-primary/95
+        dark:border-th-dark-primary dark:hover:enabled:border-th-dark-primary/95
+        bg-th-primary hover:enabled:bg-th-primary/95
+        dark:bg-th-dark-primary dark:hover:enabled:bg-th-dark-primary/95
+        ring-th-primary dark:ring-th-dark-primary`,
+      variant === 'destructive' &&
+        `text-th-destructive dark:text-th-dark-destructive font-medium
+        border-th-destructive hover:enabled:border-th-destructive/95
+        dark:border-th-dark-destructive dark:hover:enabled:border-th-dark-destructive/95
+        bg-th hover:enabled:bg-th-destructive/5
+        dark:bg-th-dark dark:hover:enabled:bg-th-dark-destructive/5
+        ring-th-destructive dark:ring-th-dark-destructive`,
       className,
     )}
   >
