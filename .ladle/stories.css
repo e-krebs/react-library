@@ -41,7 +41,7 @@
     }
 
     .ladle-addons {
-      @apply w-full p-4 m-0 bg-th-bg dark:bg-th-dark-bg border-t border-th-dark-border dark:border-th-border;
+      @apply w-full p-4 m-0 bg-th dark:bg-th-dark border-t border-th-dark dark:border-th;
     }
 
     div[data-reach-dialog-content] {
@@ -83,9 +83,9 @@
 
   @media (prefers-color-scheme: dark) {
     body {
-      --ladle-bg-color-primary: theme('colors.th-dark-bg');
+      --ladle-bg-color-primary: theme('backgroundColor.th-dark');
       --ladle-bg-color-secondary: theme('colors.gray.800');
-      --ladle-color-primary: theme('colors.th-dark-text');
+      --ladle-color-primary: theme('textColor.th-dark');
       --ladle-color-hover: theme('colors.gray.200');
       --ladle-color-accent: theme('colors.th-dark-primary');
     }
@@ -96,15 +96,15 @@
 
     .ladle-controls-table select,
     .ladle-controls-table input {
-      @apply bg-th-dark-bg;
+      @apply bg-th-dark;
     }
   }
 
   @media (prefers-color-scheme: light) {
     body {
-      --ladle-bg-color-primary: theme('colors.th-bg');
+      --ladle-bg-color-primary: theme('backgroundColor.th');
       --ladle-bg-color-secondary: theme('colors.gray.200');
-      --ladle-color-primary: theme('colors.th-text');
+      --ladle-color-primary: theme('textColor.th');
       --ladle-color-hover: theme('colors.gray.700');
       --ladle-color-accent: theme('colors.th-primary');
     }

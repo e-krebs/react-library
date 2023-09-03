@@ -22,14 +22,36 @@ module.exports = {
       colors: {
         'gray': colors.zinc,
         primary,
-        'th-bg': colors.white,
-        'th-text': colors.gray[500],
-        'th-border': colors.gray[700],
         'th-primary': primary[500],
-        'th-dark-bg': colors.zinc[900],
-        'th-dark-text': colors.gray[400],
-        'th-dark-border': colors.gray[300],
         'th-dark-primary': primary[300],
+      },
+      backgroundColor: {
+        th: colors.white,
+        'th-dark': colors.zinc[900],
+      },
+      ringOffsetColor: {
+        th: colors.white,
+        'th-dark': colors.zinc[900],
+      },
+      stroke: {
+        th: colors.white,
+        'th-dark': colors.zinc[900],
+      },
+      textColor: {
+        'th': colors.gray[500],
+        'th-dark': colors.gray[400],
+      },
+      fill: {
+        'th': colors.gray[500],
+        'th-dark': colors.gray[400],
+      },
+      borderColor: {
+        'th': colors.gray[700],
+        'th-dark': colors.gray[300],
+      },
+      ringColor: {
+        'th': colors.gray[700],
+        'th-dark': colors.gray[300],
       },
       strokeWidth: {
         '3': '3px',
@@ -52,6 +74,7 @@ module.exports = {
     data: {
       disabled: 'disabled',
       focused: 'focused',
+      'focus-visible': 'focus-visible',
       selected: 'selected',
     }
   },
