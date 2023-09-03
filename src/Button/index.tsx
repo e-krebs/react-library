@@ -27,9 +27,10 @@ export const Button: FC<ButtonProps> = ({
       ring-offset-2 ring-offset-th dark:ring-offset-th-dark`,
       variant !== 'unstyled' &&
         `inline-flex items-center h-input w-fit px-2 space-x-2
-        border rounded-md border-th dark:border-th-dark
-        bg-th enabled:hover:bg-th-hover
-        dark:bg-th-dark enabled:hover:dark:bg-th-dark-hover`,
+        text-th-primary dark:text-th-dark-primary
+        border rounded-md border-th-primary dark:border-th-dark-primary
+        bg-th hover:enabled:bg-th-primary/5
+        dark:bg-th-dark dark:hover:enabled:bg-th-dark-primary/5`,
       className,
     )}
   >
