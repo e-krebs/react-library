@@ -22,7 +22,7 @@ export const ThemeSelector: FC = () => {
       flow="row"
       items={items}
       selectedKey={theme}
-      onSelectionChange={(value) => setTheme((value as unknown as (typeof items)[number]).name)}
+      onSelectionChange={(value) => setTheme(value as Theme | null)}
       className={getThemeClassName(theme)}
     >
       {(item) => (

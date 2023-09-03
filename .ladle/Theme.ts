@@ -13,8 +13,8 @@ export const items: ThemeItem[] = [
 ];
 
 const itemClassName: Record<Theme, string> = {
-  yellow: 'text-yellow-500 dark:text-yellow-300',
-  blue: 'text-sky-500 dark:text-sky-300',
+  yellow: 'text-yellow-500 dark:text-yellow-400',
+  blue: 'text-sky-500 dark:text-sky-400',
 };
 
 export const getThemeClassName = (theme?: Theme | null): string | undefined =>

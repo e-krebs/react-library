@@ -31,10 +31,16 @@
 - for border colors:
   - replace ~~`border-gray-700`~~ by `border-th`
   - replace ~~`dark:border-gray-300`~~ by `dark:border-th-dark`
-- for primary colors:
-  - `...-th-primary` & `dark:...-th-dark-primary`
+- for primary colors use `...-th-primary` or `...-th-dark-primary`
 - for sizes (width & height)
   - replace ~~`w-4 h-4`~~ by `w-icon h-icon`
   - replace ~~`h-9`~~ by `h-input`
 - for opacity
   - replace ~~`opacity-40`~~ by `opacity-disabled`
+- for line height
+
+  - replace ~~`leading-9`~~ by `leading-th`
+
+## tools
+
+- run `yarn theme` to generate theme values from tailwindCss colors
