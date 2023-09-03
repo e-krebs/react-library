@@ -1,4 +1,5 @@
 ## TODO
+
 - migrate components:
   - [x] `Button`
   - [x] `Checkbox`
@@ -6,16 +7,20 @@
   - [ ] `TextInput`
   - [ ] `Modal`
   - [ ] `Select`
+- [ ] svg sprites
+  - [ ] one for newly themed components
+  - [ ] one for ladle custom UI
 - [ ] update README by documenting how to theme
   - [ ] document group/??? on newly themed components when/if relevant
 
 ## Tips
+
 - add _**animations**_ & don't forget `motion-reduce:transition-none`
 - `className` & `cx`
   - use `data-...` attributes instead of `cx` for conditional classnames (isSelected, ...)
   - ⚠️ don't forget the `data-focused` state (keyboard selection) ⚠️
   - replace `classnames` by `tailwind-merge` for merging with `className` property
-  - don't hesitate to override the `className` property provided by `react-aria-component` with `className?: string` as with `tailwindCss` & react-aria's `data-...` attributes we shouldn't  need state-dependant classNames
+  - don't hesitate to override the `className` property provided by `react-aria-component` with `className?: string` as with `tailwindCss` & react-aria's `data-...` attributes we shouldn't need state-dependant classNames
 - don't use the ~~`zinc`~~ color but `gray` instead
 - for background colors:
   - replace ~~`white`~~ by `bg-th` (and `hover:bg-th-hover` when needed)
