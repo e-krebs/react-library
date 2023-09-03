@@ -23,7 +23,7 @@ export const Button: FC<ButtonProps> = ({
     {...props}
     className={twMerge(
       `disabled:cursor-not-allowed disabled:opacity-disabled
-      data-focus-visible:ring-2 ring-th dark:ring-th-dark
+      data-focused:ring-2 ring-th dark:ring-th-dark
       ring-offset-2 ring-offset-th dark:ring-offset-th-dark`,
       variant !== 'unstyled' &&
         `inline-flex items-center h-input w-fit px-2 space-x-2

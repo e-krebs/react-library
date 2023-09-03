@@ -28,9 +28,9 @@ module.exports = {
       },
       backgroundColor: {
         th: colors.white,
-        'th-hover': colors.zinc[100],
+        'th-hover': colors.zinc[200],
         'th-dark': colors.zinc[900],
-        'th-dark-hover': colors.zinc[800],
+        'th-dark-hover': colors.zinc[700],
       },
       ringOffsetColor: {
         th: colors.white,
@@ -84,7 +84,6 @@ module.exports = {
     data: {
       disabled: 'disabled',
       focused: 'focused',
-      'focus-visible': 'focus-visible',
       selected: 'selected',
     },
   },
