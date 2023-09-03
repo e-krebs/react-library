@@ -18,7 +18,7 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
     className={twMerge(
       `group/checkbox
       flex items-center gap-x-2 w-fit
-      data-disabled:cursor-not-allowed data-disabled:opacity-40`,
+      data-disabled:cursor-not-allowed data-disabled:opacity-disabled`,
       className,
     )}
   >
