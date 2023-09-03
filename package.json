@@ -21,7 +21,8 @@
     "dev": "yarn clean && yarn dev:library & yarn dev:doc",
     "lint": "eslint --ext .ts,.tsx src",
     "build": "yarn clean && yarn build:library && yarn build:doc",
-    "serve": "serve build"
+    "serve": "serve build",
+    "theme": "node src/scripts/theme.js"
   },
   "peerDependencies": {
     "@tailwindcss/typography": "^0.5.9",
