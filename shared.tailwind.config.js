@@ -38,20 +38,20 @@ module.exports = {
         'th-dark': colors.zinc[900],
       },
       textColor: {
-        'th': colors.gray[500],
-        'th-dark': colors.gray[400],
+        'th': colors.zinc[500],
+        'th-dark': colors.zinc[400],
       },
       fill: {
-        'th': colors.gray[500],
-        'th-dark': colors.gray[400],
+        'th': colors.zinc[500],
+        'th-dark': colors.zinc[400],
       },
       borderColor: {
-        'th': colors.gray[700],
-        'th-dark': colors.gray[300],
+        'th': colors.zinc[700],
+        'th-dark': colors.zinc[300],
       },
       ringColor: {
-        'th': colors.gray[700],
-        'th-dark': colors.gray[300],
+        'th': colors.zinc[700],
+        'th-dark': colors.zinc[300],
       },
       strokeWidth: {
         '3': '3px',
