@@ -38,7 +38,7 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
         viewBox="0 0 18 18"
         aria-hidden="true"
         className={`
-          w-4 h-4 fill-none
+          w-icon h-icon fill-none
           stroke-3 stroke-th dark:stroke-th-dark
           [stroke-dasharray:22px]
           [stroke-dashoffset:66] group-data-selected/checkbox:[stroke-dashoffset:44]

@@ -1,3 +1,4 @@
+const { spacing } = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 const typography = require('@tailwindcss/typography');
 
@@ -54,6 +55,10 @@ module.exports = {
       ringColor: {
         'th': colors.zinc[700],
         'th-dark': colors.zinc[300],
+      },
+      spacing: {
+        icon: spacing[4],
+        input: spacing[9],
       },
       strokeWidth: {
         '3': '3px',

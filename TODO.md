@@ -28,3 +28,6 @@
   - replace ~~`dark:border-gray-300`~~ by `dark:border-th-dark`
 - for primary colors:
   - `...-th-primary` & `dark:...-th-dark-primary`
+- for sizes (with & height)
+  - replace ~~`w-4 h-4`~~ by `w-icon h-icon`
+  - replace ~~`h-9`~~ by `h-input`
