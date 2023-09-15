@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import type { JSXElementConstructor, ReactElement, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import {
   Button,
   Label,
@@ -8,7 +8,6 @@ import {
   Select as AriaSelect,
   type SelectProps as AriaSelectProps,
   SelectValue,
-  type SelectRenderProps,
 } from 'react-aria-components';
 import { Text } from 'react-aria-components';
 import { ChevronDown } from 'react-feather';
@@ -16,20 +15,18 @@ import { ChevronDown } from 'react-feather';
 import type { InputBorder, InputFlow } from '../types';
 import { Item } from './Item';
 
-// @ts-expect-error RenderProps<SelectRenderProps> should be RenderProps<SelectRenderProps & T>
-interface SelectProps<T extends object> extends AriaSelectProps<T> {
+interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, 'children'> {
   label?: string;
   description?: string;
   errorMessage?: string;
+  items?: Iterable<T>;
   className?: string;
   labelClassName?: string;
   flow?: InputFlow;
   flowClassName?: string;
   border?: InputBorder;
   popoverClassName?: string;
-  children:
-    | ReactNode
-    | ((item: SelectRenderProps & T) => ReactElement<T, string | JSXElementConstructor<T>>);
+  children: ReactNode | ((item: T) => ReactNode);
 }
 
 export const Select = <T extends object>({
@@ -43,6 +40,7 @@ export const Select = <T extends object>({
   border = 'bottom',
   popoverClassName,
   children,
+  items,
   ...props
 }: SelectProps<T>) => {
   const buttonClassName = 'px-3 py-1 w-9 h-9';
@@ -91,7 +89,7 @@ export const Select = <T extends object>({
           popoverClassName,
         )}
       >
-        <ListBox>{children}</ListBox>
+        <ListBox items={items}>{children}</ListBox>
       </Popover>
     </AriaSelect>
   );
