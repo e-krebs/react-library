@@ -16,9 +16,9 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
   <AriaCheckBox
     {...props}
     className={twMerge(
-      `group/checkbox
+      `group
       flex items-center gap-x-2 w-fit
-      data-disabled:cursor-not-allowed data-disabled:opacity-disabled`,
+      disabled:cursor-not-allowed disabled:opacity-disabled`,
       className,
     )}
   >
@@ -26,10 +26,10 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
       className={`
         flex items-center justify-center h-5 w-5
         border-2 rounded border-th dark:border-th-dark
-        group-data-selected/checkbox:border-th-primary dark:group-data-selected/checkbox:border-th-dark-primary
-        group-data-selected/checkbox:bg-th-primary dark:group-data-selected/checkbox:bg-th-dark-primary
-        group-data-focused/checkbox:ring-2 ring-th dark:ring-th-dark
-        group-data-selected/checkbox:ring-th-primary group-data-selected/checkbox:dark:ring-th-dark-primary
+        group-selected:border-th-primary dark:group-selected:border-th-dark-primary
+        group-selected:bg-th-primary dark:group-selected:bg-th-dark-primary
+        group-focus:ring-2 ring-th dark:ring-th-dark
+        group-selected:ring-th-primary group-selected:dark:ring-th-dark-primary
         ring-offset-2 ring-offset-th dark:ring-offset-th-dark
         transition-all duration-300 motion-reduce:transition-none
       `}
@@ -41,7 +41,7 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
           w-icon h-icon fill-none
           stroke-3 stroke-th dark:stroke-th-dark
           [stroke-dasharray:22px]
-          [stroke-dashoffset:66] group-data-selected/checkbox:[stroke-dashoffset:44]
+          [stroke-dashoffset:66] group-selected:[stroke-dashoffset:44]
           transition-all duration-300 motion-reduce:transition-none
         `}
       >

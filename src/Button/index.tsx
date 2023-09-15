@@ -25,7 +25,7 @@ export const Button: FC<ButtonProps> = ({
       `inline-flex items-center h-input w-fit
       px-2 space-x-2 rounded-md
       disabled:cursor-not-allowed disabled:opacity-disabled
-      outline-0 data-focused:ring-2
+      outline-0 focus:ring-2
       ring-offset-2 ring-offset-th dark:ring-offset-th-dark`,
       variant !== 'unstyled' && `border`,
       variant === 'regular' &&

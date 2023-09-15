@@ -1,8 +1,7 @@
 const { opacity, spacing, lineHeight } = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
-const typography = require('@tailwindcss/typography');
-const { parseColor } = require('tailwindcss/lib/util/color');
 const plugin = require('tailwindcss/plugin');
+const { parseColor } = require('tailwindcss/lib/util/color');
 
 // Converts HEX color to RGB values
 const toRGB = (value) => parseColor(value).color.join(' ');
@@ -10,8 +9,9 @@ const toRGB = (value) => parseColor(value).color.join(' ');
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   plugins: [
-    typography,
-    plugin(function ({ addUtilities, theme }) {
+    require('@tailwindcss/typography'),
+    require('tailwindcss-react-aria-components'),
+    plugin(function ({ addUtilities }) {
       addUtilities({
         '.tap-highlight-primary': {
           '-webkit-tap-highlight-color': `rgb(var(--primary-500, ${toRGB(colors.zinc[500])}) / 0.2)`,
@@ -106,11 +106,6 @@ module.exports = {
         'modal-grow': 'modal-grow 150ms cubic-bezier(0.4, 0, 0.2, 1)',
         'modal-shrink': 'modal-shrink 150ms cubic-bezier(0.4, 0, 0.2, 1)',
       },
-    },
-    data: {
-      disabled: 'disabled',
-      focused: 'focused',
-      selected: 'selected',
     },
   },
 };
