@@ -1,4 +1,4 @@
-const { opacity, spacing } = require('tailwindcss/defaultTheme');
+const { opacity, spacing, lineHeight } = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 const typography = require('@tailwindcss/typography');
 const { parseColor } = require('tailwindcss/lib/util/color');
@@ -65,6 +65,9 @@ module.exports = {
       spacing: {
         icon: spacing[4],
         input: spacing[9],
+      },
+      lineHeight: {
+        th: lineHeight[9],
       },
       strokeWidth: {
         3: '3px',
