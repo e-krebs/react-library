@@ -39,8 +39,9 @@
 - for opacity
   - replace ~~`opacity-40`~~ by `opacity-disabled`
 - for line height
-
   - replace ~~`leading-9`~~ by `leading-th`
+- for **red** colors
+  - use `*-error` & `*-error-dark` variants (for text, border & ring)
 
 ## tools
 
