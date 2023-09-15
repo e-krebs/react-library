@@ -4,7 +4,7 @@
   - [x] `Button`
   - [x] `Checkbox`
   - [ ] `NumberInput`
-  - [ ] `TextInput`
+  - [x] `TextInput`
   - [ ] `Modal`
   - [ ] `Select`
 - [ ] svg sprites

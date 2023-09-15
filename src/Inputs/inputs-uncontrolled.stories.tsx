@@ -33,7 +33,6 @@ export const CheckboxStory: Story<StoryParams> = ({
       errorMessage={error}
       border={border}
       flow={flow}
-      aria-label="fallback label"
     />
   </Section>
 );
