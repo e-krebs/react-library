@@ -28,7 +28,7 @@ module.exports = {
         'th-primary': `rgb(var(--primary-500, ${toRGB(colors.zinc[500])}) / <alpha-value>)`,
         'th-dark-primary': `rgb(var(--primary-500, ${toRGB(colors.zinc[100])}) / <alpha-value>)`,
         'th-destructive': colors.red[600],
-        'th-dark-destructive': colors.red[600],
+        'th-dark-destructive': colors.red[500],
       },
       backgroundColor: {
         th: colors.zinc[50],
@@ -49,6 +49,8 @@ module.exports = {
         'th-dark': colors.zinc[400],
         'th-reversed': colors.zinc[50],
         'th-dark-reversed': colors.zinc[900],
+        error: colors.red[600],
+        'error-dark': colors.red[500],
       },
       fill: {
         th: colors.zinc[500],
@@ -57,10 +59,14 @@ module.exports = {
       borderColor: {
         th: colors.zinc[700],
         'th-dark': colors.zinc[300],
+        error: colors.red[600],
+        'error-dark': colors.red[500],
       },
       ringColor: {
         th: colors.zinc[700],
         'th-dark': colors.zinc[300],
+        error: colors.red[600],
+        'error-dark': colors.red[500],
       },
       spacing: {
         icon: spacing[4],
