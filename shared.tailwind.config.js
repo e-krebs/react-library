@@ -26,7 +26,7 @@ module.exports = {
           950: `rgb(var(--primary-950, ${toRGB(colors.zinc[950])}) / <alpha-value>)`,
         },
         'th-primary': `rgb(var(--primary-500, ${toRGB(colors.zinc[500])}) / <alpha-value>)`,
-        'th-dark-primary': `rgb(var(--primary-500, ${toRGB(colors.zinc[100])}) / <alpha-value>)`,
+        'th-dark-primary': `rgb(var(--primary-500, ${toRGB(colors.zinc[500])}) / <alpha-value>)`,
         'th-destructive': colors.red[600],
         'th-dark-destructive': colors.red[500],
       },
@@ -34,7 +34,7 @@ module.exports = {
         th: colors.zinc[50],
         'th-hover': colors.zinc[100],
         'th-dark': colors.zinc[900],
-        'th-dark-hover': colors.zinc[700],
+        'th-dark-hover': colors.zinc[800],
       },
       ringOffsetColor: {
         th: colors.white,

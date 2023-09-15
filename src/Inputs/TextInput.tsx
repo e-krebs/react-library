@@ -41,7 +41,7 @@ export const TextInput: FC<TextInputProps> = ({
     <Input
       className={twMerge(
         inputClassName,
-        `bg-th p-1 dark:bg-th-dark
+        `bg-th-hover p-1 dark:bg-th-dark-hover
         outline-0 focus:ring-2
         ring-offset-2 ring-offset-th dark:ring-offset-th-dark`,
         border !== 'bottom' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
