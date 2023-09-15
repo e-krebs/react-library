@@ -8,5 +8,6 @@
     @apply selection:bg-th-primary selection:text-th-reversed;
     @apply dark:bg-th-dark dark:text-th-dark dark:fill-th-dark;
     @apply dark:selection:bg-th-dark-primary dark:selection:text-th-dark-reversed;
+    @apply tap-highlight-primary;
   }
 }

@@ -2,12 +2,23 @@ const { opacity, spacing, lineHeight } = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 const typography = require('@tailwindcss/typography');
 const { parseColor } = require('tailwindcss/lib/util/color');
+const plugin = require('tailwindcss/plugin');
 
 // Converts HEX color to RGB values
 const toRGB = (value) => parseColor(value).color.join(' ');
 
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
+  plugins: [
+    typography,
+    plugin(function ({ addUtilities, theme }) {
+      addUtilities({
+        '.tap-highlight-primary': {
+          '-webkit-tap-highlight-color': `rgb(var(--primary-500, ${toRGB(colors.zinc[500])}) / 0.2)`,
+        },
+      });
+    }),
+  ],
   theme: {
     extend: {
       colors: {
@@ -102,5 +113,4 @@ module.exports = {
       selected: 'selected',
     },
   },
-  plugins: [typography],
 };
