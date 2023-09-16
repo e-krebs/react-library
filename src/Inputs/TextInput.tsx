@@ -31,6 +31,7 @@ export const TextInput: FC<TextInputProps> = ({
 }) => (
   <TextField
     {...textFieldProps}
+    isInvalid={textFieldProps.isInvalid || !!errorMessage}
     className={twMerge(
       'flex',
       flow === 'row' ? 'flex-row space-x-2' : 'flex-col w-fit',
@@ -42,16 +43,22 @@ export const TextInput: FC<TextInputProps> = ({
       className={twMerge(
         inputClassName,
         `bg-th-hover p-1 dark:bg-th-dark-hover
+        border-th/50 dark:border-th-dark/50
+        invalid:border-error invalid:dark:border-error-dark
+        focus:border-transparent focus:dark:border-transparent
+        invalid:focus:border-transparent invalid:focus:dark:border-transparent
         focus:outline-none appearance-none focus:ring-2
-        ring-offset-2 ring-offset-th dark:ring-offset-th-dark
+        ring-offset-0
+        ring-th-primary dark:ring-th-dark-primary
+        invalid:ring-error invalid:dark:ring-error-dark
         caret-th-primary dark:caret-th-dark-primary
-        transition-all duration-150 motion-reduce:transition-none
+        invalid:caret-error invalid:dark:caret-error-dark
+        transition-all duration-150 motion-reduce:transition-none`,
         border !== 'bottom' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
-        border === 'bottom' && 'border-b',
+        border === 'bottom' &&
+          `border-b focus:border-b-transparent focus:dark:border-b-transparent
+          invalid:focus:border-b-transparent invalid:focus:dark:border-b-transparent`,
         border === 'rounded' && 'border',
-        errorMessage
-          ? 'border-error dark:border-error-dark ring-error dark:ring-error-dark'
-          : 'border-th/50 dark:border-th-dark/50 ring-th-primary/50 dark:ring-th-dark-primary',
       )}
     />
     {description && (
