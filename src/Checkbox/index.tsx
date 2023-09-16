@@ -31,7 +31,7 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
         group-focus:ring-2 ring-th dark:ring-th-dark
         group-selected:ring-th-primary group-selected:dark:ring-th-dark-primary
         ring-offset-2 ring-offset-th dark:ring-offset-th-dark
-        transition-all duration-300 motion-reduce:transition-none
+        transition-all duration-150 motion-reduce:transition-none
       `}
     >
       <svg
@@ -42,7 +42,7 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
           stroke-3 stroke-th dark:stroke-th-dark
           [stroke-dasharray:22px]
           [stroke-dashoffset:66] group-selected:[stroke-dashoffset:44]
-          transition-all duration-300 motion-reduce:transition-none
+          transition-all duration-150 motion-reduce:transition-none
         `}
       >
         <polyline points="1 9 7 14 15 4" />

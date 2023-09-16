@@ -45,7 +45,7 @@ export const TextInput: FC<TextInputProps> = ({
         focus:outline-none appearance-none focus:ring-2
         ring-offset-2 ring-offset-th dark:ring-offset-th-dark
         caret-th-primary dark:caret-th-dark-primary
-        transition-all duration-300 motion-reduce:transition-none`,
+        transition-all duration-150 motion-reduce:transition-none
         border !== 'bottom' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
         border === 'bottom' && 'border-b',
         border === 'rounded' && 'border',

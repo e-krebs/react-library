@@ -27,7 +27,7 @@ export const Button: FC<ButtonProps> = ({
       disabled:cursor-not-allowed disabled:opacity-disabled
       outline-0 focus:ring-2
       ring-offset-2 ring-offset-th dark:ring-offset-th-dark
-      transition-all duration-300 motion-reduce:transition-none`,
+      transition-all duration-150 motion-reduce:transition-none`,
       variant !== 'unstyled' && `border`,
       variant === 'regular' &&
         `text-th-primary dark:text-th-dark-primary
