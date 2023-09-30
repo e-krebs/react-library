@@ -31,8 +31,6 @@ type SelectProps<T extends Key> = Omit<AriaSelectProps<ItemProps<T>>, 'children'
     children: ReactNode | ((item: ItemProps<T>) => ReactNode);
   }>;
 
-// TODO: make sure items or children is set
-
 export const Select = <T extends Key>({
   label,
   className,
