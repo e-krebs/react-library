@@ -24,8 +24,6 @@ export const ThemeSelector: FC = () => {
       selectedKey={theme}
       onSelectionChange={setTheme}
       className={getThemeClassName(theme)}
-    >
-      {(item) => <Select.Item {...item} key={item.textValue} className={getThemeClassName(item.name)} />}
-    </Select>
+    />
   );
 };
