@@ -1,15 +1,14 @@
+import { type ItemProps } from '../src/Select/Item';
+
 const themes = ['yellow', 'blue'] as const;
 
 export type Theme = (typeof themes)[number];
 
-interface ThemeItem {
-  value: string;
-  name: Theme | null;
-}
+type ThemeItem = ItemProps<Theme>;
 
 export const items: ThemeItem[] = [
-  { value: 'black & white', name: null },
-  ...themes.map((theme) => ({ value: theme, name: theme })),
+  { textValue: 'black & white', value: undefined },
+  ...themes.map((theme) => ({ textValue: theme, value: theme })),
 ];
 
 const itemClassName: Record<Theme, string> = {

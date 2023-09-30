@@ -5,7 +5,7 @@ import { type Theme, items, getThemeClassName } from './Theme';
 import { Select } from '../src/Select';
 
 export const ThemeSelector: FC = () => {
-  const [theme, setTheme] = useState<Theme | null>('yellow' as Theme);
+  const [theme, setTheme] = useState<Theme | undefined>('yellow' as Theme);
 
   useEffect(() => {
     if (theme) {
@@ -22,19 +22,10 @@ export const ThemeSelector: FC = () => {
       flow="row"
       items={items}
       selectedKey={theme}
-      onSelectionChange={(value) => setTheme(value as Theme | null)}
+      onSelectionChange={setTheme}
       className={getThemeClassName(theme)}
     >
-      {(item) => (
-        <Select.Item
-          id={item.value}
-          value={item.name}
-          textValue={item.value}
-          className={getThemeClassName(item.name)}
-        >
-          {item.value}
-        </Select.Item>
-      )}
+      {(item) => <Select.Item {...item} key={item.textValue} className={getThemeClassName(item.name)} />}
     </Select>
   );
 };

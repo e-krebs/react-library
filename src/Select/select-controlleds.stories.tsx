@@ -19,16 +19,16 @@ interface StoryParams {
 }
 
 const options = [
-  { name: 'Zero', value: 0 },
-  { name: 'One', value: 1 },
-  { name: 'Two', value: 2 },
-  { name: 'Three', value: 3 },
-  { name: 'Four', value: 4 },
-  { name: 'Five', value: 5 },
-  { name: 'Six', value: 6 },
-  { name: 'Seven', value: 7 },
-  { name: 'Eight', value: 8 },
-  { name: 'Nine', value: 9 },
+  { textValue: 'Zero', value: 0 },
+  { textValue: 'One', value: 1 },
+  { textValue: 'Two', value: 2 },
+  { textValue: 'Three', value: 3 },
+  { textValue: 'Four', value: 4 },
+  { textValue: 'Five', value: 5 },
+  { textValue: 'Six', value: 6 },
+  { textValue: 'Seven', value: 7 },
+  { textValue: 'Eight', value: 8 },
+  { textValue: 'Nine', value: 9 },
 ];
 
 export const SelectStory: Story<StoryParams> = () => {
@@ -45,11 +45,7 @@ export const SelectStory: Story<StoryParams> = () => {
         selectedKey={value}
         onSelectionChange={setValue}
       >
-        {(item) => (
-          <Select.Item id={item.value} textValue={item.value.toString()}>
-            {item.name}
-          </Select.Item>
-        )}
+        {(item) => <Select.Item key={item.textValue} {...item} />}
       </Select>
     </Section>
   );
