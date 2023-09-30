@@ -42,7 +42,8 @@ export const TextInput: FC<TextInputProps> = ({
     <Input
       className={twMerge(
         inputClassName,
-        `bg-th-hover p-1 dark:bg-th-dark-hover
+        `bg-th-light p-1 dark:bg-th-dark-light
+        disabled:cursor-not-allowed disabled:opacity-disabled
         border-th/50 dark:border-th-dark/50
         invalid:border-error invalid:dark:border-error-dark
         focus:border-transparent focus:dark:border-transparent
