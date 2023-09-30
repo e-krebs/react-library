@@ -72,6 +72,7 @@ export const Select = <T extends Key>({
       <ChevronDown
         aria-hidden="true"
         className={twMerge(
+          'my-auto min-h-full',
           border === 'rounded'
             ? 'border-th/50 dark:border-th-dark/50 group-focus:border-th-primary group-focus:dark:border-th-dark-primary'
             : 'border-th-bg dark:border-th-dark-bg',
