@@ -46,8 +46,12 @@ module.exports = {
       backgroundColor: {
         th: colors.zinc[50],
         'th-hover': colors.zinc[100],
+        'th-light': colors.zinc[100],
+        'th-light-hover': colors.zinc[200],
         'th-dark': colors.zinc[900],
         'th-dark-hover': colors.zinc[800],
+        'th-dark-light': colors.zinc[800],
+        'th-dark-light-hover': colors.zinc[700],
       },
       ringOffsetColor: {
         th: colors.white,
@@ -69,7 +73,9 @@ module.exports = {
       },
       borderColor: {
         th: colors.zinc[700],
+        'th-bg': colors.zinc[50],
         'th-dark': colors.zinc[300],
+        'th-dark-bg': colors.zinc[900],
       },
       ringColor: {
         th: colors.zinc[700],
@@ -81,6 +87,7 @@ module.exports = {
       },
       lineHeight: {
         th: lineHeight[9],
+        'th-input': lineHeight[7],
       },
       strokeWidth: {
         3: '3px',
@@ -101,6 +108,9 @@ module.exports = {
       animation: {
         'modal-grow': 'modal-grow 150ms cubic-bezier(0.4, 0, 0.2, 1)',
         'modal-shrink': 'modal-shrink 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      data: {
+        selected: 'selected',
       },
     },
   },
