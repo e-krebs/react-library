@@ -6,7 +6,7 @@
   - [ ] `NumberInput`
   - [x] `TextInput`
   - [ ] `Modal`
-  - [ ] `Select`
+  - [x] `Select`
 - [ ] svg sprites
   - [ ] one for newly themed components
   - [ ] one for ladle custom UI
