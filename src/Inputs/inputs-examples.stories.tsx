@@ -9,13 +9,20 @@ export default {
 
 export const CheckboxStory: Story = () => (
   <Section title="Text Input: Examples">
-    <TextInput
-      label="with a default value"
-      placeholder="and still a placeholder"
-      defaultValue="whatever"
-    />
-    <div className="2xl:flex gap-6">
+    <div className="flex flex-col xl:flex-row gap-6">
       <div className="space-y-6 2xl:w-1/2">
+        <TextInput
+          label="with a default value"
+          placeholder="and still a placeholder"
+          defaultValue="whatever"
+        />
+      </div>
+      <div className="space-y-6 2xl:w-1/2">
+        <TextInput label="with a placeholder" placeholder="with a placeholder" />
+      </div>
+    </div>
+    <div className="2xl:flex gap-6">
+      <div className="space-y-6 2xl:w-1/3">
         <h2>Col flow (default)</h2>
         <TextInput label="bottom border (default)" />
         <TextInput border="rounded" label="rounded border" />
@@ -25,7 +32,7 @@ export const CheckboxStory: Story = () => (
         <TextInput flow="row" border="rounded" label="rounded border" />
         <TextInput flow="row" border="none" label="no border" />
       </div>
-      <div className="space-y-6 2xl:w-1/2">
+      <div className="space-y-6 2xl:w-1/3">
         <h2>Col flow disabled</h2>
         <TextInput label="bottom border (default)" isDisabled={true} />
         <TextInput border="rounded" label="rounded border" isDisabled={true} />
@@ -35,7 +42,7 @@ export const CheckboxStory: Story = () => (
         <TextInput flow="row" border="rounded" label="rounded border" isDisabled={true} />
         <TextInput flow="row" border="none" label="no border" isDisabled={true} />
       </div>
-      <div className="space-y-6 2xl:w-1/2">
+      <div className="space-y-6 2xl:w-1/3">
         <h2>with error</h2>
         <TextInput label="bottom border (default)" errorMessage="you made a mistake!" />
         <TextInput border="rounded" label="rounded border" errorMessage="you made a mistake!" />
