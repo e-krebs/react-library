@@ -57,7 +57,7 @@ export const Select = <T extends Key>({
           bg-th-light dark:bg-th-dark-light
           border-th/50 dark:border-th-dark/50
           focus:border-transparent focus:dark:border-transparent
-          focus:outline-none appearance-none focus:ring-2
+          focus:outline-none appearance-none focus:ring-2 ring-offset-0
           ring-th-primary dark:ring-th-dark-primary
           hover:bg-th-light-hover hover:dark:bg-th-dark-light-hover`,
         errorMessage && `border-error dark:border-error-dark ring-error dark:ring-error-dark`,
@@ -66,7 +66,18 @@ export const Select = <T extends Key>({
         border === 'rounded' && 'border',
       )}
     >
-      <SelectValue className={twMerge(className, 'grow px-3 py-1')} />
+      <SelectValue
+        className={twMerge(
+          className,
+          'grow px-3 py-1',
+          border === 'rounded' &&
+            `relative
+            after:absolute after:-bottom-px after:-right-px after:w-px after:h-px
+            after:group-focus:bg-th-primary after:dark:group-focus:bg-th-dark-primary
+            before:absolute before:-top-px before:-right-px before:w-px before:h-px
+            before:group-focus:bg-th-primary before:dark:group-focus:bg-th-dark-primary`,
+        )}
+      />
       <ChevronDown
         aria-hidden="true"
         className={twMerge(
