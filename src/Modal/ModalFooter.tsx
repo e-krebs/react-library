@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import { twMerge } from 'tailwind-merge';
 import { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
 export const ModalFooter: FC<PropsWithChildren<HTMLAttributes<HTMLElement>>> = ({
@@ -6,7 +6,7 @@ export const ModalFooter: FC<PropsWithChildren<HTMLAttributes<HTMLElement>>> = (
   className,
   ...props
 }) => (
-  <footer {...props} className={cx('flex justify-end px-1', className)}>
+  <footer {...props} className={twMerge('flex justify-end px-1', className)}>
     {children}
   </footer>
 );
