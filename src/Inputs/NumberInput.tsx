@@ -67,6 +67,7 @@ export const NumberInput = ({
             border-r h-initial transition-none
             group-focus-within:border-th-primary group-focus-within:dark:border-th-dark-primary
             group-invalid:group-focus-within:border-error group-invalid:group-focus-within:dark:border-error-dark
+            group-invalid:text-error group-invalid:dark:text-error-dark
             relative
             after:absolute after:-bottom-px after:-right-px after:w-px after:h-px
             after:group-focus-within:bg-th-primary after:dark:group-focus-within:bg-th-dark-primary
@@ -104,6 +105,7 @@ export const NumberInput = ({
             border-l h-initial transition-none
             group-focus-within:border-th-primary group-focus-within:dark:border-th-dark-primary
             group-invalid:group-focus-within:border-error group-invalid:group-focus-within:dark:border-error-dark
+            group-invalid:text-error group-invalid:dark:text-error-dark
             relative
             after:absolute after:-bottom-px after:-left-px after:w-px after:h-px
             after:group-focus-within:bg-th-primary after:dark:group-focus-within:bg-th-dark-primary
