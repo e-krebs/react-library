@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "@react-aria/utils": "^3.21.0",
-    "classnames": "^2.3.2",
     "react-aria-components": "1.0.0-beta.1",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-react-aria-components": "1.0.0-beta.1"

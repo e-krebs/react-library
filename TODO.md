@@ -17,11 +17,10 @@
 
 - add _**animations**_ & don't forget `motion-reduce:transition-none`
   - [react-aria recommendations](https://react-spectrum.adobe.com/react-aria/styling.html#animation)
-- `className` & `cx`
-  - use attributes based on data- instead of `cx` for conditional classnames (isSelected, ...)
+- `className`
+  - use attributes based on data- instead of `tailwind-merge` for conditional classnames (isSelected, ...)
     - those do come from the [official plugin](https://react-spectrum.adobe.com/react-aria/styling.html#tailwind-css)
   - ⚠️ don't forget the `focus:` state (keyboard selection) ⚠️
-  - replace `classnames` by `tailwind-merge` for merging with `className` property
   - don't hesitate to override the `className` property provided by `react-aria-component` with `className?: string` as with `tailwindCss` & react-aria's attributes based on data- we shouldn't need state-dependant classNames
 - don't use the ~~`zinc`~~ color but `gray` instead
 - for background colors:
