@@ -102,7 +102,7 @@ export const Select = <T extends Key>({
       )}
     >
       <ListBox className="p-2 outline-none" items={items}>
-        {children ? children : items?.map((item) => <Select.Item key={item.value} {...item} />)}
+        {children ? children : items?.map((item) => <Select.Item key={item.textValue} {...item} />)}
       </ListBox>
     </Popover>
   </AriaSelect>
