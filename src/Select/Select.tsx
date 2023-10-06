@@ -87,7 +87,7 @@ export const Select = <T extends Key>({
           'border-l px-3 py-1 w-input h-input',
           errorMessage && 'text-error dark:text-error-dark',
           errorMessage &&
-            border !== 'none' &&
+            border === 'rounded' &&
             'border-error dark:border-error-dark group-focus:border-error group-focus:dark:border-error-dark',
         )}
       />
