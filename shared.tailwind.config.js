@@ -84,6 +84,7 @@ module.exports = {
       spacing: {
         icon: spacing[4],
         input: spacing[9],
+        initial: 'initial',
       },
       lineHeight: {
         th: lineHeight[9],

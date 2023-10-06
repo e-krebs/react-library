@@ -3,7 +3,7 @@
 - migrate components:
   - [x] `Button`
   - [x] `Checkbox`
-  - [ ] `NumberInput`
+  - [x] `NumberInput`
   - [x] `TextInput`
   - [ ] `Modal`
   - [x] `Select`
@@ -11,7 +11,7 @@
   - [ ] one for newly themed components
   - [ ] one for ladle custom UI
 - [ ] update README by documenting how to theme
-  - [x] ~~document group/??? on newly themed components when/if relevant~~ (revisit [once named groups are supported](https://github.com/adobe/react-spectrum/issues/5085) by `tailwindcss-react-aria-components`)
+  - [ ] document group/??? on newly themed components when/if relevant (waiting for `tailwindcss-react-aria-components` update)
 
 ## Tips
 
