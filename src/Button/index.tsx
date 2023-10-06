@@ -1,7 +1,8 @@
 import { Button as AriaButton, ButtonProps as AriaButtonProps } from 'react-aria-components';
 import type { FC, PropsWithChildren, RefAttributes } from 'react';
 import { Icon } from 'react-feather';
-import { twMerge } from 'tailwind-merge';
+
+import { twMerge } from '../utils';
 
 export interface ButtonProps
   extends PropsWithChildren<AriaButtonProps & RefAttributes<HTMLButtonElement>> {

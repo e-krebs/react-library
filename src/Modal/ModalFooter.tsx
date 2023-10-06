@@ -1,5 +1,6 @@
-import { twMerge } from 'tailwind-merge';
 import { FC, HTMLAttributes, PropsWithChildren } from 'react';
+
+import { twMerge } from '../utils';
 
 export const ModalFooter: FC<PropsWithChildren<HTMLAttributes<HTMLElement>>> = ({
   children,

@@ -10,9 +10,8 @@ import {
 } from 'react-aria-components';
 import { Text } from 'react-aria-components';
 import { ChevronDown } from 'react-feather';
-import { twMerge } from 'tailwind-merge';
-import { type RequireAtLeastOne } from 'utils';
 
+import { twMerge, type RequireAtLeastOne } from '../utils';
 import type { InputBorder, InputFlow } from '../types';
 import { Item, type ItemProps } from './Item';
 

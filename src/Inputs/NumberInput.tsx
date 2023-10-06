@@ -1,8 +1,8 @@
 import { RefAttributes } from 'react';
 import { Group, Input, Label, NumberField, type NumberFieldProps, Text } from 'react-aria-components';
 import { Minus, Plus } from 'react-feather';
-import { twMerge } from 'tailwind-merge';
 
+import { twMerge } from '../utils';
 import { Button } from '../Button';
 import { InputBorder, InputFlow } from '../types';
 

@@ -1,5 +1,4 @@
 import { useId } from '@react-aria/utils';
-import { twMerge } from 'tailwind-merge';
 import {
   HTMLAttributes,
   PropsWithChildren,
@@ -14,6 +13,7 @@ import {
 } from 'react';
 import { X } from 'react-feather';
 
+import { twMerge } from '../utils';
 import { ModalCloseButton } from './ModalCloseButton';
 import { ModalContext } from './useModal';
 

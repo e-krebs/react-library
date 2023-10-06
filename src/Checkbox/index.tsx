@@ -3,7 +3,8 @@ import {
   Checkbox as AriaCheckBox,
   type CheckboxProps as AriaCheckboxProps,
 } from 'react-aria-components';
-import { twMerge } from 'tailwind-merge';
+
+import { twMerge } from '../utils';
 
 export interface CheckboxProps
   extends Omit<AriaCheckboxProps, 'children' | 'className'>,

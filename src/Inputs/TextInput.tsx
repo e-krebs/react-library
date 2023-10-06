@@ -1,7 +1,7 @@
 import { FC, type RefAttributes } from 'react';
 import { Input, Label, Text, TextField, type TextFieldProps } from 'react-aria-components';
-import { twMerge } from 'tailwind-merge';
 
+import { twMerge } from '../utils';
 import type { InputBorder, InputFlow } from '../types';
 
 export interface TextInputProps

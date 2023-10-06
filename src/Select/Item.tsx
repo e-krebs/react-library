@@ -1,7 +1,8 @@
 import { Key } from 'react';
 import { Item as AriaItem, type ItemProps as AriaItemProps } from 'react-aria-components';
 import { Check } from 'react-feather';
-import { twMerge } from 'tailwind-merge';
+
+import { twMerge } from '../utils';
 
 export interface ItemProps<T extends Key>
   extends Omit<AriaItemProps<{ value: T }>, 'value' | 'children' | 'textValue'> {
