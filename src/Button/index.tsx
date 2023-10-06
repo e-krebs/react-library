@@ -54,7 +54,7 @@ export const Button: FC<ButtonProps> = ({
     )}
   >
     {IconStart !== undefined && <IconStart className="h-icon w-icon" />}
-    {children && <span>{children}</span>}
+    {children && <span className="inline-flex items-center">{children}</span>}
     {IconEnd !== undefined && <IconEnd className="h-icon w-icon" />}
   </AriaButton>
 );
