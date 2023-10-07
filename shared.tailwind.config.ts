@@ -1,12 +1,13 @@
-const { opacity, spacing, lineHeight } = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
-const plugin = require('tailwindcss/plugin');
-const { parseColor } = require('tailwindcss/lib/util/color');
+import type { Config } from 'tailwindcss';
+import { opacity, spacing, lineHeight } from 'tailwindcss/defaultTheme';
+import colors from 'tailwindcss/colors';
+import plugin from 'tailwindcss/plugin';
+import { parseColor } from 'tailwindcss/lib/util/color';
 
 // Converts HEX color to RGB values
 const toRGB = (value) => parseColor(value).color.join(' ');
 
-module.exports = {
+export default {
   content: ['./src/**/*.{ts,tsx}'],
   plugins: [
     require('@tailwindcss/typography'),
@@ -102,8 +103,8 @@ module.exports = {
           '100%': { transform: 'scale(1)' },
         },
         'modal-shrink': {
-          '0%': { transform: 'scale(1)', opacity: 1 },
-          '100%': { transform: 'scale(0)', opacity: 0 },
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '100%': { transform: 'scale(0)', opacity: '0' },
         },
       },
       animation: {
@@ -115,4 +116,4 @@ module.exports = {
       },
     },
   },
-};
+} satisfies Config;
