@@ -118,9 +118,10 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
             role="dialog"
             aria-labelledby={titleId}
             className={twMerge(
-              'relative flex flex-col rounded-xl p-6',
-              'bg-white text-base text-gray-500',
-              'dark:bg-gray-900 dark:fill-gray-400 dark:text-gray-400',
+              `relative flex flex-col rounded-xl p-6
+              bg-th dark:bg-th-dark
+              text-base text-th dark:text-th-dark
+              fill-th dark:fill-th-dark`,
               closing ? 'animate-modal-shrink opacity-0' : 'animate-modal-grow',
               contentClassName,
             )}
@@ -133,7 +134,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
                 {...titleProps}
                 id={titleId}
                 className={twMerge(
-                  'm-0 grow truncate text-xl font-bold capitalize leading-8 text-black dark:text-white',
+                  'm-0 grow truncate text-xl font-bold capitalize leading-th text-th-bg dark:text-th-dark-bg',
                   titleClassName,
                 )}
               >
@@ -141,7 +142,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
               </h1>
               <ModalCloseButton
                 variant="unstyled"
-                className="h-8 w-8 shrink-0 rounded-full p-1 hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="w-9 shrink-0 rounded-full p-1.5 ring-offset-0"
               >
                 <X />
               </ModalCloseButton>

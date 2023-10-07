@@ -5,8 +5,10 @@
   - [x] `Checkbox`
   - [x] `NumberInput`
   - [x] `TextInput`
-  - [ ] `Modal`
+  - [x] `Modal`
   - [x] `Select`
+- [ ] nested rounded corners (ring)
+- [ ] rationalize tailwind theming
 - [ ] svg sprites
   - [ ] one for newly themed components
   - [ ] one for ladle custom UI
