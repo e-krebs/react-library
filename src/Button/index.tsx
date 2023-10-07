@@ -26,10 +26,11 @@ export const Button: FC<ButtonProps> = ({
       `inline-flex items-center h-input w-fit
       px-2 space-x-2 rounded-md
       disabled:cursor-not-allowed disabled:opacity-disabled
-      outline-0 focus:ring-2
-      ring-offset-2 ring-offset-th dark:ring-offset-th-dark
       transition-all duration-150 motion-reduce:transition-none`,
-      variant !== 'unstyled' && `border`,
+      variant !== 'unstyled' &&
+        `border
+        focus:outline-none focus:ring-2
+        ring-offset-2 ring-offset-th dark:ring-offset-th-dark`,
       variant === 'regular' &&
         `text-th-primary dark:text-th-dark-primary
         border-th-primary dark:border-th-dark-primary
