@@ -25,12 +25,14 @@ export const Button: FC<ButtonProps> = ({
     className={twMerge(
       `inline-flex items-center h-input w-fit
       px-2 space-x-2 rounded-md
+      focus:outline-none focus:ring-2
+      ring-offset-2 ring-offset-th dark:ring-offset-th-dark
       disabled:cursor-not-allowed disabled:opacity-disabled
       transition-all duration-150 motion-reduce:transition-none`,
-      variant !== 'unstyled' &&
-        `border
-        focus:outline-none focus:ring-2
-        ring-offset-2 ring-offset-th dark:ring-offset-th-dark`,
+      variant !== 'unstyled' && 'border',
+      variant === 'unstyled' &&
+        `hover:enabled:bg-th-hover dark:hover:enabled:bg-th-dark-hover
+        ring-th-primary dark:ring-th-dark-primary`,
       variant === 'regular' &&
         `text-th-primary dark:text-th-dark-primary
         border-th-primary dark:border-th-dark-primary
