@@ -44,7 +44,7 @@ export const TextInput: FC<TextInputProps> = ({
         inputClassName,
         `bg-th-light p-1
         disabled:cursor-not-allowed disabled:opacity-disabled
-        border-th/50 dark:border-th-dark/50
+        border-th
         invalid:border-error invalid:dark:border-error-dark
         focus:border-transparent focus:dark:border-transparent
         invalid:focus:border-transparent invalid:focus:dark:border-transparent

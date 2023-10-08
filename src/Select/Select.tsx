@@ -54,7 +54,7 @@ export const Select = <T extends Key>({
         `group flex items-center leading-th-input
           disabled:cursor-not-allowed disabled:opacity-disabled
           bg-th-light
-          border-th/50 dark:border-th-dark/50
+          border-th-light
           focus:border-transparent focus:dark:border-transparent
           focus:outline-none appearance-none focus:ring-2 ring-offset-0
           ring-th-primary dark:ring-th-dark-primary
@@ -82,8 +82,8 @@ export const Select = <T extends Key>({
         className={twMerge(
           'my-auto min-h-full',
           border === 'rounded'
-            ? 'border-th/50 dark:border-th-dark/50 group-focus:border-th-primary group-focus:dark:border-th-dark-primary'
-            : 'border-th-bg dark:border-th-dark-bg',
+            ? 'border-th-light group-focus:border-th-primary group-focus:dark:border-th-dark-primary'
+            : 'border-th-bg',
           'border-l px-3 py-1 w-input h-input',
           errorMessage && 'text-error dark:text-error-dark',
           errorMessage &&
@@ -105,7 +105,7 @@ export const Select = <T extends Key>({
     <Popover
       className={twMerge(
         `rounded-md leading-7
-          border border-th/50 dark:border-th-dark/50
+          border border-th-light
           bg-th
           shadow-md dark:shadow-inner`,
         popoverClassName,

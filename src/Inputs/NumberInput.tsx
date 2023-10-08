@@ -44,7 +44,7 @@ export const NumberInput = ({
         `flex group leading-th-input h-input
           bg-th-light
           disabled:cursor-not-allowed disabled:opacity-disabled
-          border-th/50 dark:border-th-dark/50
+          border-th-light
           invalid:border-error invalid:dark:border-error-dark
           focus-within:outline-2
           -outline-offset-1 focus-within:outline
@@ -77,16 +77,16 @@ export const NumberInput = ({
           `px-3 py-1
             border-x rounded-none
             bg-th-light
-            border-th/50 dark:border-th-dark/50
+            border-th-light
             focus:outline-none appearance-none
             group-focus-within:border-th-primary group-focus-within:dark:border-th-dark-primary
             group-invalid:group-focus-within:border-error group-invalid:group-focus-within:dark:border-error-dark
             caret-th-primary dark:caret-th-dark-primary
             group-invalid:caret-error group-invalid:dark:caret-error-dark`,
           border === 'rounded'
-            ? `border-th/50 dark:border-th-dark/50
+            ? `border-th-light
             group-invalid:border-error group-invalid:dark:border-error-dark`
-            : 'border-th-bg dark:border-th-dark-bg',
+            : 'border-th-bg',
         )}
       />
       <Button

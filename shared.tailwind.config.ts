@@ -62,12 +62,6 @@ export default {
         th: colors.zinc[500],
         'th-dark': colors.zinc[400],
       },
-      borderColor: {
-        th: colors.zinc[700],
-        'th-bg': colors.zinc[50],
-        'th-dark': colors.zinc[300],
-        'th-dark-bg': colors.zinc[900],
-      },
       ringColor: {
         th: colors.zinc[700],
         'th-dark': colors.zinc[300],
