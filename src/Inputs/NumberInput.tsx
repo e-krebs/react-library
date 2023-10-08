@@ -46,10 +46,10 @@ export const NumberInput = ({
           disabled:cursor-not-allowed disabled:opacity-disabled
           border-th/50 dark:border-th-dark/50
           invalid:border-error invalid:dark:border-error-dark
-          focus-within:ring-2
-          ring-offset-0
-          ring-th-primary dark:ring-th-dark-primary
-          invalid:ring-error invalid:dark:ring-error-dark`,
+          focus-within:outline-2
+          -outline-offset-1 focus-within:outline
+          outline-th-primary dark:outline-th-dark-primary
+          invalid:outline-error invalid:dark:outline-error-dark`,
         border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
         border === 'bottom' &&
           `border-b focus-within:border-b-transparent focus-within:dark:border-b-transparent
@@ -61,25 +61,13 @@ export const NumberInput = ({
         variant="unstyled"
         slot="decrement"
         className={twMerge(
-          `px-3 py-1 mt-px
+          `px-3 py-1
             bg-th-light dark:bg-th-dark-light
             hover:bg-th-light-hover hover:dark:bg-th-dark-light-hover
-            border-r h-initial transition-none
-            group-focus-within:border-th-primary group-focus-within:dark:border-th-dark-primary
-            group-invalid:group-focus-within:border-error group-invalid:group-focus-within:dark:border-error-dark
+            border-none h-initial transition-none
             group-invalid:text-error group-invalid:dark:text-error-dark
-            relative
-            after:absolute after:-bottom-px after:-right-px after:w-px after:h-px
-            after:group-focus-within:bg-th-primary after:dark:group-focus-within:bg-th-dark-primary
-            after:group-invalid:group-focus-within:bg-error after:dark:group-invalid:group-focus-within:bg-error-dark
-            before:absolute before:-top-px before:-right-px before:w-px before:h-px
-            before:group-focus-within:bg-th-primary before:dark:group-focus-within:bg-th-dark-primary
-            before:group-invalid:group-focus-within:bg-error before:dark:group-invalid:group-focus-within:bg-error-dark`,
-          border === 'rounded'
-            ? `rounded-l-md rounded-r-none
-                border-th/50 dark:border-th-dark/50
-                group-invalid:border-error group-invalid:dark:border-error-dark`
-            : 'rounded-none border-th-bg dark:border-th-dark-bg',
+            focus:ring-transparent focus:ring-offset-transparent`,
+          border === 'rounded' ? 'rounded-l-md rounded-r-none' : 'rounded-none ',
         )}
       >
         <Minus className="h-icon w-icon" />
@@ -87,37 +75,32 @@ export const NumberInput = ({
       <Input
         className={twMerge(
           inputClassName,
-          `z-10 px-3 py-1
+          `px-3 py-1
+            border-x
             bg-th-light dark:bg-th-dark-light
             border-th/50 dark:border-th-dark/50
             focus:outline-none appearance-none
+            group-focus-within:border-th-primary group-focus-within:dark:border-th-dark-primary
+            group-invalid:group-focus-within:border-error group-invalid:group-focus-within:dark:border-error-dark
             caret-th-primary dark:caret-th-dark-primary
             group-invalid:caret-error group-invalid:dark:caret-error-dark`,
+          border === 'rounded'
+            ? `border-th/50 dark:border-th-dark/50
+            group-invalid:border-error group-invalid:dark:border-error-dark`
+            : 'border-th-bg dark:border-th-dark-bg',
         )}
       />
       <Button
         variant="unstyled"
         slot="increment"
         className={twMerge(
-          `px-3 py-1 mt-px
+          `px-3 py-1
             bg-th-light dark:bg-th-dark-light
             hover:bg-th-light-hover hover:dark:bg-th-dark-light-hover
-            border-l h-initial transition-none
-            group-focus-within:border-th-primary group-focus-within:dark:border-th-dark-primary
-            group-invalid:group-focus-within:border-error group-invalid:group-focus-within:dark:border-error-dark
+            border-none h-initial transition-none
             group-invalid:text-error group-invalid:dark:text-error-dark
-            relative
-            after:absolute after:-bottom-px after:-left-px after:w-px after:h-px
-            after:group-focus-within:bg-th-primary after:dark:group-focus-within:bg-th-dark-primary
-            after:group-invalid:group-focus-within:bg-error after:dark:group-invalid:group-focus-within:bg-error-dark
-            before:absolute before:-top-px before:-left-px before:w-px before:h-px
-            before:group-focus-within:bg-th-primary before:dark:group-focus-within:bg-th-dark-primary
-            before:group-invalid:group-focus-within:bg-error before:dark:group-invalid:group-focus-within:bg-error-dark`,
-          border === 'rounded'
-            ? `rounded-r-md rounded-l-none
-                border-th/50 dark:border-th-dark/50
-                group-invalid:border-error group-invalid:dark:border-error-dark`
-            : 'rounded-none border-th-bg dark:border-th-dark-bg',
+            focus:ring-transparent focus:ring-offset-transparent`,
+          border === 'rounded' ? 'rounded-r-md rounded-l-none' : 'rounded-none ',
         )}
       >
         <Plus className="h-icon w-icon" />
