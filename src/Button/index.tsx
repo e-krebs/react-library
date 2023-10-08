@@ -30,9 +30,7 @@ export const Button: FC<ButtonProps> = ({
       disabled:cursor-not-allowed disabled:opacity-disabled
       transition-all duration-150 motion-reduce:transition-none`,
       variant !== 'unstyled' && 'border',
-      variant === 'unstyled' &&
-        `hover:enabled:bg-th-hover dark:hover:enabled:bg-th-dark-hover
-        ring-th-primary dark:ring-th-dark-primary`,
+      variant === 'unstyled' && `hover:enabled:bg-th-hover dark:hover:enabled:bg-th-dark-hover`,
       variant === 'regular' &&
         `text-th-primary dark:text-th-dark-primary
         border-th-primary dark:border-th-dark-primary
