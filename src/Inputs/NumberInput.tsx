@@ -76,7 +76,7 @@ export const NumberInput = ({
         className={twMerge(
           inputClassName,
           `px-3 py-1
-            border-x
+            border-x rounded-none
             bg-th-light dark:bg-th-dark-light
             border-th/50 dark:border-th-dark/50
             focus:outline-none appearance-none
