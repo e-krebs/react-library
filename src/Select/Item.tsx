@@ -23,7 +23,7 @@ export const Item = <T extends Key>({ value, textValue, className, ...props }: I
         rounded-md
         text-th dark:text-th-dark
         hover:text-th-primary dark:hover:text-th-dark-primary
-        hover:bg-th-light-hover hover:dark:bg-th-dark-light-hover
+        hover:bg-th-hover hover:dark:bg-th-dark-hover
         ring-th-primary dark:ring-th-dark-primary
         hover:ring-2`,
       className,

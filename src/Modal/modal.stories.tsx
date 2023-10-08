@@ -35,7 +35,7 @@ export const ModalStory = () => {
             This example uses both <code>Modal.Content</code> & <code>Modal.Footer</code> components.
           </p>
           You can close the modal by:
-          <ol className="leading-8">
+          <ol className="leading-th">
             <li>
               Hitting <b>{'<Esc>'}</b> on your Keyboard,
             </li>

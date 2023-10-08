@@ -63,7 +63,7 @@ export const NumberInput = ({
         className={twMerge(
           `px-3 py-1
             bg-th-light dark:bg-th-dark-light
-            hover:bg-th-light-hover hover:dark:bg-th-dark-light-hover
+            hover:bg-th-hover hover:dark:bg-th-dark-hover
             border-none h-initial transition-none
             group-invalid:text-error group-invalid:dark:text-error-dark
             focus:ring-transparent focus:ring-offset-transparent`,
@@ -96,7 +96,7 @@ export const NumberInput = ({
         className={twMerge(
           `px-3 py-1
             bg-th-light dark:bg-th-dark-light
-            hover:bg-th-light-hover hover:dark:bg-th-dark-light-hover
+            hover:bg-th-hover hover:dark:bg-th-dark-hover
             border-none h-initial transition-none
             group-invalid:text-error group-invalid:dark:text-error-dark
             focus:ring-transparent focus:ring-offset-transparent`,

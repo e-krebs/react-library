@@ -46,13 +46,11 @@ export default {
       },
       backgroundColor: {
         th: colors.zinc[50],
-        'th-hover': colors.zinc[100],
+        'th-hover': colors.zinc[200],
         'th-light': colors.zinc[100],
-        'th-light-hover': colors.zinc[200],
         'th-dark': colors.zinc[900],
-        'th-dark-hover': colors.zinc[800],
+        'th-dark-hover': colors.zinc[700],
         'th-dark-light': colors.zinc[800],
-        'th-dark-light-hover': colors.zinc[700],
       },
       ringOffsetColor: {
         th: colors.white,

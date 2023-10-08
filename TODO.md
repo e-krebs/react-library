@@ -7,8 +7,7 @@
   - [x] `TextInput`
   - [x] `Modal`
   - [x] `Select`
-- [ ] nested rounded corners (ring)
-- [ ] rationalize tailwind theming
+- [x] rationalize tailwind theming
 - [ ] svg sprites
   - [ ] one for newly themed components
   - [ ] one for ladle custom UI

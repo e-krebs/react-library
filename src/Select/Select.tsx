@@ -58,7 +58,7 @@ export const Select = <T extends Key>({
           focus:border-transparent focus:dark:border-transparent
           focus:outline-none appearance-none focus:ring-2 ring-offset-0
           ring-th-primary dark:ring-th-dark-primary
-          hover:bg-th-light-hover hover:dark:bg-th-dark-light-hover`,
+          hover:bg-th-hover hover:dark:bg-th-dark-hover`,
         errorMessage && `border-error dark:border-error-dark ring-error dark:ring-error-dark`,
         border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
         border === 'bottom' && `border-b focus:border-b-transparent focus:dark:border-b-transparent`,
