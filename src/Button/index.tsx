@@ -30,12 +30,12 @@ export const Button: FC<ButtonProps> = ({
       disabled:cursor-not-allowed disabled:opacity-disabled
       transition-all duration-150 motion-reduce:transition-none`,
       variant !== 'unstyled' && 'border',
-      variant === 'unstyled' && `hover:enabled:bg-th-hover dark:hover:enabled:bg-th-dark-hover`,
+      variant === 'unstyled' && 'hover:enabled:bg-th-hover',
       variant === 'regular' &&
         `text-th-primary dark:text-th-dark-primary
         border-th-primary dark:border-th-dark-primary
         bg-th hover:enabled:bg-th-primary/5
-        dark:bg-th-dark dark:hover:enabled:bg-th-dark-primary/5
+        dark:hover:enabled:bg-th-dark-primary/5
         ring-th-primary dark:ring-th-dark-primary`,
       variant === 'primary' &&
         `text-th-reversed dark:text-th-dark-reversed font-medium
@@ -49,7 +49,7 @@ export const Button: FC<ButtonProps> = ({
         border-th-destructive hover:enabled:border-th-destructive/95
         dark:border-th-dark-destructive dark:hover:enabled:border-th-dark-destructive/95
         bg-th hover:enabled:bg-th-destructive/5
-        dark:bg-th-dark dark:hover:enabled:bg-th-dark-destructive/5
+        dark:hover:enabled:bg-th-dark-destructive/5
         ring-th-destructive dark:ring-th-dark-destructive`,
       className,
     )}

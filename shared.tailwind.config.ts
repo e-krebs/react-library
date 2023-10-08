@@ -44,14 +44,6 @@ export default {
         error: colors.red[600],
         'error-dark': colors.red[500],
       },
-      backgroundColor: {
-        th: colors.zinc[50],
-        'th-hover': colors.zinc[200],
-        'th-light': colors.zinc[100],
-        'th-dark': colors.zinc[900],
-        'th-dark-hover': colors.zinc[700],
-        'th-dark-light': colors.zinc[800],
-      },
       ringOffsetColor: {
         th: colors.white,
         'th-dark': colors.zinc[900],

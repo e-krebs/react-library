@@ -4,10 +4,23 @@
 
 @layer base {
   body {
-    @apply bg-th text-th text-base min-h-screen;
+    @apply bg-th;
+    @apply text-th text-base min-h-screen;
     @apply selection:bg-th-primary selection:text-th-reversed;
-    @apply dark:bg-th-dark dark:text-th-dark dark:fill-th-dark;
+    @apply dark:text-th-dark dark:fill-th-dark;
     @apply dark:selection:bg-th-dark-primary dark:selection:text-th-dark-reversed;
     @apply tap-highlight-primary;
+  }
+}
+
+@layer utilities {
+  .bg-th {
+    @apply bg-gray-50 dark:bg-gray-900;
+  }
+  .bg-th-light {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  .bg-th-hover {
+    @apply bg-gray-200 dark:bg-gray-700;
   }
 }

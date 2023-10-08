@@ -53,12 +53,12 @@ export const Select = <T extends Key>({
       className={twMerge(
         `group flex items-center leading-th-input
           disabled:cursor-not-allowed disabled:opacity-disabled
-          bg-th-light dark:bg-th-dark-light
+          bg-th-light
           border-th/50 dark:border-th-dark/50
           focus:border-transparent focus:dark:border-transparent
           focus:outline-none appearance-none focus:ring-2 ring-offset-0
           ring-th-primary dark:ring-th-dark-primary
-          hover:bg-th-hover hover:dark:bg-th-dark-hover`,
+          hover:bg-th-hover`,
         errorMessage && `border-error dark:border-error-dark ring-error dark:ring-error-dark`,
         border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
         border === 'bottom' && `border-b focus:border-b-transparent focus:dark:border-b-transparent`,
@@ -106,7 +106,7 @@ export const Select = <T extends Key>({
       className={twMerge(
         `rounded-md leading-7
           border border-th/50 dark:border-th-dark/50
-          bg-th dark:bg-th-dark
+          bg-th
           shadow-md dark:shadow-inner`,
         popoverClassName,
       )}

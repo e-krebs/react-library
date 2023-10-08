@@ -42,7 +42,7 @@ export const NumberInput = ({
     <Group
       className={twMerge(
         `flex group leading-th-input h-input
-          bg-th-light dark:bg-th-dark-light
+          bg-th-light
           disabled:cursor-not-allowed disabled:opacity-disabled
           border-th/50 dark:border-th-dark/50
           invalid:border-error invalid:dark:border-error-dark
@@ -62,8 +62,7 @@ export const NumberInput = ({
         slot="decrement"
         className={twMerge(
           `px-3 py-1
-            bg-th-light dark:bg-th-dark-light
-            hover:bg-th-hover hover:dark:bg-th-dark-hover
+            bg-th-light hover:bg-th-hover
             border-none h-initial transition-none
             group-invalid:text-error group-invalid:dark:text-error-dark
             focus:ring-transparent focus:ring-offset-transparent`,
@@ -77,7 +76,7 @@ export const NumberInput = ({
           inputClassName,
           `px-3 py-1
             border-x rounded-none
-            bg-th-light dark:bg-th-dark-light
+            bg-th-light
             border-th/50 dark:border-th-dark/50
             focus:outline-none appearance-none
             group-focus-within:border-th-primary group-focus-within:dark:border-th-dark-primary
@@ -95,8 +94,7 @@ export const NumberInput = ({
         slot="increment"
         className={twMerge(
           `px-3 py-1
-            bg-th-light dark:bg-th-dark-light
-            hover:bg-th-hover hover:dark:bg-th-dark-hover
+            bg-th-light hover:bg-th-hover
             border-none h-initial transition-none
             group-invalid:text-error group-invalid:dark:text-error-dark
             focus:ring-transparent focus:ring-offset-transparent`,

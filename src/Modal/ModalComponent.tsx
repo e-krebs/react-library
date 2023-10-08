@@ -119,7 +119,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
             aria-labelledby={titleId}
             className={twMerge(
               `relative flex flex-col rounded-xl p-6
-              bg-th dark:bg-th-dark
+              bg-th
               text-base text-th dark:text-th-dark
               fill-th dark:fill-th-dark`,
               closing ? 'animate-modal-shrink opacity-0' : 'animate-modal-grow',
