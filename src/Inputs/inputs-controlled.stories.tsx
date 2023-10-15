@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
-import { Minus, Plus } from 'react-feather';
 import { Section } from 'utils';
 
+import { Minus, Plus } from '../../.ladle/Icons';
 import { Button } from '../Button';
 import { TextInput } from './TextInput';
 

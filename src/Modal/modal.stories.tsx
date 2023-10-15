@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import { X } from 'react-feather';
 
+import { Icon } from '../assets/Icons';
 import { Button } from '../Button';
 import { Modal, type ModalRef } from './index';
 
@@ -41,7 +41,7 @@ export const ModalStory = () => {
             </li>
             <li>Clicking outside of the modal,</li>
             <li>
-              Clicking the <X /> Button at the top-right of the modal,
+              Clicking the <Icon id="x" /> Button at the top-right of the modal,
             </li>
             <li>Clicking either button below.</li>
           </ol>

@@ -2,7 +2,7 @@ import { type SVGProps } from 'react';
 
 const icons = ['minus', 'plus', 'check', 'chevron-down', 'x'] as const;
 
-interface IconProps extends SVGProps<SVGSVGElement> {
+export interface IconProps extends SVGProps<SVGSVGElement> {
   id: (typeof icons)[number];
 }
 
