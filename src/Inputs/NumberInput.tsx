@@ -1,10 +1,10 @@
 import { RefAttributes } from 'react';
 import { Group, Input, Label, NumberField, type NumberFieldProps, Text } from 'react-aria-components';
-import { Minus, Plus } from 'react-feather';
 
 import { twMerge } from '../utils';
 import { Button } from '../Button';
 import { InputBorder, InputFlow } from '../types';
+import { Icon } from '../assets/Icons';
 
 interface NumberInputProps extends NumberFieldProps, Omit<RefAttributes<HTMLDivElement>, 'className'> {
   label?: string;
@@ -71,7 +71,7 @@ export const NumberInput = ({
           border === 'rounded' ? 'rounded-l-md rounded-r-none' : 'rounded-none ',
         )}
       >
-        <Minus className="h-icon w-icon" />
+        <Icon id="minus" className="h-icon w-icon" />
       </Button>
       <Input
         className={twMerge(
@@ -100,7 +100,7 @@ export const NumberInput = ({
           border === 'rounded' ? 'rounded-r-md rounded-l-none' : 'rounded-none ',
         )}
       >
-        <Plus className="h-icon w-icon" />
+        <Icon id="plus" className="h-icon w-icon" />
       </Button>
     </Group>
     {description && (

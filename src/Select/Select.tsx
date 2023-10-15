@@ -9,8 +9,8 @@ import {
   SelectValue,
 } from 'react-aria-components';
 import { Text } from 'react-aria-components';
-import { ChevronDown } from 'react-feather';
 
+import { Icon } from '../assets/Icons';
 import { twMerge, type RequireAtLeastOne } from '../utils';
 import type { InputBorder, InputFlow } from '../types';
 import { Item, type ItemProps } from './Item';
@@ -89,7 +89,8 @@ export const Select = <T extends Key>({
           errorMessage && 'selection:bg-error',
         )}
       />
-      <ChevronDown
+      <Icon
+        id="chevron-down"
         aria-hidden="true"
         className={twMerge(
           'my-auto min-h-full border-l px-3 py-1 w-input h-input',

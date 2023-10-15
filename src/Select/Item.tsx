@@ -1,7 +1,7 @@
 import { Key } from 'react';
 import { Item as AriaItem, type ItemProps as AriaItemProps } from 'react-aria-components';
-import { Check } from 'react-feather';
 
+import { Icon } from '../assets/Icons';
 import { twMerge } from '../utils';
 
 export interface ItemProps<T extends Key>
@@ -32,7 +32,8 @@ export const Item = <T extends Key>({ value, textValue, className, ...props }: I
     {({ isSelected }) => (
       <>
         {isSelected && (
-          <Check
+          <Icon
+            id="check"
             width={18}
             height={18}
             className="py-0.5 -ml-5 mr-0.5 text-green-600 dark:text-green-400"

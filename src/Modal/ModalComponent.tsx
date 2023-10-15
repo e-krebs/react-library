@@ -11,11 +11,11 @@ import {
   FC,
   RefAttributes,
 } from 'react';
-import { X } from 'react-feather';
 
 import { twMerge } from '../utils';
 import { ModalCloseButton } from './ModalCloseButton';
 import { ModalContext } from './useModal';
+import { Icon } from '../assets/Icons';
 
 interface ModalFCProps {
   title: string;
@@ -144,7 +144,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
                 variant="unstyled"
                 className="w-9 shrink-0 rounded-full p-1.5 ring-offset-0 ring-th"
               >
-                <X />
+                <Icon id="x" />
               </ModalCloseButton>
             </header>
             {children}
