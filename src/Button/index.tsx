@@ -38,7 +38,7 @@ export const Button: FC<ButtonProps> = ({
         dark:hover:enabled:bg-th-dark-primary/5
         ring-th-primary dark:ring-th-dark-primary`,
       variant === 'primary' &&
-        `text-th-reversed dark:text-th-dark-reversed font-medium
+        `text-th-reversed font-medium
         border-th-primary hover:enabled:border-th-primary/95
         dark:border-th-dark-primary dark:hover:enabled:border-th-dark-primary/95
         bg-th-primary hover:enabled:bg-th-primary/95

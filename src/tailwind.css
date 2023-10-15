@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    @apply bg-th;
-    @apply text-th text-base min-h-screen;
-    @apply selection:bg-th-primary selection:text-th-reversed;
-    @apply dark:text-th-dark dark:fill-th-dark;
-    @apply dark:selection:bg-th-dark-primary dark:selection:text-th-dark-reversed;
+    @apply bg-th text-th selection:text-th-reversed;
+    @apply text-base min-h-screen;
+    @apply selection:bg-th-primary;
+    @apply dark:fill-th-dark;
+    @apply dark:selection:bg-th-dark-primary;
     @apply tap-highlight-primary;
   }
 }
@@ -23,6 +23,7 @@
   .bg-th-hover {
     @apply bg-gray-200 dark:bg-gray-700;
   }
+
   .border-th {
     @apply border-gray-700 dark:border-gray-300;
   }
@@ -31,5 +32,12 @@
   }
   .border-th-bg {
     @apply border-gray-50 dark:border-gray-900;
+  }
+
+  .text-th {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+  .text-th-reversed {
+    @apply text-gray-50 dark:text-gray-900;
   }
 }

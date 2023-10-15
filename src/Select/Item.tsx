@@ -21,7 +21,7 @@ export const Item = <T extends Key>({ value, textValue, className, ...props }: I
       `flex items-center pl-6 pr-3 py-1
         cursor-pointer outline-none
         rounded-md
-        text-th dark:text-th-dark
+        text-th
         hover:text-th-primary dark:hover:text-th-dark-primary
         hover:bg-th-hover
         ring-th-primary dark:ring-th-dark-primary

@@ -52,12 +52,6 @@ export default {
         th: colors.white,
         'th-dark': colors.zinc[900],
       },
-      textColor: {
-        th: colors.zinc[500],
-        'th-dark': colors.zinc[400],
-        'th-reversed': colors.zinc[50],
-        'th-dark-reversed': colors.zinc[900],
-      },
       fill: {
         th: colors.zinc[500],
         'th-dark': colors.zinc[400],
