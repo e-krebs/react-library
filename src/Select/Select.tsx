@@ -59,7 +59,7 @@ export const Select = <T extends Key>({
           focus:outline-none appearance-none focus:ring-2 ring-offset-0
           ring-primary
           hover:bg-th-hover`,
-        errorMessage && `border-error dark:border-error-dark ring-error dark:ring-error-dark`,
+        errorMessage && 'border-error ring-error',
         border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
         border === 'bottom' && `border-b focus:border-b-transparent focus:dark:border-b-transparent`,
         border === 'rounded' && 'border',
@@ -80,13 +80,10 @@ export const Select = <T extends Key>({
       <ChevronDown
         aria-hidden="true"
         className={twMerge(
-          'my-auto min-h-full',
+          'my-auto min-h-full border-l px-3 py-1 w-input h-input',
           border === 'rounded' ? 'border-th-light group-focus:border-primary' : 'border-th-bg',
-          'border-l px-3 py-1 w-input h-input',
-          errorMessage && 'text-error dark:text-error-dark',
-          errorMessage &&
-            border === 'rounded' &&
-            'border-error dark:border-error-dark group-focus:border-error group-focus:dark:border-error-dark',
+          errorMessage && 'text-error',
+          errorMessage && border === 'rounded' && 'border-error group-focus:border-error',
         )}
       />
     </Button>
@@ -96,7 +93,7 @@ export const Select = <T extends Key>({
       </Text>
     )}
     {errorMessage && (
-      <Text slot="errorMessage" className="leading-th text-th-destructive dark:text-th-dark-destructive">
+      <Text slot="errorMessage" className="leading-th text-destructive">
         {errorMessage}
       </Text>
     )}

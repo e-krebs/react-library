@@ -45,15 +45,15 @@ export const TextInput: FC<TextInputProps> = ({
         `bg-th-light p-1
         disabled:cursor-not-allowed disabled:opacity-disabled
         border-th
-        invalid:border-error invalid:dark:border-error-dark
+        invalid:border-error
         focus:border-transparent focus:dark:border-transparent
         invalid:focus:border-transparent invalid:focus:dark:border-transparent
         focus:outline-none appearance-none focus:ring-2
         ring-offset-0
         ring-primary
-        invalid:ring-error invalid:dark:ring-error-dark
+        invalid:ring-error
         caret-primary
-        invalid:caret-error invalid:dark:caret-error-dark`,
+        invalid:caret-error`,
         border !== 'bottom' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
         border === 'bottom' &&
           `border-b focus:border-b-transparent focus:dark:border-b-transparent
@@ -67,7 +67,7 @@ export const TextInput: FC<TextInputProps> = ({
       </Text>
     )}
     {errorMessage && (
-      <Text slot="errorMessage" className="leading-th text-error dark:text-error-dark">
+      <Text slot="errorMessage" className="leading-th text-error">
         {errorMessage}
       </Text>
     )}

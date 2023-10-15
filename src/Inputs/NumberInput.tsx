@@ -45,11 +45,11 @@ export const NumberInput = ({
           bg-th-light
           disabled:cursor-not-allowed disabled:opacity-disabled
           border-th-light
-          invalid:border-error invalid:dark:border-error-dark
+          invalid:border-error
           focus-within:outline-2
           -outline-offset-1 focus-within:outline
           outline-primary
-          invalid:outline-error invalid:dark:outline-error-dark`,
+          invalid:outline-error`,
         border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
         border === 'bottom' &&
           `border-b focus-within:border-b-transparent focus-within:dark:border-b-transparent
@@ -64,7 +64,7 @@ export const NumberInput = ({
           `px-3 py-1
             bg-th-light hover:bg-th-hover
             border-none h-initial transition-none
-            group-invalid:text-error group-invalid:dark:text-error-dark
+            group-invalid:text-error
             focus:ring-transparent focus:ring-offset-transparent`,
           border === 'rounded' ? 'rounded-l-md rounded-r-none' : 'rounded-none ',
         )}
@@ -80,13 +80,10 @@ export const NumberInput = ({
             border-th-light
             focus:outline-none appearance-none
             group-focus-within:border-primary
-            group-invalid:group-focus-within:border-error group-invalid:group-focus-within:dark:border-error-dark
+            group-invalid:group-focus-within:border-error
             caret-primary
-            group-invalid:caret-error group-invalid:dark:caret-error-dark`,
-          border === 'rounded'
-            ? `border-th-light
-            group-invalid:border-error group-invalid:dark:border-error-dark`
-            : 'border-th-bg',
+            group-invalid:caret-error`,
+          border === 'rounded' ? 'border-th-light group-invalid:border-error' : 'border-th-bg',
         )}
       />
       <Button
@@ -96,7 +93,7 @@ export const NumberInput = ({
           `px-3 py-1
             bg-th-light hover:bg-th-hover
             border-none h-initial transition-none
-            group-invalid:text-error group-invalid:dark:text-error-dark
+            group-invalid:text-error
             focus:ring-transparent focus:ring-offset-transparent`,
           border === 'rounded' ? 'rounded-r-md rounded-l-none' : 'rounded-none ',
         )}
@@ -110,7 +107,7 @@ export const NumberInput = ({
       </Text>
     )}
     {errorMessage && (
-      <Text slot="errorMessage" className="leading-th text-error dark:text-error-dark">
+      <Text slot="errorMessage" className="leading-th text-error">
         {errorMessage}
       </Text>
     )}

@@ -41,12 +41,10 @@ export const Button: FC<ButtonProps> = ({
         bg-primary hover:enabled:bg-primary/95`,
       variant === 'destructive' &&
         `font-medium
-        text-th-destructive dark:text-th-dark-destructive
-        border-th-destructive
-        dark:border-th-dark-destructive
-        bg-th hover:enabled:bg-th-destructive/5
-        dark:hover:enabled:bg-th-dark-destructive/5
-        ring-th-destructive dark:ring-th-dark-destructive`,
+        text-destructive
+        border-destructive
+        bg-th hover:enabled:bg-destructive/5
+        ring-destructive`,
       className,
     )}
   >

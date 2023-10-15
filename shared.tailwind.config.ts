@@ -37,10 +37,6 @@ export default {
           900: `rgb(var(--primary-900, ${toRGB(colors.zinc[900])}) / <alpha-value>)`,
           950: `rgb(var(--primary-950, ${toRGB(colors.zinc[950])}) / <alpha-value>)`,
         },
-        'th-destructive': colors.red[600],
-        'th-dark-destructive': colors.red[500],
-        error: colors.red[600],
-        'error-dark': colors.red[500],
       },
       stroke: {
         th: colors.white,
