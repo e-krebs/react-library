@@ -56,10 +56,6 @@ export default {
         th: colors.zinc[500],
         'th-dark': colors.zinc[400],
       },
-      ringColor: {
-        th: colors.zinc[700],
-        'th-dark': colors.zinc[300],
-      },
       spacing: {
         icon: spacing[4],
         input: spacing[9],

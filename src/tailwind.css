@@ -40,4 +40,8 @@
   .text-th-reversed {
     @apply text-gray-50 dark:text-gray-900;
   }
+
+  .ring-th {
+    @apply ring-gray-700 dark:ring-gray-300;
+  }
 }
