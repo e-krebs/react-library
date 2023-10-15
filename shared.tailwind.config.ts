@@ -44,10 +44,6 @@ export default {
         error: colors.red[600],
         'error-dark': colors.red[500],
       },
-      ringOffsetColor: {
-        th: colors.white,
-        'th-dark': colors.zinc[900],
-      },
       stroke: {
         th: colors.white,
         'th-dark': colors.zinc[900],

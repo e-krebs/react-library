@@ -44,4 +44,8 @@
   .ring-th {
     @apply ring-gray-700 dark:ring-gray-300;
   }
+
+  .ring-offset-th {
+    @apply ring-offset-white dark:ring-offset-gray-900;
+  }
 }

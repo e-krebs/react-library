@@ -31,7 +31,7 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
         group-selected:bg-th-primary dark:group-selected:bg-th-dark-primary
         group-focus:ring-2 ring-th
         group-selected:ring-th-primary group-selected:dark:ring-th-dark-primary
-        ring-offset-2 ring-offset-th dark:ring-offset-th-dark
+        ring-offset-2 ring-offset-th
         transition-all duration-150 motion-reduce:transition-none
       `}
     >
