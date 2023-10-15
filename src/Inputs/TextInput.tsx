@@ -33,12 +33,14 @@ export const TextInput: FC<TextInputProps> = ({
     {...textFieldProps}
     isInvalid={textFieldProps.isInvalid || !!errorMessage}
     className={twMerge(
-      'flex',
+      'group flex',
       flow === 'row' ? 'flex-row space-x-2' : 'flex-col w-fit',
       wrapperClassName,
     )}
   >
-    <Label className={twMerge('leading-th', labelClassName)}>{label}</Label>
+    <Label className={twMerge('leading-th group-invalid:selection:bg-error', labelClassName)}>
+      {label}
+    </Label>
     <Input
       className={twMerge(
         inputClassName,
@@ -53,7 +55,7 @@ export const TextInput: FC<TextInputProps> = ({
         ring-primary
         invalid:ring-error
         caret-primary
-        invalid:caret-error`,
+        invalid:caret-error invalid:selection:bg-error`,
         border !== 'bottom' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
         border === 'bottom' &&
           `border-b focus:border-b-transparent focus:dark:border-b-transparent
@@ -62,12 +64,12 @@ export const TextInput: FC<TextInputProps> = ({
       )}
     />
     {description && (
-      <Text slot="description" className="leading-th">
+      <Text slot="description" className="leading-th group-invalid:bg-error">
         {description}
       </Text>
     )}
     {errorMessage && (
-      <Text slot="errorMessage" className="leading-th text-error">
+      <Text slot="errorMessage" className="leading-th text-error selection:bg-error">
         {errorMessage}
       </Text>
     )}

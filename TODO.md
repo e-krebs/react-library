@@ -13,6 +13,7 @@
   - [ ] one for ladle custom UI
 - [ ] update README by documenting how to theme
   - [ ] document group/??? on newly themed components when/if relevant (waiting for `tailwindcss-react-aria-components` update)
+- [ ] `Select`: don't rely on `errorMessage &&` but use custom `data-...` + `group-...` instead
 
 ## Tips
 

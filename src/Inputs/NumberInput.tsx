@@ -33,16 +33,18 @@ export const NumberInput = ({
     {...numberFieldProps}
     isInvalid={numberFieldProps.isInvalid || !!errorMessage}
     className={twMerge(
-      'flex',
+      'flex group',
       flow === 'row' ? 'flex-row space-x-2' : 'flex-col w-fit',
       wrapperClassName,
     )}
   >
-    <Label className={twMerge('leading-th', labelClassName)}>{label}</Label>
+    <Label className={twMerge('leading-th group-invalid:selection:bg-error', labelClassName)}>
+      {label}
+    </Label>
     <Group
       className={twMerge(
         `flex group leading-th-input h-input
-          bg-th-light
+          bg-th-light invalid:selection:bg-error
           disabled:cursor-not-allowed disabled:opacity-disabled
           border-th-light
           invalid:border-error
@@ -102,12 +104,12 @@ export const NumberInput = ({
       </Button>
     </Group>
     {description && (
-      <Text slot="description" className="leading-th">
+      <Text slot="description" className="leading-th group-invalid:selection:bg-error">
         {description}
       </Text>
     )}
     {errorMessage && (
-      <Text slot="errorMessage" className="leading-th text-error">
+      <Text slot="errorMessage" className="leading-th text-error group-invalid:selection:bg-error">
         {errorMessage}
       </Text>
     )}

@@ -48,7 +48,9 @@ export const Select = <T extends Key>({
     {...props}
     className={twMerge('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}
   >
-    <Label className={twMerge('leading-th', labelClassName)}>{label}</Label>
+    <Label className={twMerge('leading-th', errorMessage && 'selection:bg-error', labelClassName)}>
+      {label}
+    </Label>
     <Button
       className={twMerge(
         `group flex items-center leading-th-input
@@ -64,6 +66,7 @@ export const Select = <T extends Key>({
         border === 'bottom' && `border-b focus:border-b-transparent focus:dark:border-b-transparent`,
         border === 'rounded' && 'border',
       )}
+      data-error={Boolean(errorMessage)}
     >
       <SelectValue
         className={twMerge(
@@ -75,6 +78,7 @@ export const Select = <T extends Key>({
             after:group-focus:bg-primary
             before:absolute before:-top-px before:-right-px before:w-px before:h-px
             before:group-focus:bg-primary`,
+          errorMessage && 'selection:bg-error',
         )}
       />
       <ChevronDown
@@ -88,12 +92,15 @@ export const Select = <T extends Key>({
       />
     </Button>
     {description && (
-      <Text slot="description" className="leading-th">
+      <Text slot="description" className={twMerge('leading-th', errorMessage && 'selection:bg-error')}>
         {description}
       </Text>
     )}
     {errorMessage && (
-      <Text slot="errorMessage" className="leading-th text-destructive">
+      <Text
+        slot="errorMessage"
+        className={twMerge('leading-th text-destructive', errorMessage && 'selection:bg-error')}
+      >
         {errorMessage}
       </Text>
     )}

@@ -38,12 +38,12 @@ export const Button: FC<ButtonProps> = ({
       variant === 'primary' &&
         `font-medium
         text-th-reversed border-primary ring-primary
-        bg-primary hover:enabled:bg-primary/95`,
+        bg-primary hover:enabled:bg-primary/95 selection:bg-gray-900 selection:dark:bg-gray-50`,
       variant === 'destructive' &&
         `font-medium
         text-destructive
         border-destructive
-        bg-th hover:enabled:bg-destructive/5
+        bg-th hover:enabled:bg-destructive/5 selection:bg-error
         ring-destructive`,
       className,
     )}
