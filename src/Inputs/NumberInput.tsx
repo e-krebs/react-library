@@ -48,7 +48,7 @@ export const NumberInput = ({
           invalid:border-error invalid:dark:border-error-dark
           focus-within:outline-2
           -outline-offset-1 focus-within:outline
-          outline-th-primary dark:outline-th-dark-primary
+          outline-primary
           invalid:outline-error invalid:dark:outline-error-dark`,
         border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
         border === 'bottom' &&
@@ -79,9 +79,9 @@ export const NumberInput = ({
             bg-th-light
             border-th-light
             focus:outline-none appearance-none
-            group-focus-within:border-th-primary group-focus-within:dark:border-th-dark-primary
+            group-focus-within:border-primary
             group-invalid:group-focus-within:border-error group-invalid:group-focus-within:dark:border-error-dark
-            caret-th-primary dark:caret-th-dark-primary
+            caret-primary
             group-invalid:caret-error group-invalid:dark:caret-error-dark`,
           border === 'rounded'
             ? `border-th-light

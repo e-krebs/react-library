@@ -28,26 +28,22 @@ export const Button: FC<ButtonProps> = ({
       focus:outline-none focus:ring-2
       ring-offset-2 ring-offset-th
       disabled:cursor-not-allowed disabled:opacity-disabled
-      transition-all duration-150 motion-reduce:transition-none`,
-      variant !== 'unstyled' && 'border',
-      variant === 'unstyled' && 'hover:enabled:bg-th-hover',
+      duration-150 motion-reduce:transition-none`,
+      variant === 'unstyled'
+        ? 'transition-[box-shadow] hover:enabled:bg-th-hover'
+        : 'transition-all border',
       variant === 'regular' &&
-        `text-th-primary dark:text-th-dark-primary
-        border-th-primary dark:border-th-dark-primary
-        bg-th hover:enabled:bg-th-primary/5
-        dark:hover:enabled:bg-th-dark-primary/5
-        ring-th-primary dark:ring-th-dark-primary`,
+        `text-primary border-primary ring-primary
+        bg-th hover:enabled:bg-primary/5`,
       variant === 'primary' &&
-        `text-th-reversed font-medium
-        border-th-primary hover:enabled:border-th-primary/95
-        dark:border-th-dark-primary dark:hover:enabled:border-th-dark-primary/95
-        bg-th-primary hover:enabled:bg-th-primary/95
-        dark:bg-th-dark-primary dark:hover:enabled:bg-th-dark-primary/95
-        ring-th-primary dark:ring-th-dark-primary`,
+        `font-medium
+        text-th-reversed border-primary ring-primary
+        bg-primary hover:enabled:bg-primary/95`,
       variant === 'destructive' &&
-        `text-th-destructive dark:text-th-dark-destructive font-medium
-        border-th-destructive hover:enabled:border-th-destructive/95
-        dark:border-th-dark-destructive dark:hover:enabled:border-th-dark-destructive/95
+        `font-medium
+        text-th-destructive dark:text-th-dark-destructive
+        border-th-destructive
+        dark:border-th-dark-destructive
         bg-th hover:enabled:bg-th-destructive/5
         dark:hover:enabled:bg-th-dark-destructive/5
         ring-th-destructive dark:ring-th-dark-destructive`,

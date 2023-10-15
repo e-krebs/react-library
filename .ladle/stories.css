@@ -93,7 +93,7 @@
       --ladle-bg-color-secondary: theme('colors.gray.800');
       --ladle-color-primary: theme('colors.gray.400');
       --ladle-color-hover: theme('colors.gray.200');
-      --ladle-color-accent: theme('colors.th-dark-primary');
+      --ladle-color-accent: theme('colors.primary.400');
     }
 
     pre {
@@ -107,7 +107,7 @@
       --ladle-bg-color-secondary: theme('colors.gray.200');
       --ladle-color-primary: theme('colors.gray.500');
       --ladle-color-hover: theme('colors.gray.700');
-      --ladle-color-accent: theme('colors.th-primary');
+      --ladle-color-accent: theme('colors.primary.500');
     }
   }
 }

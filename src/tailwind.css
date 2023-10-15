@@ -4,11 +4,10 @@
 
 @layer base {
   body {
-    @apply bg-th text-th selection:text-th-reversed;
+    @apply bg-th text-th;
+    @apply selection:bg-primary selection:text-th-reversed;
     @apply text-base min-h-screen;
-    @apply selection:bg-th-primary;
     @apply dark:fill-th-dark;
-    @apply dark:selection:bg-th-dark-primary;
     @apply tap-highlight-primary;
   }
 }
@@ -16,6 +15,15 @@
 @layer utilities {
   .bg-th {
     @apply bg-gray-50 dark:bg-gray-900;
+  }
+  .bg-primary {
+    @apply bg-primary-500 dark:bg-primary-400;
+  }
+  .bg-primary\/5 {
+    @apply bg-primary-500/5 dark:bg-primary-400/5;
+  }
+  .bg-primary\/95 {
+    @apply bg-primary-500/95 dark:bg-primary-400/95;
   }
   .bg-th-light {
     @apply bg-gray-100 dark:bg-gray-800;
@@ -27,6 +35,12 @@
   .border-th {
     @apply border-gray-700 dark:border-gray-300;
   }
+  .border-primary {
+    @apply border-primary-500 dark:border-primary-400;
+  }
+  .border-primary.bg-primary\/95 {
+    @apply border-primary-500/95 dark:border-primary-400/95;
+  }
   .border-th-light {
     @apply border-gray-400 dark:border-gray-500;
   }
@@ -37,6 +51,9 @@
   .text-th {
     @apply text-gray-500 dark:text-gray-400;
   }
+  .text-primary {
+    @apply text-primary-500 dark:text-primary-400;
+  }
   .text-th-reversed {
     @apply text-gray-50 dark:text-gray-900;
   }
@@ -44,8 +61,19 @@
   .ring-th {
     @apply ring-gray-700 dark:ring-gray-300;
   }
+  .ring-primary {
+    @apply ring-primary-500 dark:ring-primary-400;
+  }
 
   .ring-offset-th {
     @apply ring-offset-white dark:ring-offset-gray-900;
+  }
+
+  .outline-primary {
+    @apply outline-primary-500 dark:outline-primary-400;
+  }
+
+  .caret-primary {
+    @apply caret-primary-500 dark:caret-primary-400;
   }
 }

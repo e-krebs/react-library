@@ -57,7 +57,7 @@ export const Select = <T extends Key>({
           border-th-light
           focus:border-transparent focus:dark:border-transparent
           focus:outline-none appearance-none focus:ring-2 ring-offset-0
-          ring-th-primary dark:ring-th-dark-primary
+          ring-primary
           hover:bg-th-hover`,
         errorMessage && `border-error dark:border-error-dark ring-error dark:ring-error-dark`,
         border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
@@ -72,18 +72,16 @@ export const Select = <T extends Key>({
           border === 'rounded' &&
             `relative
             after:absolute after:-bottom-px after:-right-px after:w-px after:h-px
-            after:group-focus:bg-th-primary after:dark:group-focus:bg-th-dark-primary
+            after:group-focus:bg-primary
             before:absolute before:-top-px before:-right-px before:w-px before:h-px
-            before:group-focus:bg-th-primary before:dark:group-focus:bg-th-dark-primary`,
+            before:group-focus:bg-primary`,
         )}
       />
       <ChevronDown
         aria-hidden="true"
         className={twMerge(
           'my-auto min-h-full',
-          border === 'rounded'
-            ? 'border-th-light group-focus:border-th-primary group-focus:dark:border-th-dark-primary'
-            : 'border-th-bg',
+          border === 'rounded' ? 'border-th-light group-focus:border-primary' : 'border-th-bg',
           'border-l px-3 py-1 w-input h-input',
           errorMessage && 'text-error dark:text-error-dark',
           errorMessage &&

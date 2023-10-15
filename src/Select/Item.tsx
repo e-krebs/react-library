@@ -22,9 +22,9 @@ export const Item = <T extends Key>({ value, textValue, className, ...props }: I
         cursor-pointer outline-none
         rounded-md
         text-th
-        hover:text-th-primary dark:hover:text-th-dark-primary
+        hover:text-primary
         hover:bg-th-hover
-        ring-th-primary dark:ring-th-dark-primary
+        ring-primary
         hover:ring-2`,
       className,
     )}

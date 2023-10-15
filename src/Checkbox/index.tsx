@@ -27,10 +27,10 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
       className={`
         flex items-center justify-center h-5 w-5
         border-2 rounded border-th
-        group-selected:border-th-primary dark:group-selected:border-th-dark-primary
-        group-selected:bg-th-primary dark:group-selected:bg-th-dark-primary
+        group-selected:border-primary
+        group-selected:bg-primary
         group-focus:ring-2 ring-th
-        group-selected:ring-th-primary group-selected:dark:ring-th-dark-primary
+        group-selected:ring-primary
         ring-offset-2 ring-offset-th
         transition-all duration-150 motion-reduce:transition-none
       `}
