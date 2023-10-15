@@ -21,7 +21,9 @@ export const Provider: GlobalProvider = ({ children }) => (
       </a>
     </header>
 
-    <section className="flex justify-end"><ThemeSelector /></section>
+    <section className="flex justify-end">
+      <ThemeSelector />
+    </section>
 
     <section>{children}</section>
   </>

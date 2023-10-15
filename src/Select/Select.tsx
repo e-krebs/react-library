@@ -15,7 +15,10 @@ import { twMerge, type RequireAtLeastOne } from '../utils';
 import type { InputBorder, InputFlow } from '../types';
 import { Item, type ItemProps } from './Item';
 
-type SelectProps<T extends Key> = Omit<AriaSelectProps<ItemProps<T>>, 'children'> & {
+type SelectProps<T extends Key> = Omit<
+  AriaSelectProps<ItemProps<T>>,
+  'children' | 'selectedKey' | 'defaultSelectedKey' | 'onSelectionChange'
+> & {
   label?: string;
   description?: string;
   errorMessage?: string;
@@ -25,6 +28,9 @@ type SelectProps<T extends Key> = Omit<AriaSelectProps<ItemProps<T>>, 'children'
   flowClassName?: string;
   border?: InputBorder;
   popoverClassName?: string;
+  selectedKey?: T | null;
+  defaultSelectedKey?: T;
+  onSelectionChange?: (key: T) => void;
 } & RequireAtLeastOne<{
     items: ItemProps<T>[];
     children: ReactNode | ((item: ItemProps<T>) => ReactNode);
@@ -42,10 +48,12 @@ export const Select = <T extends Key>({
   popoverClassName,
   children,
   items,
+  onSelectionChange,
   ...props
 }: SelectProps<T>) => (
   <AriaSelect
     {...props}
+    onSelectionChange={onSelectionChange as ((key: Key) => void) | undefined}
     className={twMerge('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}
   >
     <Label className={twMerge('leading-th', errorMessage && 'selection:bg-error', labelClassName)}>
