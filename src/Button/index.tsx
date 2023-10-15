@@ -1,14 +1,14 @@
 import { Button as AriaButton, ButtonProps as AriaButtonProps } from 'react-aria-components';
 import type { FC, PropsWithChildren, RefAttributes } from 'react';
-import { Icon } from 'react-feather';
 
+import { type IconComponent } from '../types';
 import { twMerge } from '../utils';
 
 export interface ButtonProps
   extends PropsWithChildren<AriaButtonProps & RefAttributes<HTMLButtonElement>> {
   className?: string;
-  iconStart?: Icon;
-  iconEnd?: Icon;
+  iconStart?: IconComponent;
+  iconEnd?: IconComponent;
   variant?: 'regular' | 'primary' | 'destructive' | 'unstyled';
 }
 
