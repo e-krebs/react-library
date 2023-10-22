@@ -8,13 +8,9 @@
   - [x] `Modal`
   - [x] `Select`
 - [x] rationalize tailwind theming
-- [ ] svg sprites
-  - [x] one for newly themed components
-  - [x] expose svg file through package
-  - [ ] document how to use this 👆
-  - [ ] one for ladle custom UI
 - [ ] update README by documenting how to theme
   - [ ] document group/??? on newly themed components when/if relevant (waiting for `tailwindcss-react-aria-components` update)
+  - [ ] document how to use icons svg sprite
 - [ ] `Select`: don't rely on `errorMessage &&` but use custom `data-...` + `group-...` instead
 
 ## Tips
