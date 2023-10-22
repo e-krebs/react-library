@@ -1,7 +1,7 @@
 import { Key } from 'react';
 import { Item as AriaItem, type ItemProps as AriaItemProps } from 'react-aria-components';
 
-import { Icon } from '../assets/Icons';
+import { Icon } from '../assets/Icon';
 import { twMerge } from '../utils';
 
 export interface ItemProps<T extends Key>

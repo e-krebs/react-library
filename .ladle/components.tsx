@@ -4,14 +4,11 @@ import { GitHub } from 'react-feather';
 
 import { ThemeSelector } from './ThemeSelector';
 
-import { Icons } from '../src/assets/Icons';
-
 import '../src/tailwind.css';
 import './stories.css';
 
 export const Provider: GlobalProvider = ({ children }) => (
   <>
-    <Icons />
     <header className="mx-auto flex w-full justify-between">
       <h1>React library</h1>
       <a

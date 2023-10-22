@@ -9,8 +9,9 @@
   - [x] `Select`
 - [x] rationalize tailwind theming
 - [ ] svg sprites
-  - [ ] one for newly themed components
-  - [ ] document how to use this 👆 (`<Icons />`, ...)
+  - [x] one for newly themed components
+  - [ ] expose svg file through package
+  - [ ] document how to use this 👆
   - [ ] one for ladle custom UI
 - [ ] update README by documenting how to theme
   - [ ] document group/??? on newly themed components when/if relevant (waiting for `tailwindcss-react-aria-components` update)

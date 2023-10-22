@@ -4,7 +4,7 @@ import { Group, Input, Label, NumberField, type NumberFieldProps, Text } from 'r
 import { twMerge } from '../utils';
 import { Button } from '../Button';
 import { InputBorder, InputFlow } from '../types';
-import { Icon } from '../assets/Icons';
+import { Icon } from '../assets/Icon';
 
 interface NumberInputProps extends NumberFieldProps, Omit<RefAttributes<HTMLDivElement>, 'className'> {
   label?: string;

@@ -15,7 +15,7 @@ import {
 import { twMerge } from '../utils';
 import { ModalCloseButton } from './ModalCloseButton';
 import { ModalContext } from './useModal';
-import { Icon } from '../assets/Icons';
+import { Icon } from '../assets/Icon';
 
 interface ModalFCProps {
   title: string;

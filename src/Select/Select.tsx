@@ -10,7 +10,7 @@ import {
 } from 'react-aria-components';
 import { Text } from 'react-aria-components';
 
-import { Icon } from '../assets/Icons';
+import { Icon } from '../assets/Icon';
 import { twMerge, type RequireAtLeastOne } from '../utils';
 import type { InputBorder, InputFlow } from '../types';
 import { Item, type ItemProps } from './Item';
