@@ -10,7 +10,7 @@
 - [x] rationalize tailwind theming
 - [ ] svg sprites
   - [x] one for newly themed components
-  - [ ] expose svg file through package
+  - [x] expose svg file through package
   - [ ] document how to use this 👆
   - [ ] one for ladle custom UI
 - [ ] update README by documenting how to theme
