@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
-import { Anchor, Aperture } from 'react-feather';
 
 import { Button } from './index';
+import { Anchor, Aperture } from '../../.ladle/assets/StoryIcon';
 
 export default {
   title: 'Components',

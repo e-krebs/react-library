@@ -22,5 +22,5 @@ function inlineSvg(...paths) {
 
 export default defineConfig({
   server: { open: false },
-  plugins: [inlineSvg('src/assets/icons.svg')],
+  plugins: [inlineSvg('src/assets/icons.svg', '.ladle/assets/stories-icons.svg')],
 });

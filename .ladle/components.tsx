@@ -1,8 +1,8 @@
 import type { GlobalProvider } from '@ladle/react';
 import React from 'react';
-import { GitHub } from 'react-feather';
 
 import { ThemeSelector } from './ThemeSelector';
+import { GitHub } from './assets/StoryIcon';
 
 import '../src/tailwind.css';
 import './stories.css';
