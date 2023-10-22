@@ -32,12 +32,7 @@ export const Item = <T extends Key>({ value, textValue, className, ...props }: I
     {({ isSelected }) => (
       <>
         {isSelected && (
-          <Icon
-            id="check"
-            width={18}
-            height={18}
-            className="py-0.5 -ml-5 mr-0.5 text-green-600 dark:text-green-400"
-          />
+          <Icon id="check" width={18} height={18} className="py-0.5 -ml-5 mr-0.5 text-valid" />
         )}
         {textValue}
       </>

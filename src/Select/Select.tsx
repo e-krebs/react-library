@@ -118,7 +118,7 @@ export const Select = <T extends Key>({
         `rounded-md leading-7
           border border-th-light
           bg-th
-          shadow-md dark:shadow-inner`,
+          shadow-th`,
         popoverClassName,
       )}
     >

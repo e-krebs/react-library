@@ -121,7 +121,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
               `relative flex flex-col rounded-xl p-6
               bg-th
               text-base text-th
-              fill-th dark:fill-th-dark`,
+              fill-th`,
               closing ? 'animate-modal-shrink opacity-0' : 'animate-modal-grow',
               contentClassName,
             )}
@@ -134,7 +134,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
                 {...titleProps}
                 id={titleId}
                 className={twMerge(
-                  'm-0 grow truncate text-xl font-bold capitalize leading-th text-gray-900 dark:text-gray-50',
+                  'm-0 grow truncate text-xl font-bold capitalize leading-th text-h1',
                   titleClassName,
                 )}
               >

@@ -12,7 +12,7 @@
   }
 
   div[role='dialog'] {
-    @apply shadow-lg shadow-black/40;
+    @apply shadow-th;
   }
 
   .ladle-wrapper {

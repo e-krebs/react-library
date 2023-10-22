@@ -40,7 +40,7 @@ export const Checkbox: FC<CheckboxProps> = ({ label, className, ...props }) => (
         aria-hidden="true"
         className={`
           w-icon h-icon fill-none
-          stroke-3 stroke-th dark:stroke-th-dark
+          stroke-3 stroke-th
           [stroke-dasharray:22px]
           [stroke-dashoffset:66] group-selected:[stroke-dashoffset:44]
           transition-all duration-150 motion-reduce:transition-none

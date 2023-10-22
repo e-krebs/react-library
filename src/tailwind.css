@@ -7,7 +7,7 @@
     @apply bg-th text-th;
     @apply selection:bg-primary selection:text-th-reversed;
     @apply text-base min-h-screen;
-    @apply dark:fill-th-dark;
+    @apply fill-th;
     @apply tap-highlight-primary;
   }
 }
@@ -16,6 +16,9 @@
   /* background-color classes */
   .bg-th {
     @apply bg-gray-50 dark:bg-gray-900;
+  }
+  .bg-th-reversed {
+    @apply bg-gray-900 dark:bg-gray-50;
   }
   .bg-primary {
     @apply bg-primary-500 dark:bg-primary-400;
@@ -65,12 +68,18 @@
   .text-th {
     @apply text-gray-500 dark:text-gray-400;
   }
+  .text-h1 {
+    @apply text-gray-900 dark:text-gray-50;
+  }
   .text-primary {
     @apply text-primary-500 dark:text-primary-400;
   }
   .text-destructive,
   .text-error {
     @apply text-red-600 dark:text-red-500;
+  }
+  .text-valid {
+    @apply text-green-600 dark:text-green-400;
   }
   .text-th-reversed {
     @apply text-gray-50 dark:text-gray-900;
@@ -109,5 +118,20 @@
   .caret-destructive,
   .caret-error {
     @apply caret-red-600 dark:caret-red-500;
+  }
+
+  /* stroke-color classes */
+  .stroke-th {
+    @apply stroke-white dark:stroke-gray-900;
+  }
+
+  /* fill-color classes */
+  .fill-th {
+    @apply fill-gray-500 dark:fill-gray-400;
+  }
+
+  /* shadow class */
+  .shadow-th {
+    @apply shadow-md dark:shadow-inner;
   }
 }
