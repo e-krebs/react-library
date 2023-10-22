@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import { Icon } from '../assets/Icons';
+import { Icon } from '../assets/Icon';
 import { Button } from '../Button';
 import { Modal, type ModalRef } from './index';
 
