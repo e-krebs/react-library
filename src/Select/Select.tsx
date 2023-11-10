@@ -1,4 +1,5 @@
-import type { Key, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import type { Key } from '@react-types/shared';
 import {
   Button,
   Label,

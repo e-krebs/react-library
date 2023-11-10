@@ -1,18 +1,18 @@
-import { Key } from 'react';
-import { Item as AriaItem, type ItemProps as AriaItemProps } from 'react-aria-components';
+import { Key } from '@react-types/shared';
+import { ListBoxItem, type ListBoxItemProps } from 'react-aria-components';
 
 import { Icon } from '../assets/Icon';
 import { twMerge } from '../utils';
 
 export interface ItemProps<T extends Key>
-  extends Omit<AriaItemProps<{ value: T }>, 'value' | 'children' | 'textValue'> {
+  extends Omit<ListBoxItemProps<{ value: T }>, 'value' | 'children' | 'textValue'> {
   value?: T;
   textValue: string;
   className?: string;
 }
 
 export const Item = <T extends Key>({ value, textValue, className, ...props }: ItemProps<T>) => (
-  <AriaItem
+  <ListBoxItem
     {...props}
     value={{ value }}
     textValue={textValue}
@@ -37,5 +37,5 @@ export const Item = <T extends Key>({ value, textValue, className, ...props }: I
         {textValue}
       </>
     )}
-  </AriaItem>
+  </ListBoxItem>
 );
