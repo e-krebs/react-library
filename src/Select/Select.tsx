@@ -1,5 +1,5 @@
-import cx from 'classnames';
-import type { JSXElementConstructor, ReactElement, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import type { Key } from '@react-types/shared';
 import {
   Button,
   Label,
@@ -8,16 +8,18 @@ import {
   Select as AriaSelect,
   type SelectProps as AriaSelectProps,
   SelectValue,
-  type SelectRenderProps,
 } from 'react-aria-components';
 import { Text } from 'react-aria-components';
-import { ChevronDown } from 'react-feather';
 
+import { Icon } from '../assets/Icon';
+import { twMerge, type RequireAtLeastOne } from '../utils';
 import type { InputBorder, InputFlow } from '../types';
-import { Item } from './Item';
+import { Item, type ItemProps } from './Item';
 
-// @ts-expect-error RenderProps<SelectRenderProps> should be RenderProps<SelectRenderProps & T>
-interface SelectProps<T extends object> extends AriaSelectProps<T> {
+type SelectProps<T extends Key> = Omit<
+  AriaSelectProps<ItemProps<T>>,
+  'children' | 'selectedKey' | 'defaultSelectedKey' | 'onSelectionChange'
+> & {
   label?: string;
   description?: string;
   errorMessage?: string;
@@ -27,12 +29,15 @@ interface SelectProps<T extends object> extends AriaSelectProps<T> {
   flowClassName?: string;
   border?: InputBorder;
   popoverClassName?: string;
-  children:
-    | ReactNode
-    | ((item: SelectRenderProps & T) => ReactElement<T, string | JSXElementConstructor<T>>);
-}
+  selectedKey?: T | null;
+  defaultSelectedKey?: T;
+  onSelectionChange?: (key: T) => void;
+} & RequireAtLeastOne<{
+    items: ItemProps<T>[];
+    children: ReactNode | ((item: ItemProps<T>) => ReactNode);
+  }>;
 
-export const Select = <T extends object>({
+export const Select = <T extends Key>({
   label,
   className,
   labelClassName,
@@ -43,57 +48,86 @@ export const Select = <T extends object>({
   border = 'bottom',
   popoverClassName,
   children,
+  items,
+  onSelectionChange,
   ...props
-}: SelectProps<T>) => {
-  const buttonClassName = 'px-3 py-1 w-9 h-9';
-
-  return (
-    <AriaSelect
-      {...props}
-      className={cx('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}
+}: SelectProps<T>) => (
+  <AriaSelect
+    {...props}
+    onSelectionChange={onSelectionChange as ((key: Key) => void) | undefined}
+    className={twMerge('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}
+  >
+    <Label className={twMerge('leading-th', errorMessage && 'selection:bg-error', labelClassName)}>
+      {label}
+    </Label>
+    <Button
+      className={twMerge(
+        `group flex items-center leading-th-input
+          disabled:cursor-not-allowed disabled:opacity-disabled
+          bg-th-light
+          border-th-light
+          focus:border-transparent focus:dark:border-transparent
+          focus:outline-none appearance-none focus:ring-2 ring-offset-0
+          ring-primary
+          hover:bg-th-hover`,
+        errorMessage && 'border-error ring-error',
+        border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
+        border === 'bottom' && `border-b focus:border-b-transparent focus:dark:border-b-transparent`,
+        border === 'rounded' && 'border',
+      )}
+      data-error={Boolean(errorMessage)}
     >
-      <Label className={cx('leading-9', labelClassName)}>{label}</Label>
-      <Button
-        className={cx(
-          `flex items-center border-gray-500 bg-gray-100 leading-7
-          hover:bg-gray-200 dark:bg-gray-800 hover:dark:bg-gray-700`,
-          border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
-          border === 'bottom' && 'border-b',
-          border === 'rounded' && 'border',
+      <SelectValue
+        className={twMerge(
+          className,
+          'grow px-3 py-1',
+          border === 'rounded' &&
+            `relative
+            after:absolute after:-bottom-px after:-right-px after:w-px after:h-px
+            after:group-focus:bg-primary
+            before:absolute before:-top-px before:-right-px before:w-px before:h-px
+            before:group-focus:bg-primary`,
+          errorMessage && 'selection:bg-error',
         )}
-      >
-        <SelectValue className={cx(className, 'grow px-3 py-1 dark:border-gray-400 ')} />
-        <ChevronDown
-          aria-hidden="true"
-          className={cx(
-            border === 'rounded'
-              ? 'border-gray-500 dark:border-gray-400'
-              : 'border-white dark:border-gray-900',
-            'border-l',
-            buttonClassName,
-          )}
-        />
-      </Button>
-      {description && (
-        <Text slot="description" className="leading-9">
-          {description}
-        </Text>
-      )}
-      {errorMessage && (
-        <Text slot="errorMessage" className="leading-9 text-red-600 dark:text-red-400">
-          {errorMessage}
-        </Text>
-      )}
-      <Popover
-        className={cx(
-          `rounded-md border border-gray-500 bg-gray-100 leading-7 shadow-lg
-          dark:border-gray-400 dark:bg-gray-800 dark:shadow-gray-700`,
-          popoverClassName,
+      />
+      <Icon
+        id="chevron-down"
+        aria-hidden="true"
+        className={twMerge(
+          'my-auto min-h-full border-l px-3 py-1 w-input h-input',
+          border === 'rounded' ? 'border-th-light group-focus:border-primary' : 'border-th-bg',
+          errorMessage && 'text-error',
+          errorMessage && border === 'rounded' && 'border-error group-focus:border-error',
         )}
+      />
+    </Button>
+    {description && (
+      <Text slot="description" className={twMerge('leading-th', errorMessage && 'selection:bg-error')}>
+        {description}
+      </Text>
+    )}
+    {errorMessage && (
+      <Text
+        slot="errorMessage"
+        className={twMerge('leading-th text-destructive', errorMessage && 'selection:bg-error')}
       >
-        <ListBox>{children}</ListBox>
-      </Popover>
-    </AriaSelect>
-  );
-};
+        {errorMessage}
+      </Text>
+    )}
+    <Popover
+      className={twMerge(
+        `rounded-md leading-7
+          border border-th-light
+          bg-th
+          shadow-th`,
+        popoverClassName,
+      )}
+    >
+      <ListBox className="p-2 outline-none" items={items}>
+        {children ? children : items?.map((item) => <Select.Item key={item.textValue} {...item} />)}
+      </ListBox>
+    </Popover>
+  </AriaSelect>
+);
+
 Select.Item = Item;

@@ -10,6 +10,7 @@
   "types": "dist/types.d.ts",
   "exports": {
     ".": "./dist/index.js",
+    "./icons.svg": "./src/assets/icons.svg",
     "./tailwind.config.js": "./shared.tailwind.config.js"
   },
   "scripts": {
@@ -18,54 +19,53 @@
     "build:library": "parcel build src/index.ts",
     "dev:doc": "ladle serve",
     "build:doc": "ladle build",
-    "dev": "yarn clean && yarn dev:library & yarn dev:doc",
+    "dev": "yarn clean && concurrently \"yarn dev:library\" \"yarn dev:doc\"",
     "lint": "eslint --ext .ts,.tsx src",
     "build": "yarn clean && yarn build:library && yarn build:doc",
-    "serve": "serve build"
+    "serve": "serve build",
+    "theme": "node src/scripts/theme.js"
   },
   "peerDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-feather": "^2.0.10"
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@react-aria/utils": "^3.18.0",
-    "classnames": "^2.3.2",
-    "react-aria-components": "1.0.0-alpha.5"
+    "@react-aria/utils": "^3.22.0",
+    "react-aria-components": "1.0.0-rc.0",
+    "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
-    "@ladle/react": "^2.16.1",
-    "@parcel/packager-ts": "2.9.3",
-    "@parcel/transformer-typescript-tsc": "^2.9.3",
-    "@parcel/transformer-typescript-types": "2.9.3",
-    "@tailwindcss/typography": "^0.5.9",
-    "@types/react": "^18.2.18",
-    "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.46.0",
-    "eslint-plugin-import": "^2.28.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "^7.33.1",
+    "@ladle/react": "^3.3.1",
+    "@parcel/packager-ts": "2.10.2",
+    "@parcel/transformer-typescript-tsc": "^2.10.2",
+    "@parcel/transformer-typescript-types": "^2.10.2",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/babel__template": "^7.4.4",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.53.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "parcel": "^2.9.3",
-    "postcss": "^8.4.27",
-    "prettier": "^3.0.1",
-    "prettier-plugin-tailwindcss": "^0.4.1",
+    "parcel": "^2.10.2",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-feather": "^2.0.10",
-    "rimraf": "^5.0.1",
-    "serve": "^14.2.0",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.1.6"
+    "rimraf": "^5.0.5",
+    "serve": "^14.2.1",
+    "tailwindcss": "^3.3.5",
+    "tailwindcss-react-aria-components": "1.0.0-rc.0",
+    "typescript": "^5.2.2"
   },
   "resolutions": {
     "**/semver": "^7.5.2"
-  },
-  "alias": {
-    "utils": "./src/utils"
   }
 }

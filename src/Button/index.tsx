@@ -1,14 +1,15 @@
 import { Button as AriaButton, ButtonProps as AriaButtonProps } from 'react-aria-components';
-import cx from 'classnames';
 import type { FC, PropsWithChildren, RefAttributes } from 'react';
-import { Icon } from 'react-feather';
+
+import { type IconComponent } from '../types';
+import { twMerge } from '../utils';
 
 export interface ButtonProps
   extends PropsWithChildren<AriaButtonProps & RefAttributes<HTMLButtonElement>> {
   className?: string;
-  iconStart?: Icon;
-  iconEnd?: Icon;
-  variant?: 'regular' | 'unstyled';
+  iconStart?: IconComponent;
+  iconEnd?: IconComponent;
+  variant?: 'regular' | 'primary' | 'destructive' | 'unstyled';
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -21,20 +22,34 @@ export const Button: FC<ButtonProps> = ({
 }) => (
   <AriaButton
     {...props}
-    className={({ isDisabled }) =>
-      cx(
-        variant !== 'unstyled' &&
-          `inline-flex h-9 w-fit items-center space-x-2
-          rounded-md border border-gray-500 bg-gray-100 px-2
-          dark:border-gray-400 dark:bg-gray-800 `,
-        isDisabled && 'cursor-not-allowed opacity-40',
-        !isDisabled && variant !== 'unstyled' && 'hover:bg-gray-200 hover:dark:bg-gray-700',
-        className,
-      )
-    }
+    className={twMerge(
+      `inline-flex items-center h-input w-fit
+      px-2 space-x-2 rounded-md
+      focus:outline-none focus:ring-2
+      ring-offset-2 ring-offset-th
+      disabled:cursor-not-allowed disabled:opacity-disabled
+      duration-150 motion-reduce:transition-none`,
+      variant === 'unstyled'
+        ? 'transition-[box-shadow] hover:enabled:bg-th-hover'
+        : 'transition-all border',
+      variant === 'regular' &&
+        `text-primary border-primary ring-primary
+        bg-th hover:enabled:bg-primary/5`,
+      variant === 'primary' &&
+        `font-medium
+        text-th-reversed border-primary ring-primary
+        bg-primary hover:enabled:bg-primary/95 selection:bg-th-reversed`,
+      variant === 'destructive' &&
+        `font-medium
+        text-destructive
+        border-destructive
+        bg-th hover:enabled:bg-destructive/5 selection:bg-error
+        ring-destructive`,
+      className,
+    )}
   >
-    {IconStart !== undefined && <IconStart className="h-4 w-4" />}
-    {children && <span>{children}</span>}
-    {IconEnd !== undefined && <IconEnd className="h-4 w-4" />}
+    {IconStart !== undefined && <IconStart className="h-icon w-icon" />}
+    {children && <span className="inline-flex items-center">{children}</span>}
+    {IconEnd !== undefined && <IconEnd className="h-icon w-icon" />}
   </AriaButton>
 );

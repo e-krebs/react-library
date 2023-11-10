@@ -1,5 +1,4 @@
 import { useId } from '@react-aria/utils';
-import cx from 'classnames';
 import {
   HTMLAttributes,
   PropsWithChildren,
@@ -12,10 +11,11 @@ import {
   FC,
   RefAttributes,
 } from 'react';
-import { X } from 'react-feather';
 
+import { twMerge } from '../utils';
 import { ModalCloseButton } from './ModalCloseButton';
 import { ModalContext } from './useModal';
+import { Icon } from '../assets/Icon';
 
 interface ModalFCProps {
   title: string;
@@ -107,7 +107,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
         <dialog
           {...dialogProps}
           ref={modalRef}
-          className={cx(
+          className={twMerge(
             '!m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-sm',
             dialogClassName,
           )}
@@ -117,23 +117,24 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
             {...contentProps}
             role="dialog"
             aria-labelledby={titleId}
-            className={cx(
-              'relative flex flex-col rounded-xl p-6',
-              'bg-white text-base text-gray-500',
-              'dark:bg-gray-900 dark:fill-gray-400 dark:text-gray-400',
+            className={twMerge(
+              `relative flex flex-col rounded-xl p-6
+              bg-th
+              text-base text-th
+              fill-th`,
               closing ? 'animate-modal-shrink opacity-0' : 'animate-modal-grow',
               contentClassName,
             )}
           >
             <header
               {...headerProps}
-              className={cx('flex w-full items-center justify-between space-x-8', headerClassName)}
+              className={twMerge('flex w-full items-center justify-between space-x-8', headerClassName)}
             >
               <h1
                 {...titleProps}
                 id={titleId}
-                className={cx(
-                  'm-0 grow truncate text-xl font-bold capitalize leading-8 text-black dark:text-white',
+                className={twMerge(
+                  'm-0 grow truncate text-xl font-bold capitalize leading-th text-h1',
                   titleClassName,
                 )}
               >
@@ -141,9 +142,9 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
               </h1>
               <ModalCloseButton
                 variant="unstyled"
-                className="h-8 w-8 shrink-0 rounded-full p-1 hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="w-9 shrink-0 rounded-full p-1.5 ring-offset-0 ring-th"
               >
-                <X />
+                <Icon id="x" />
               </ModalCloseButton>
             </header>
             {children}

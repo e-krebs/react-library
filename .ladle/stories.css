@@ -5,14 +5,14 @@
     display: initial;
   }
   div[data-reach-dialog-overlay] {
-    @apply bg-gray-900/90
+    @apply bg-gray-900/90;
   }
   div[data-reach-dialog-content] {
     width: calc(100% - 42px);
   }
 
-  div[role="dialog"] {
-    @apply shadow-lg shadow-black/40;
+  div[role='dialog'] {
+    @apply shadow-th;
   }
 
   .ladle-wrapper {
@@ -27,7 +27,8 @@
     @apply capitalize;
   }
 
-  .ladle-aside, .ladle-aside input {
+  .ladle-aside,
+  .ladle-aside input {
     @apply bg-[color:var(--ladle-bg-color-secondary)];
   }
 
@@ -41,7 +42,7 @@
     }
 
     .ladle-addons {
-      @apply w-full p-4 m-0 bg-white dark:bg-gray-900 border-t dark:border-gray-800;
+      @apply w-full p-4 m-0 bg-th border-t border-gray-300 dark:border-gray-700;
     }
 
     div[data-reach-dialog-content] {
@@ -53,32 +54,60 @@
     --ladle-main-padding-mobile: 2rem;
   }
 
+  body[data-theme='yellow'] {
+    --primary-50: 254 252 232; /* yellow-50 rgb values */
+    --primary-100: 254 249 195; /* yellow-100 rgb values */
+    --primary-200: 254 240 138; /* yellow-200 rgb values */
+    --primary-300: 253 224 71; /* yellow-300 rgb values */
+    --primary-400: 250 204 21; /* yellow-400 rgb values */
+    --primary-500: 234 179 8; /* yellow-500 rgb values */
+    --primary-600: 202 138 4; /* yellow-600 rgb values */
+    --primary-700: 161 98 7; /* yellow-700 rgb values */
+    --primary-800: 133 77 14; /* yellow-800 rgb values */
+    --primary-900: 113 63 18; /* yellow-900 rgb values */
+    --primary-950: 66 32 6; /* yellow-950 rgb values */
+  }
+
+  body[data-theme='blue'] {
+    --primary-50: 240 249 255; /* sky-50 rgb values */
+    --primary-100: 224 242 254; /* sky-100 rgb values */
+    --primary-200: 186 230 253; /* sky-200 rgb values */
+    --primary-300: 125 211 252; /* sky-300 rgb values */
+    --primary-400: 56 189 248; /* sky-400 rgb values */
+    --primary-500: 14 165 233; /* sky-500 rgb values */
+    --primary-600: 2 132 199; /* sky-600 rgb values */
+    --primary-700: 3 105 161; /* sky-700 rgb values */
+    --primary-800: 7 89 133; /* sky-800 rgb values */
+    --primary-900: 12 74 110; /* sky-900 rgb values */
+    --primary-950: 8 47 73; /* sky-950 rgb values */
+  }
+
+  .ladle-controls-table select,
+  .ladle-controls-table input {
+    @apply bg-th;
+  }
+
   @media (prefers-color-scheme: dark) {
     body {
       --ladle-bg-color-primary: theme('colors.gray.900');
       --ladle-bg-color-secondary: theme('colors.gray.800');
       --ladle-color-primary: theme('colors.gray.400');
       --ladle-color-hover: theme('colors.gray.200');
-      --ladle-color-accent: theme('colors.yellow.400');
+      --ladle-color-accent: theme('colors.primary.400');
     }
 
     pre {
       @apply !bg-gray-300;
     }
-
-    .ladle-controls-table select,
-    .ladle-controls-table input {
-      @apply bg-gray-900;
-    }
   }
 
   @media (prefers-color-scheme: light) {
     body {
-      --ladle-bg-color-primary: theme('colors.white');
+      --ladle-bg-color-primary: theme('colors.gray.50');
       --ladle-bg-color-secondary: theme('colors.gray.200');
       --ladle-color-primary: theme('colors.gray.500');
       --ladle-color-hover: theme('colors.gray.700');
-      --ladle-color-accent: theme('colors.yellow.500');
+      --ladle-color-accent: theme('colors.primary.500');
     }
   }
 }

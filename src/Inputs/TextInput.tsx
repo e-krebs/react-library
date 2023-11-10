@@ -1,58 +1,77 @@
-import cx from 'classnames';
 import { FC, type RefAttributes } from 'react';
 import { Input, Label, Text, TextField, type TextFieldProps } from 'react-aria-components';
 
-import { InputBorder, InputFlow } from '../types';
+import { twMerge } from '../utils';
+import type { InputBorder, InputFlow } from '../types';
 
-export interface TextInputProps extends TextFieldProps, RefAttributes<HTMLDivElement> {
+export interface TextInputProps
+  extends TextFieldProps,
+    Omit<RefAttributes<HTMLDivElement>, 'className'> {
   label?: string;
   placeholder?: string;
   description?: string;
   errorMessage?: string;
-  className?: string;
+  inputClassName?: string;
   labelClassName?: string;
   flow?: InputFlow;
-  flowClassName?: string;
+  wrapperClassName?: string;
   border?: InputBorder;
 }
 
 export const TextInput: FC<TextInputProps> = ({
   label,
-  className,
-  labelClassName,
   flow,
-  flowClassName,
+  border = 'bottom',
   description,
   errorMessage,
-  ...props
-}) => {
-  const { border = 'bottom', ...textFieldProps } = props;
-
-  return (
-    <TextField
-      {...textFieldProps}
-      className={cx('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}
-    >
-      <Label className={cx('leading-9', labelClassName)}>{label}</Label>
-      <Input
-        className={cx(
-          className,
-          'border-gray-500 bg-gray-100 p-1 dark:border-gray-400 dark:bg-gray-800',
-          border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
-          border === 'bottom' && 'border-b',
-          border === 'rounded' && 'border',
-        )}
-      />
-      {description && (
-        <Text slot="description" className="leading-9">
-          {description}
-        </Text>
+  inputClassName,
+  labelClassName,
+  wrapperClassName,
+  ...textFieldProps
+}) => (
+  <TextField
+    {...textFieldProps}
+    isInvalid={textFieldProps.isInvalid || !!errorMessage}
+    className={twMerge(
+      'group flex',
+      flow === 'row' ? 'flex-row space-x-2' : 'flex-col w-fit',
+      wrapperClassName,
+    )}
+  >
+    <Label className={twMerge('leading-th group-invalid:selection:bg-error', labelClassName)}>
+      {label}
+    </Label>
+    <Input
+      className={twMerge(
+        inputClassName,
+        `bg-th-light p-1
+        disabled:cursor-not-allowed disabled:opacity-disabled
+        border-th
+        invalid:border-error
+        focus:border-transparent focus:dark:border-transparent
+        invalid:focus:border-transparent invalid:focus:dark:border-transparent
+        focus:outline-none appearance-none focus:ring-2
+        ring-offset-0
+        ring-primary
+        invalid:ring-error
+        caret-primary
+        invalid:caret-error invalid:selection:bg-error`,
+        border !== 'bottom' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
+        border === 'bottom' &&
+          `border-b focus:border-b-transparent focus:dark:border-b-transparent
+          invalid:focus:border-b-transparent invalid:focus:dark:border-b-transparent`,
+        border === 'rounded' && 'border',
       )}
-      {errorMessage && (
-        <Text slot="errorMessage" className="leading-9 text-red-600 dark:text-red-400">
-          {errorMessage}
-        </Text>
-      )}
-    </TextField>
-  );
-};
+    />
+    {description && (
+      <Text slot="description" className="leading-th group-invalid:bg-error">
+        {description}
+      </Text>
+    )}
+    {errorMessage && (
+      <Text slot="errorMessage" className="leading-th text-error selection:bg-error">
+        {errorMessage}
+      </Text>
+    )}
+  </TextField>
+);

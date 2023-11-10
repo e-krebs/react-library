@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import { X } from 'react-feather';
 
+import { Icon } from '../assets/Icon';
 import { Button } from '../Button';
 import { Modal, type ModalRef } from './index';
 
@@ -21,14 +21,10 @@ export const ModalStory = () => {
   return (
     <section className="space-y-6">
       <h2>Modal</h2>
-      <Button className="h-9 rounded-md border px-2" onPress={openModal}>
-        Open modal
-      </Button>
-      <p>
-        The modal has been close {nb} times.
-        <Button className="ml-2 h-9 rounded-md border px-2" onPress={() => setNb(0)}>
-          reset counter
-        </Button>
+      <Button onPress={openModal}>Open modal</Button>
+      <p className="space-x-2">
+        <span>The modal has been close {nb} times.</span>
+        <Button onPress={() => setNb(0)}>reset counter</Button>
       </p>
 
       <Modal ref={modalRef} title="Example modal" onClosed={() => setNb((nb) => nb + 1)}>
@@ -39,13 +35,13 @@ export const ModalStory = () => {
             This example uses both <code>Modal.Content</code> & <code>Modal.Footer</code> components.
           </p>
           You can close the modal by:
-          <ol className="leading-8">
+          <ol className="leading-th">
             <li>
               Hitting <b>{'<Esc>'}</b> on your Keyboard,
             </li>
             <li>Clicking outside of the modal,</li>
             <li>
-              Clicking the <X /> Button at the top-right of the modal,
+              Clicking the <Icon id="x" /> Button at the top-right of the modal,
             </li>
             <li>Clicking either button below.</li>
           </ol>
@@ -53,9 +49,7 @@ export const ModalStory = () => {
         <Modal.Footer className="flex-col items-end space-y-2">
           <div className="space-x-2">
             <span className="italic">regular Button calling closeModal →</span>
-            <Button className="h-9 rounded-md border px-2" onPress={closeModal}>
-              Close Modal
-            </Button>
+            <Button onPress={closeModal}>Close Modal</Button>
           </div>
           <div className="space-x-2">
             <span className="italic">Modal.CloseButton →</span>

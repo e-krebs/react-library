@@ -16,21 +16,30 @@ interface StoryParams {
   flow?: InputFlow;
 }
 
+const options = [
+  { textValue: 'Zero', value: 0 },
+  { textValue: 'One', value: 1 },
+  { textValue: 'Two', value: 2 },
+  { textValue: 'Three', value: 3 },
+  { textValue: 'Four', value: 4 },
+  { textValue: 'Five', value: 5 },
+  { textValue: 'Six', value: 6 },
+  { textValue: 'Seven', value: 7 },
+  { textValue: 'Eight', value: 8 },
+  { textValue: 'Nine', value: 9 },
+];
+
 export const SelectStory: Story<StoryParams> = ({ label, description, error, border, flow }) => {
   return (
     <Section title="Select">
-      <Select label={label} description={description} errorMessage={error} border={border} flow={flow}>
-        <Select.Item value={0}>Zero</Select.Item>
-        <Select.Item value={1}>One</Select.Item>
-        <Select.Item value={2}>Two</Select.Item>
-        <Select.Item value={3}>Three</Select.Item>
-        <Select.Item value={4}>Four</Select.Item>
-        <Select.Item value={5}>Five</Select.Item>
-        <Select.Item value={6}>Six</Select.Item>
-        <Select.Item value={7}>Seven</Select.Item>
-        <Select.Item value={8}>Eight</Select.Item>
-        <Select.Item value={9}>Nine</Select.Item>
-      </Select>
+      <Select
+        label={label}
+        description={description}
+        errorMessage={error}
+        border={border}
+        flow={flow}
+        items={options}
+      />
     </Section>
   );
 };
