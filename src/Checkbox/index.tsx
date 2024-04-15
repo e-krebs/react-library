@@ -8,7 +8,7 @@ import { twMerge } from '../utils';
 
 export interface CheckboxProps
   extends Omit<AriaCheckboxProps, 'children' | 'className'>,
-    RefAttributes<HTMLInputElement> {
+    RefAttributes<HTMLLabelElement> {
   label?: string;
   className?: string;
 }
