@@ -17,4 +17,4 @@ jobs:
           bun-version: 'latest'
       - run: bun install --no-save
       - run: bun run lint
-      - run: bun run build
+      - run: bun run build:bun

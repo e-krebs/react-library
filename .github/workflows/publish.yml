@@ -29,7 +29,7 @@ jobs:
           echo "invalid package version, expected: ${{env.new_release_version}}, got: ${{steps.package.outputs.prop}}"
           exit 1
       - run: bun install --no-save
-      - run: bun run build
+      - run: bun run build:bun
       - name: create .npmrc file
         run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
       - run: npm publish --access public
