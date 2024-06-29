@@ -13,6 +13,9 @@
     "./icons.svg": "./src/assets/icons.svg",
     "./tailwind.config.js": "./shared.tailwind.config.js"
   },
+  "engines": {
+    "node": ">= 20.0.0"
+  },
   "scripts": {
     "clean": "rimraf .parcel-cache dist build",
     "dev:library": "parcel watch",
