@@ -1,5 +1,9 @@
+import react from '@vitejs/plugin-react';
 import fs from 'fs';
+import { resolve } from 'path';
+import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
 function inlineSvg(...paths) {
   return {
@@ -20,7 +24,31 @@ function inlineSvg(...paths) {
   };
 }
 
-export default defineConfig({
-  server: { open: false },
-  plugins: [inlineSvg('src/assets/icons.svg', '.ladle/assets/stories-icons.svg')],
+export default defineConfig(({ isSsrBuild, isPreview }) => {
+  const isLadle = isSsrBuild === undefined && isPreview === undefined;
+
+  return {
+    server: { open: false },
+    plugins: isLadle
+      ? [inlineSvg('src/assets/icons.svg', '.ladle/assets/stories-icons.svg')]
+      : [react(), dts({ rollupTypes: true })],
+    css: {
+      postcss: {
+        plugins: [tailwindcss],
+      },
+    },
+    build: {
+      lib: {
+        entry: resolve(__dirname, 'src/index.ts'),
+        name: '@e-krebs/react-library',
+        fileName: 'index',
+      },
+      rollupOptions: {
+        external: ['react', 'react-dom', 'tailwindcss'],
+        output: { globals: { react: 'React', 'react-dom': 'ReactDOM', tailwindcss: 'tailwindcss' } },
+      },
+      sourcemap: true,
+      emptyOutDir: true,
+    },
+  };
 });
