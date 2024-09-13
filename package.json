@@ -26,7 +26,6 @@
     "lint": "eslint --ext .ts,.tsx src",
     "build": "yarn clean && yarn build:library && yarn build:doc",
     "build:bun": "bun run clean && bun run build:library && bun run build:doc",
-    "serve": "serve build",
     "theme": "node src/scripts/theme.js"
   },
   "peerDependencies": {
