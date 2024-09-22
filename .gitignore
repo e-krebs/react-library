@@ -129,3 +129,4 @@ dist
 dist
 build
 .parcel-cache
+yarn.lock

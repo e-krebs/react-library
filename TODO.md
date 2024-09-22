@@ -47,4 +47,4 @@
 
 ## tools
 
-- run `yarn theme` to generate theme values from tailwindCss colors
+- run `bun run theme` to generate theme values from tailwindCss colors
