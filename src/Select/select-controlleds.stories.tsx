@@ -1,5 +1,6 @@
 import type { Story } from '@ladle/react';
-import { Key, useState, useMemo } from 'react';
+import type { Key } from '@react-types/shared';
+import { useState, useMemo } from 'react';
 import { Section } from 'utils';
 import { NumberInput } from 'Inputs';
 
@@ -45,7 +46,9 @@ export const SelectStory: Story<StoryParams> = () => {
         selectedKey={value}
         onSelectionChange={setValue}
       >
-        {(item) => <Select.Item key={item.textValue} {...item} />}
+        {options.map((item) => (
+          <Select.Item key={item.textValue} {...item} />
+        ))}
       </Select>
     </Section>
   );
