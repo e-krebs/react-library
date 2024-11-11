@@ -33,7 +33,7 @@
     "dev": "bun run clean && concurrently \"bun run dev:library\" \"bun run dev:doc\"",
     "lint": "eslint --ext .ts,.tsx src",
     "build": "bun run clean && bun run build:library && bun run build:doc",
-    "theme": "node src/scripts/theme.js"
+    "theme": "bun run src/scripts/theme.js"
   },
   "peerDependencies": {
     "@tailwindcss/typography": "^0.5.15",
