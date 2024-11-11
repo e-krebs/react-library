@@ -16,11 +16,29 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: '@e-krebs/react-library',
-      fileName: 'index',
+      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'tailwindcss'],
-      output: { globals: { react: 'React', 'react-dom': 'ReactDOM', tailwindcss: 'tailwindcss' } },
+      external: [
+        '@react-aria/utils',
+        'react',
+        'react/jsx-runtime',
+        'react-aria-components',
+        'react-dom',
+        'tailwindcss',
+        'tailwind-merge',
+      ],
+      output: {
+        globals: {
+          '@react-aria/utils': 'reactAriaUtils',
+          react: 'React',
+          'react/jsx-runtime': 'reactJsxRuntime',
+          'react-aria-components': 'reactAriaComponents',
+          'react-dom': 'ReactDOM',
+          tailwindcss: 'tailwindcss',
+          'tailwind-merge': 'tailwindMerge',
+        },
+      },
     },
     sourcemap: true,
     emptyOutDir: true,
