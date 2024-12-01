@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires, no-console */
+/* eslint-disable @typescript-eslint/no-require-imports, no-console */
 const colors = require('tailwindcss/colors');
 const { parseColor } = require('tailwindcss/lib/util/color');
 
