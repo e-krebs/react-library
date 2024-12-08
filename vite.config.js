@@ -26,7 +26,6 @@ export default defineConfig({
         'react-aria-components',
         'react-dom',
         'tailwindcss',
-        'tailwind-merge',
       ],
       output: {
         globals: {
@@ -36,7 +35,6 @@ export default defineConfig({
           'react-aria-components': 'reactAriaComponents',
           'react-dom': 'ReactDOM',
           tailwindcss: 'tailwindcss',
-          'tailwind-merge': 'tailwindMerge',
         },
       },
     },
