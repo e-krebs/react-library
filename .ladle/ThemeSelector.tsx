@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 
 import { type Theme, items, getThemeClassName } from './Theme';
-
 import { Select } from '../src/Select';
 
 export const ThemeSelector: FC = () => {

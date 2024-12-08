@@ -1,9 +1,9 @@
-import React, { type SVGProps } from 'react';
+import { type SVGProps } from 'react';
 
-const icons = ['github', 'anchor', 'aperture'] as const;
+type Icons = 'github' | 'anchor' | 'aperture';
 
 export interface StoryIconProps extends SVGProps<SVGSVGElement> {
-  id: (typeof icons)[number];
+  id: Icons[number];
 }
 
 const StoryIcon = ({ id, width = 24, height = 24, ...props }: StoryIconProps) => (

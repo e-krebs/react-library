@@ -28,7 +28,7 @@
     "dev:doc": "ladle serve --viteConfig ./.ladle/vite.config.js",
     "build:doc": "ladle build --viteConfig ./.ladle/vite.config.js",
     "dev": "bun run clean && concurrently \"bun run dev:library\" \"bun run dev:doc\"",
-    "lint": "eslint src",
+    "lint": "eslint src .ladle",
     "build": "bun run clean && bun run build:library && bun run build:doc",
     "theme": "bun run src/scripts/theme.js"
   },
