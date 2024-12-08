@@ -9,9 +9,9 @@
   - [x] `Select`
 - [x] rationalize tailwind theming
 - [ ] update README by documenting how to theme
-  - [ ] document group/??? on newly themed components when/if relevant
+  - [x] ~~document group/??? on newly themed components when/if relevant~~
   - [ ] document how to use icons svg sprite
-- [ ] `Select`: don't rely on `errorMessage &&` but use custom `data-...` + `group-...` instead
+- [x] `Select`: don't rely on `errorMessage &&` but use custom `data-...` + `group-...` instead
 - [ ] update version
 
 ## Tips
