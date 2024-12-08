@@ -69,6 +69,7 @@ export default {
       },
       data: {
         selected: 'selected',
+        error: 'error~=true',
       },
     },
   },
