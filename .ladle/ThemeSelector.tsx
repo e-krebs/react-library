@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 
-import { type Theme, items, getThemeClassName } from './Theme';
+import { type Theme, items, getThemeClassName, ThemeItem } from './Theme';
 import { Select } from '../src/Select';
 
 export const ThemeSelector: FC = () => {
@@ -15,14 +15,12 @@ export const ThemeSelector: FC = () => {
   }, [theme]);
 
   return (
-    <Select
-      label="theme"
-      border="rounded"
-      flow="row"
-      items={items}
-      selectedKey={theme}
-      onSelectionChange={setTheme}
-      className={getThemeClassName(theme)}
-    />
+    <Select label="theme" border="rounded" flow="row" selectedKey={theme} onSelectionChange={setTheme}>
+      {items.map((props: ThemeItem) => (
+        <Select.Item {...props} key={props.textValue}>
+          <span className={getThemeClassName(props.value)}>{props.textValue}</span>
+        </Select.Item>
+      ))}
+    </Select>
   );
 };
