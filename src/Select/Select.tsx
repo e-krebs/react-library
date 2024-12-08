@@ -12,23 +12,19 @@ import {
 import { Text } from 'react-aria-components';
 
 import { Icon } from '../assets/Icon';
-import { twMerge, type RequireAtLeastOne } from '../utils';
+import { type RequireAtLeastOne } from '../utils';
 import type { InputBorder, InputFlow } from '../types';
 import { Item, type ItemProps } from './Item';
 
 type SelectProps<T extends Key> = Omit<
   AriaSelectProps<ItemProps<T>>,
-  'children' | 'selectedKey' | 'defaultSelectedKey' | 'onSelectionChange'
+  'children' | 'selectedKey' | 'defaultSelectedKey' | 'onSelectionChange' | 'className'
 > & {
   label?: string;
   description?: string;
   errorMessage?: string;
-  className?: string;
-  labelClassName?: string;
   flow?: InputFlow;
-  flowClassName?: string;
   border?: InputBorder;
-  popoverClassName?: string;
   selectedKey?: T | null;
   defaultSelectedKey?: T;
   onSelectionChange?: (key: T) => void;
@@ -39,91 +35,85 @@ type SelectProps<T extends Key> = Omit<
 
 export const Select = <T extends Key>({
   label,
-  className,
-  labelClassName,
-  flow,
-  flowClassName,
+  flow = 'col',
   description,
   errorMessage,
   border = 'bottom',
-  popoverClassName,
   children,
   items,
   onSelectionChange,
   ...props
 }: SelectProps<T>) => (
   <AriaSelect
+    className="group flex data-[flow=col]:flex-col data-[flow=col]:w-fit data-[flow=row]:flex-row data-[flow=row]:space-x-2"
     {...props}
+    data-error={Boolean(errorMessage)}
+    data-flow={flow}
+    data-border={border}
     onSelectionChange={onSelectionChange as ((key: Key) => void) | undefined}
-    className={twMerge('flex', flow === 'row' ? 'flex-row space-x-2' : 'w-fit flex-col', flowClassName)}
   >
-    <Label className={twMerge('leading-th', errorMessage && 'selection:bg-error', labelClassName)}>
-      {label}
-    </Label>
+    <Label className="leading-th group-data-error:selection:bg-error">{label}</Label>
     <Button
-      className={twMerge(
-        `group flex items-center leading-th-input
+      // rounded-none is necessary for iPad
+      className="group/button flex items-center leading-th-input
           disabled:cursor-not-allowed disabled:opacity-disabled
           bg-th-light
-          border-th-light
+          border-th-light group-data-error:border-error
           focus:border-transparent focus:dark:border-transparent
           focus:outline-none appearance-none focus:ring-2 ring-offset-0
-          ring-primary
-          hover:bg-th-hover`,
-        errorMessage && 'border-error ring-error',
-        border === 'rounded' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
-        border === 'bottom' && `border-b focus:border-b-transparent focus:dark:border-b-transparent`,
-        border === 'rounded' && 'border',
-      )}
-      data-error={Boolean(errorMessage)}
+          ring-primary group-data-error:ring-error
+          hover:bg-th-hover
+          rounded-none group-data-[border=rounded]:rounded-md
+          group-data-[border=bottom]:border-b focus:group-data-[border=bottom]:border-b-transparent focus:dark:group-data-[border=bottom]:border-b-transparent
+          group-data-[border=rounded]:border"
     >
       <SelectValue
-        className={twMerge(
-          className,
-          'grow px-3 py-1',
-          border === 'rounded' &&
-            `relative
-            after:absolute after:-bottom-px after:-right-px after:w-px after:h-px
-            after:group-focus:bg-primary
-            before:absolute before:-top-px before:-right-px before:w-px before:h-px
-            before:group-focus:bg-primary`,
-          errorMessage && 'selection:bg-error',
-        )}
+        className="grow px-3 py-1 group-data-error:selection:bg-error
+          group-data-[border=rounded]:relative
+          group-data-[border=rounded]:after:absolute
+          after:-bottom-px
+          group-data-[border=rounded]:after:-right-px
+          group-data-[border=rounded]:after:w-px
+          group-data-[border=rounded]:after:h-px
+          group-data-[border=rounded]:after:group-focus/button:bg-primary
+          group-data-[border=rounded]:before:absolute
+          group-data-[border=rounded]:before:-top-px
+          group-data-[border=rounded]:before:-right-px
+          group-data-[border=rounded]:before:w-px
+          group-data-[border=rounded]:before:h-px
+          group-data-[border=rounded]:before:group-focus/button:bg-primary"
       />
       <Icon
         id="chevron-down"
         aria-hidden="true"
-        className={twMerge(
-          'my-auto min-h-full border-l px-3 py-1 w-input h-input',
-          border === 'rounded' ? 'border-th-light group-focus:border-primary' : 'border-th-bg',
-          errorMessage && 'text-error',
-          errorMessage && border === 'rounded' && 'border-error group-focus:border-error',
-        )}
+        className="my-auto min-h-full border-l px-3 py-1 w-input h-input
+          border-th-bg group-data-[border=rounded]:border-th-light
+          group-focus/button:group-data-[border=rounded]:border-primary
+          group-data-error:text-error
+          group-data-[border=rounded]:group-data-error:border-error
+          group-data-[border=rounded]:group-data-error:group-focus/button:border-error"
       />
     </Button>
     {description && (
-      <Text slot="description" className={twMerge('leading-th', errorMessage && 'selection:bg-error')}>
+      <Text slot="description" className="leading-th group-data-error:selection:bg-error">
         {description}
       </Text>
     )}
     {errorMessage && (
       <Text
         slot="errorMessage"
-        className={twMerge('leading-th text-destructive', errorMessage && 'selection:bg-error')}
+        className="leading-th text-destructive group-data-error:selection:bg-error"
       >
         {errorMessage}
       </Text>
     )}
     <Popover
-      className={twMerge(
-        `rounded-md leading-7
+      className="rounded-md leading-7
           border border-th-light
           bg-th
-          shadow-th`,
-        popoverClassName,
-      )}
+          shadow-th"
     >
-      <ListBox className="p-2 outline-none" items={items}>
+      <ListBox className="p-2 outline-none">
         {children ? children : items?.map((item) => <Select.Item key={item.textValue} {...item} />)}
       </ListBox>
     </Popover>

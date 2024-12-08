@@ -2,11 +2,9 @@ import { Button as AriaButton, ButtonProps as AriaButtonProps } from 'react-aria
 import type { FC, PropsWithChildren, RefAttributes } from 'react';
 
 import { type IconComponent } from '../types';
-import { twMerge } from '../utils';
 
 export interface ButtonProps
   extends PropsWithChildren<AriaButtonProps & RefAttributes<HTMLButtonElement>> {
-  className?: string;
   iconStart?: IconComponent;
   iconEnd?: IconComponent;
   variant?: 'regular' | 'primary' | 'destructive' | 'unstyled';
@@ -14,39 +12,43 @@ export interface ButtonProps
 
 export const Button: FC<ButtonProps> = ({
   children,
-  className,
   iconStart: IconStart,
   iconEnd: IconEnd,
   variant = 'regular',
   ...props
 }) => (
   <AriaButton
-    {...props}
-    className={twMerge(
-      `inline-flex items-center h-input w-fit
+    data-variant={variant}
+    className="inline-flex items-center h-input w-fit
       px-2 space-x-2 rounded-md
       focus:outline-none focus:ring-2
       ring-offset-2 ring-offset-th
       disabled:cursor-not-allowed disabled:opacity-disabled
-      duration-150 motion-reduce:transition-none`,
-      variant === 'unstyled'
-        ? 'transition-[box-shadow] hover:enabled:bg-th-hover'
-        : 'transition-all border',
-      variant === 'regular' &&
-        `text-primary border-primary ring-primary
-        bg-th hover:enabled:bg-primary/5`,
-      variant === 'primary' &&
-        `font-medium
-        text-th-reversed border-primary ring-primary
-        bg-primary hover:enabled:bg-primary/95 selection:bg-th-reversed`,
-      variant === 'destructive' &&
-        `font-medium
-        text-destructive
-        border-destructive
-        bg-th hover:enabled:bg-destructive/5 selection:bg-error
-        ring-destructive`,
-      className,
-    )}
+      duration-150 motion-reduce:transition-none
+      transition-all data-[variant=unstyled]:transition-[box-shadow]
+      data-[variant=regular]:text-primary
+      data-[variant=destructive]:text-destructive
+      data-[variant=primary]:font-medium
+      data-[variant=destructive]:font-medium
+      data-[variant=primary]:text-th-reversed
+      border
+      data-[variant=unstyled]:border-none
+      data-[variant=regular]:border-primary
+      data-[variant=primary]:border-primary
+      data-[variant=destructive]:border-destructive
+      data-[variant=regular]:ring-primary
+      data-[variant=primary]:ring-primary
+      data-[variant=destructive]:ring-destructive
+      data-[variant=regular]:bg-th
+      data-[variant=primary]:bg-primary
+      data-[variant=destructive]:bg-th
+      hover:enabled:data-[variant=unstyled]:bg-th-hover
+      hover:enabled:data-[variant=regular]:bg-primary/5
+      hover:enabled:data-[variant=primary]:bg-primary/95
+      hover:enabled:data-[variant=destructive]:bg-destructive/5
+      selection:data-[variant=primary]:bg-th-reversed
+      selection:data-[variant=destructive]:bg-error"
+    {...props}
   >
     {IconStart !== undefined && <IconStart className="h-icon w-icon" />}
     {children && <span className="inline-flex items-center">{children}</span>}
