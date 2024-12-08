@@ -46,7 +46,7 @@ export const ModalStory = () => {
             <li>Clicking either button below.</li>
           </ol>
         </Modal.Content>
-        <Modal.Footer className="flex-col items-end space-y-2">
+        <Modal.Footer className="flex flex-col items-end px-1 space-y-2">
           <div className="space-x-2">
             <span className="italic">regular Button calling closeModal →</span>
             <Button onPress={closeModal}>Close Modal</Button>

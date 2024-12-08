@@ -1,67 +1,59 @@
 import { FC, type RefAttributes } from 'react';
 import { Input, Label, Text, TextField, type TextFieldProps } from 'react-aria-components';
 
-import { twMerge } from '../utils';
 import type { InputBorder, InputFlow } from '../types';
 
-export interface TextInputProps
-  extends TextFieldProps,
-    Omit<RefAttributes<HTMLDivElement>, 'className'> {
+export interface TextInputProps extends TextFieldProps, RefAttributes<HTMLDivElement> {
   label?: string;
   placeholder?: string;
   description?: string;
   errorMessage?: string;
-  inputClassName?: string;
-  labelClassName?: string;
   flow?: InputFlow;
-  wrapperClassName?: string;
   border?: InputBorder;
 }
 
 export const TextInput: FC<TextInputProps> = ({
   label,
-  flow,
+  flow = 'col',
   border = 'bottom',
   description,
   errorMessage,
-  inputClassName,
-  labelClassName,
-  wrapperClassName,
   ...textFieldProps
 }) => (
   <TextField
+    className="group flex
+      data-[flow=row]:flex-row data-[flow=row]:space-x-2
+      data-[flow=col]:flex-col data-[flow=col]:w-fit"
     {...textFieldProps}
+    data-flow={flow}
+    data-border={border}
     isInvalid={textFieldProps.isInvalid || !!errorMessage}
-    className={twMerge(
-      'group flex',
-      flow === 'row' ? 'flex-row space-x-2' : 'flex-col w-fit',
-      wrapperClassName,
-    )}
   >
-    <Label className={twMerge('leading-th group-invalid:selection:bg-error', labelClassName)}>
-      {label}
-    </Label>
+    <Label className="leading-th group-invalid:selection:bg-error">{label}</Label>
     <Input
-      className={twMerge(
-        inputClassName,
-        `bg-th-light p-1
+      // rounded-none is necessary for iPad
+      className="
+        bg-th-light p-1
         disabled:cursor-not-allowed disabled:opacity-disabled
+        group-data-[border=rounded]:border
+        group-data-[border=bottom]:border-b
+        group-data-[border=bottom]:focus:border-b-transparent
+        group-data-[border=bottom]:focus:dark:border-b-transparent
+        group-data-[border=bottom]:invalid:focus:border-b-transparent
+        group-data-[border=bottom]:invalid:focus:dark:border-b-transparent
         border-th
         invalid:border-error
         focus:border-transparent focus:dark:border-transparent
         invalid:focus:border-transparent invalid:focus:dark:border-transparent
+        rounded-md
+        group-data-[border=bottom]:rounded-none
         focus:outline-none appearance-none focus:ring-2
         ring-offset-0
         ring-primary
         invalid:ring-error
         caret-primary
-        invalid:caret-error invalid:selection:bg-error`,
-        border !== 'bottom' ? 'rounded-md' : 'rounded-none', // rounded-none is necessary for iPad
-        border === 'bottom' &&
-          `border-b focus:border-b-transparent focus:dark:border-b-transparent
-          invalid:focus:border-b-transparent invalid:focus:dark:border-b-transparent`,
-        border === 'rounded' && 'border',
-      )}
+        invalid:caret-error
+        invalid:selection:bg-error"
     />
     {description && (
       <Text slot="description" className="leading-th group-invalid:bg-error">

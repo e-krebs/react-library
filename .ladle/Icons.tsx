@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Icon, IconProps } from '../src/assets/Icon';
 
 type Props = Omit<IconProps, 'id'>;

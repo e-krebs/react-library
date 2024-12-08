@@ -4,7 +4,7 @@ const themes = ['yellow', 'blue'] as const;
 
 export type Theme = (typeof themes)[number];
 
-type ThemeItem = ItemProps<Theme>;
+export type ThemeItem = ItemProps<Theme>;
 
 export const items: ThemeItem[] = [
   { textValue: 'black & white', value: undefined },

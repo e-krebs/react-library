@@ -9,9 +9,9 @@
   - [x] `Select`
 - [x] rationalize tailwind theming
 - [ ] update README by documenting how to theme
-  - [ ] document group/??? on newly themed components when/if relevant
+  - [x] ~~document group/??? on newly themed components when/if relevant~~
   - [ ] document how to use icons svg sprite
-- [ ] `Select`: don't rely on `errorMessage &&` but use custom `data-...` + `group-...` instead
+- [x] `Select`: don't rely on `errorMessage &&` but use custom `data-...` + `group-...` instead
 - [ ] update version
 
 ## Tips
@@ -19,7 +19,7 @@
 - add _**animations**_ & don't forget `motion-reduce:transition-none`
   - [react-aria recommendations](https://react-spectrum.adobe.com/react-aria/styling.html#animation)
 - `className`
-  - use attributes based on data- instead of `tailwind-merge` for conditional classnames (isSelected, ...)
+  - use attributes based on data- for conditional classnames (isSelected, ...)
     - those do come from the [official plugin](https://react-spectrum.adobe.com/react-aria/styling.html#tailwind-css)
   - ⚠️ don't forget the `focus:` state (keyboard selection) ⚠️
   - don't hesitate to override the `className` property provided by `react-aria-component` with `className?: string` as with `tailwindCss` & react-aria's attributes based on data- we shouldn't need state-dependant classNames

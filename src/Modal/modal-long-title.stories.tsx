@@ -21,13 +21,13 @@ export const ModalStory = () => {
       <Modal
         ref={modalRef}
         title="Example modal with a long title that is being truncated"
-        contentProps={{ className: 'max-w-xs' }}
+        maxWidth="xs"
       >
         <Modal.Content>
           <p>
             Example modal with a long title that is being truncated. <br />
             By default, no max width is set on the modal. You have to set it through{' '}
-            <code>contentProps.className</code>.
+            <code>maxWidth</code>.
           </p>
         </Modal.Content>
       </Modal>
