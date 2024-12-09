@@ -3,7 +3,6 @@ import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import reactHooks from 'eslint-plugin-react-hooks';
 import _import from 'eslint-plugin-import';
 import prettier from 'eslint-plugin-prettier';
-import globals from 'globals';
 import tsParser from '@typescript-eslint/parser';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -43,10 +42,6 @@ export default [
     },
 
     languageOptions: {
-      globals: {
-        ...globals.node,
-      },
-
       parser: tsParser,
     },
 
@@ -108,5 +103,14 @@ export default [
     rules: {
       'react/prop-types': 'off',
     },
+  },
+  {
+    files: ['src/scripts/**/*.*'],
+    languageOptions: {
+      globals: {
+        console: 'readonly',
+      },
+    },
+    'no-console': 'off',
   },
 ];
