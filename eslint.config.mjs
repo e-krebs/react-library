@@ -111,6 +111,8 @@ export default [
         console: 'readonly',
       },
     },
-    'no-console': 'off',
+    rules: {
+      'no-console': 'off',
+    },
   },
 ];
