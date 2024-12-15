@@ -27,7 +27,8 @@
     "build:library": "bun run --bun vite build",
     "dev:doc": "ladle serve --viteConfig ./.ladle/vite.config.js",
     "build:doc": "ladle build --viteConfig ./.ladle/vite.config.js",
-    "dev": "bun run clean && concurrently \"bun run dev:library\" \"bun run dev:doc\"",
+    "dev:parallel": "bun run scripts/parallel-dev.ts",
+    "dev": "bun run clean && bun run dev:parallel",
     "lint": "eslint src .ladle",
     "build": "bun run clean && bun run build:library && bun run build:doc",
     "theme": "bun run src/scripts/theme.ts"
@@ -52,7 +53,6 @@
     "@vitejs/plugin-react": "^4.3.4",
     "ajv": "^8.17.1",
     "autoprefixer": "^10.4.20",
-    "concurrently": "^9.1.0",
     "eslint": "^9.16.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
