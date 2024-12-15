@@ -1,6 +1,6 @@
 {
   "name": "@e-krebs/react-library",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "A collection of components to be reused across personal projects",
   "repository": "github.com/e-krebs/react-library",
   "author": "Emmanuel Krebs <e-krebs@users.noreply.github.com>",
@@ -16,7 +16,7 @@
       "require": "./dist/index.umd.js"
     },
     "./icons.svg": "./src/assets/icons.svg",
-    "./tailwind.config.js": "./shared.tailwind.config.js"
+    "./tailwind.config.ts": "./shared.tailwind.config.ts"
   },
   "engines": {
     "node": ">= 20.0.0"
