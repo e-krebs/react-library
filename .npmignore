@@ -1,6 +1,7 @@
 *
 !package.json
 !dist/**/*
+!src/**/*
 !LICENSE
 !README.md
 !*tailwind.config.ts
