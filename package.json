@@ -22,7 +22,7 @@
     "node": ">= 20.0.0"
   },
   "scripts": {
-    "clean": "bun clean.sh",
+    "clean": "bun scripts/clean.sh",
     "dev:library": "bun run --bun vite",
     "build:library": "bun run --bun vite build",
     "dev:doc": "ladle serve --viteConfig ./.ladle/vite.config.js",
