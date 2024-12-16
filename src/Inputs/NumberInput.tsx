@@ -10,7 +10,7 @@ import {
   Text,
 } from 'react-aria-components';
 
-import { InputBorder, InputFlow } from '../types';
+import type { InputBorder, InputFlow, InputWidth } from '../types';
 import { Icon } from '../assets/Icon';
 
 interface NumberInputProps extends NumberFieldProps, RefAttributes<HTMLDivElement> {
@@ -20,6 +20,7 @@ interface NumberInputProps extends NumberFieldProps, RefAttributes<HTMLDivElemen
   errorMessage?: string;
   flow?: InputFlow;
   border?: InputBorder;
+  width?: InputWidth;
 }
 
 interface NumberInputButtonProps
@@ -50,6 +51,7 @@ export const NumberInput = ({
   label,
   flow = 'col',
   border = 'bottom',
+  width,
   description,
   errorMessage,
   ...numberFieldProps
@@ -57,6 +59,7 @@ export const NumberInput = ({
   <NumberField
     data-flow={flow}
     data-border={border}
+    data-width={width}
     className="group flex flex-col data-[flow=row]:flex-row
       data-[flow=row]:space-x-2 data-[flow=col]:w-fit"
     {...numberFieldProps}
@@ -88,6 +91,11 @@ export const NumberInput = ({
       </NumberInputButton>
       <Input
         className="px-3 py-1
+            group-data-[width=xs]:w-12
+            group-data-[width=s]:w-20
+            group-data-[width=m]:w-28
+            group-data-[width=l]:w-44
+            group-data-[width=xl]:w-60
             border-x rounded-none
             bg-th-light
             border-th-bg

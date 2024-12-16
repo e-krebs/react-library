@@ -2,7 +2,7 @@ import type { Story } from '@ladle/react';
 import { Section } from 'utils';
 
 import { NumberInput } from './NumberInput';
-import type { InputBorder, InputFlow } from '../types';
+import type { InputBorder, InputFlow, InputWidth } from '../types';
 
 export default {
   title: 'Components > Number Input',
@@ -15,9 +15,18 @@ interface StoryParams {
   border?: InputBorder;
   flow?: InputFlow;
   step?: string;
+  width?: InputWidth;
 }
 
-export const CheckboxStory: Story<StoryParams> = ({ label, description, error, border, flow, step }) => (
+export const CheckboxStory: Story<StoryParams> = ({
+  label,
+  description,
+  error,
+  border,
+  flow,
+  step,
+  width,
+}) => (
   <Section title="Text Input: Basics" showInfoControls>
     <NumberInput
       label={label}
@@ -26,6 +35,7 @@ export const CheckboxStory: Story<StoryParams> = ({ label, description, error, b
       border={border}
       flow={flow}
       step={parseInt(step ?? '1')}
+      width={width}
       aria-label="fallback label"
       defaultValue={0}
     />
@@ -53,5 +63,10 @@ CheckboxStory.argTypes = {
     options: ['1', '10', '100'],
     control: { type: 'select' },
     defaultValue: '1',
+  },
+  width: {
+    options: ['xs', 's', 'm', 'l', 'xl', undefined],
+    control: { type: 'select' },
+    defaultValue: undefined,
   },
 };
