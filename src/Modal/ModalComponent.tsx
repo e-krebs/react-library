@@ -150,7 +150,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
             aria-labelledby={titleId}
             data-closing={closing}
           >
-            <header className="flex w-full items-center justify-between space-x-8">
+            <header className="flex w-full items-center justify-between space-x-8 my-0.5">
               <h1
                 className="m-0 grow truncate text-xl font-bold capitalize leading-th text-h1"
                 id={titleId}
