@@ -2,7 +2,7 @@ import type { Story } from '@ladle/react';
 import { Section } from 'utils';
 
 import { TextInput } from './TextInput';
-import type { InputBorder, InputFlow } from '../types';
+import type { InputBorder, InputFlow, InputWidth } from '../types';
 
 export default {
   title: 'Components > Text Input',
@@ -15,6 +15,7 @@ interface StoryParams {
   error?: string;
   border?: InputBorder;
   flow?: InputFlow;
+  width?: InputWidth;
 }
 
 export const CheckboxStory: Story<StoryParams> = ({
@@ -24,6 +25,7 @@ export const CheckboxStory: Story<StoryParams> = ({
   error,
   border,
   flow,
+  width,
 }) => (
   <Section title="Text Input: Basics" showInfoControls>
     <TextInput
@@ -33,6 +35,7 @@ export const CheckboxStory: Story<StoryParams> = ({
       errorMessage={error}
       border={border}
       flow={flow}
+      width={width}
     />
   </Section>
 );
@@ -53,5 +56,10 @@ CheckboxStory.argTypes = {
     options: ['col', 'row'],
     control: { type: 'radio' },
     defaultValue: 'col',
+  },
+  width: {
+    options: ['xs', 's', 'm', 'l', 'xl', undefined],
+    control: { type: 'select' },
+    defaultValue: undefined,
   },
 };
