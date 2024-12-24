@@ -16,7 +16,7 @@
       "require": "./dist/index.umd.js"
     },
     "./icons.svg": "./src/assets/icons.svg",
-    "./tailwind.config.ts": "./shared.tailwind.config.ts"
+    "./tailwind.css": "./src/tailwind.css"
   },
   "engines": {
     "node": ">= 22.0.0"
@@ -46,6 +46,7 @@
     "@ladle/react": "^5.0.0",
     "@react-aria/utils": "^3.26.0",
     "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/vite": "^4.0.0-beta.8",
     "@types/babel__template": "^7.4.4",
     "@types/bun": "^1.1.14",
     "@types/react": "^19.0.2",
@@ -54,19 +55,17 @@
     "@typescript-eslint/parser": "^8.18.2",
     "@vitejs/plugin-react": "^4.3.4",
     "ajv": "^8.17.1",
-    "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-react-hooks": "^5.1.0",
-    "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "react": "^19.0.0",
     "react-aria-components": "1.5.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.0.0-beta.8",
     "tailwindcss-react-aria-components": "1.2.0",
     "typescript": "^5.7.2",
     "vite": "^6.0.6",

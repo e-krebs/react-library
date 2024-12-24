@@ -21,9 +21,6 @@ export default [
   {
     files: ['**/*.ts', '**/*.tsx'],
   },
-  {
-    ignores: ['**/*tailwind.config.js'],
-  },
   ...fixupConfigRules(
     compat.extends(
       'eslint:recommended',

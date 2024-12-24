@@ -34,10 +34,10 @@ const NumberInputButton: FC<NumberInputButtonProps> = ({ side, children, ...prop
     className="inline-flex items-center w-fit
       px-3 py-1 space-x-2
       rounded-none
-      group-data-[border=rounded]:data-[side=left]:rounded-l-md
-      group-data-[border=rounded]:data-[side=right]:rounded-r-md
-      group-invalid:text-error
-      focus:outline-none
+      in-data-[border=rounded]:data-[side=left]:rounded-l-md
+      in-data-[border=rounded]:data-[side=right]:rounded-r-md
+      invalid:text-error
+      focus:outline-hidden
       disabled:cursor-not-allowed disabled:opacity-disabled
       border-none
       bg-th-light hover:bg-th-hover hover:enabled:bg-th-hover"
@@ -60,29 +60,29 @@ export const NumberInput = ({
     data-flow={flow}
     data-border={border}
     data-width={width}
-    className="group flex max-w-full flex-col data-[flow=row]:flex-row
+    className="flex max-w-full flex-col data-[flow=row]:flex-row
       data-[flow=row]:space-x-2 data-[flow=col]:w-fit"
     {...numberFieldProps}
     isInvalid={numberFieldProps.isInvalid || !!errorMessage}
   >
-    <Label className="leading-th group-invalid:selection:bg-error">{label}</Label>
+    <Label className="leading-th invalid:selection:bg-error">{label}</Label>
     <Group
       // rounded-none is necessary for iPad
-      className="flex group leading-th-input h-input
+      className="flex leading-th-input h-input
           bg-th-light invalid:selection:bg-error
           disabled:cursor-not-allowed disabled:opacity-disabled
           border-th-light
           invalid:border-error
-          group-data-[border=rounded]:border
-          group-data-[border=bottom]:border-b
-          focus-within:group-data-[border=bottom]:border-b-transparent
-          focus-within:dark:group-data-[border=bottom]:border-b-transparent
-          invalid:focus-within:group-data-[border=bottom]:border-b-transparent
-          invalid:focus-within:dark:group-data-[border=bottom]:border-b-transparent
+          in-data-[border=rounded]:border
+          in-data-[border=bottom]:border-b
+          in-data-[border=bottom]:focus-within:border-b-transparent
+          dark:in-data-[border=bottom]:focus-within:border-b-transparent
+          in-data-[border=bottom]:invalid:focus-within:border-b-transparent
+          dark:in-data-[border=bottom]:invalid:focus-within:border-b-transparent
           rounded-none
-          group-data-[border=rounded]:rounded-md
+          in-data-[border=rounded]:rounded-md
           focus-within:outline-2
-          -outline-offset-1 focus-within:outline
+          -outline-offset-1
           outline-primary
           invalid:outline-error"
     >
@@ -91,33 +91,33 @@ export const NumberInput = ({
       </NumberInputButton>
       <Input
         className="px-3 py-1
-            group-data-[width=xs]:w-12
-            group-data-[width=s]:w-20
-            group-data-[width=m]:w-28
-            group-data-[width=l]:w-44
-            group-data-[width=xl]:w-60
+            in-data-[width=xs]:w-12
+            in-data-[width=s]:w-20
+            in-data-[width=m]:w-28
+            in-data-[width=l]:w-44
+            in-data-[width=xl]:w-60
             border-x rounded-none
             bg-th-light
             border-th-bg
-            group-data-[border=rounded]:border-th-light
-            group-invalid:group-data-[border=rounded]:border-error
-            focus:outline-none appearance-none
-            group-focus-within:border-primary
-            group-invalid:group-focus-within:border-error
+            in-data-[border=rounded]:border-th-light
+            invalid:in-data-[border=rounded]:border-error
+            focus:outline-hidden appearance-none
+            focus:border-primary
+            invalid:focus:border-error
             caret-primary
-            group-invalid:caret-error"
+            invalid:caret-error"
       />
       <NumberInputButton slot="increment" side="right">
         <Icon id="plus" className="h-icon w-icon" />
       </NumberInputButton>
     </Group>
     {description && (
-      <Text slot="description" className="leading-th group-invalid:selection:bg-error">
+      <Text slot="description" className="leading-th invalid:selection:bg-error">
         {description}
       </Text>
     )}
     {errorMessage && (
-      <Text slot="errorMessage" className="leading-th text-error group-invalid:selection:bg-error">
+      <Text slot="errorMessage" className="leading-th text-error invalid:selection:bg-error">
         {errorMessage}
       </Text>
     )}

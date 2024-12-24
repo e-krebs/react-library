@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
 function inlineSvg(...paths) {
   return {
@@ -22,5 +23,5 @@ function inlineSvg(...paths) {
 
 export default defineConfig({
   server: { open: false },
-  plugins: [inlineSvg('src/assets/icons.svg', '.ladle/assets/stories-icons.svg')],
+  plugins: [inlineSvg('src/assets/icons.svg', '.ladle/assets/stories-icons.svg'), tailwindcss()],
 });

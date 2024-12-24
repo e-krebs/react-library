@@ -21,7 +21,7 @@ const options = [
 ];
 
 export const CheckboxStory: Story = () => (
-  <Section title="Text Input: Examples">
+  <Section title="Select: Examples">
     <Select label="with a default value" items={options} defaultSelectedKey={7} />
     <div className="2xl:flex gap-6">
       <div className="space-y-6 2xl:w-1/2">
