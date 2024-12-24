@@ -112,7 +112,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
     return (
       <ModalContext.Provider value={{ openModal, closeModal }}>
         <dialog
-          className="!m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-sm"
+          className="m-auto! overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-xs"
           ref={modalRef}
           onClick={(e) => e.stopPropagation()}
         >
@@ -140,27 +140,27 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
               data-[max-width=max]:max-w-max
               data-[max-width=fit]:max-w-fit
               data-[max-width=prose]:max-w-prose
-              data-[max-width=screen-sm]:max-w-screen-sm
-              data-[max-width=screen-md]:max-w-screen-md
-              data-[max-width=screen-lg]:max-w-screen-lg
-              data-[max-width=screen-xl]:max-w-screen-xl
-              data-[max-width=screen-2xl]:max-w-screen-2xl"
+              data-[max-width=screen-sm]:max-w-(--breakpoint-sm)
+              data-[max-width=screen-md]:max-w-(--breakpoint-md)
+              data-[max-width=screen-lg]:max-w-(--breakpoint-lg)
+              data-[max-width=screen-xl]:max-w-(--breakpoint-xl)
+              data-[max-width=screen-2xl]:max-w-(--breakpoint-2xl)"
             data-max-width={maxWidth}
             role="dialog"
             aria-labelledby={titleId}
             data-closing={closing}
           >
-            <header className="flex w-full items-center justify-between space-x-8 my-0.5">
+            <header className="flex w-full items-center justify-between my-0.5">
               <h1
-                className="m-0 grow truncate text-xl font-bold capitalize leading-th text-h1"
+                className="m-0 grow truncate text-xl font-bold capitalize leading-th text-h1 not-prose"
                 id={titleId}
               >
                 {title}
               </h1>
               <ModalCloseButton
                 className="inline-flex shrink-0 items-center h-input w-9
-                  p-1.5 space-x-2 rounded-full
-                  focus:outline-none focus:ring-2
+                  p-1.5 ml-8 space-x-2 rounded-full
+                  focus:outline-hidden focus:ring-2
                   ring-offset-0 ring-offset-th
                   ring-th
                   disabled:cursor-not-allowed disabled:opacity-disabled

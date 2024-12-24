@@ -5,6 +5,6 @@ export default {
     width: { enabled: false },
     ladle: { enabled: false },
   },
-  viteConfig: '.ladle/vite.config.js',
+  viteConfig: '.ladle/vite.config.mts',
   expandStoryTree: true,
 };

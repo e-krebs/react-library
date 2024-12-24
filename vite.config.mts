@@ -1,17 +1,12 @@
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import tailwindcss from 'tailwindcss';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   server: { open: false },
-  plugins: [react(), dts({ rollupTypes: true })],
-  css: {
-    postcss: {
-      plugins: [tailwindcss],
-    },
-  },
+  plugins: [react(), dts({ rollupTypes: true }), tailwindcss()],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),

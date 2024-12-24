@@ -16,7 +16,7 @@ export const ModalCloseButton: FC<ModalCloseButton> = ({ children, ...props }) =
       className="inline-flex items-center h-input w-fit
         px-2 space-x-2 rounded-md
         border border-primary ring-primary
-        focus:outline-none focus:ring-2
+        focus:outline-hidden focus:ring-2
         ring-offset-2 ring-offset-th
         disabled:cursor-not-allowed disabled:opacity-disabled
         transition-all duration-150 motion-reduce:transition-none
