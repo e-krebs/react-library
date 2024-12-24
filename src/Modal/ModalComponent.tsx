@@ -112,7 +112,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
     return (
       <ModalContext.Provider value={{ openModal, closeModal }}>
         <dialog
-          className="m-auto! overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-xs"
+          className="m-auto overflow-y-hidden bg-transparent backdrop:bg-gray-700/80 backdrop:backdrop-blur-xs"
           ref={modalRef}
           onClick={(e) => e.stopPropagation()}
         >
