@@ -30,8 +30,7 @@
     "dev:parallel": "bun run scripts/parallel-dev.ts",
     "dev": "bun run clean && bun run dev:parallel",
     "lint": "eslint src .ladle",
-    "build": "bun run clean && bun run build:library && bun run build:doc",
-    "theme": "bun run src/scripts/theme.ts"
+    "build": "bun run clean && bun run build:library && bun run build:doc"
   },
   "peerDependencies": {
     "@tailwindcss/typography": "^0.5.15",
