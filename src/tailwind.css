@@ -70,10 +70,18 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  body {
+    @apply bg-th text-th;
+    @apply selection:bg-primary selection:text-th-reversed;
+    @apply text-base min-h-screen;
+    @apply fill-th;
+    -webkit-tap-highlight-color: theme(--color-primary-500 / 0.2);
+  }
 }
 
+/* background-color classes */
 @utility bg-th {
-  /* background-color classes */
   @apply bg-gray-50 dark:bg-gray-900;
 }
 
@@ -116,8 +124,8 @@
   @apply bg-gray-200 dark:bg-gray-700;
 }
 
+/* border-color classes */
 @utility border-th {
-  /* border-color classes */
   @apply border-gray-700 dark:border-gray-300;
 }
 
@@ -144,8 +152,8 @@
   @apply border-gray-50 dark:border-gray-900;
 }
 
+/* text-color classes */
 @utility text-th {
-  /* text-color classes */
   @apply text-gray-500 dark:text-gray-400;
 }
 
@@ -173,8 +181,8 @@
   @apply text-gray-50 dark:text-gray-900;
 }
 
+/* ring-color classes */
 @utility ring-th {
-  /* ring-color classes */
   @apply ring-gray-700 dark:ring-gray-300;
 }
 
@@ -190,13 +198,13 @@
   @apply ring-red-600 dark:ring-red-500;
 }
 
+/* ring-offset-color classes */
 @utility ring-offset-th {
-  /* ring-offset-color classes */
   @apply ring-offset-white dark:ring-offset-gray-900;
 }
 
+/* outline-color classes */
 @utility outline-primary {
-  /* outline-color classes */
   @apply outline-primary-500 dark:outline-primary-400;
 }
 
@@ -208,8 +216,8 @@
   @apply outline-red-600 dark:outline-red-500;
 }
 
+/* caret-color classes */
 @utility caret-primary {
-  /* caret-color classes */
   @apply caret-primary-500 dark:caret-primary-400;
 }
 
@@ -221,27 +229,17 @@
   @apply caret-red-600 dark:caret-red-500;
 }
 
+/* stroke-color classes */
 @utility stroke-th {
-  /* stroke-color classes */
   @apply stroke-white dark:stroke-gray-900;
 }
 
+/* fill-color classes */
 @utility fill-th {
-  /* fill-color classes */
   @apply fill-gray-500 dark:fill-gray-400;
 }
 
+/* shadow class */
 @utility shadow-th {
-  /* shadow class */
   @apply shadow-md dark:shadow-inner;
-}
-
-@layer base {
-  body {
-    @apply bg-th text-th;
-    @apply selection:bg-primary selection:text-th-reversed;
-    @apply text-base min-h-screen;
-    @apply fill-th;
-    -webkit-tap-highlight-color: theme(--color-primary-500 / 0.2);
-  }
 }
