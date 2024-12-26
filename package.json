@@ -19,14 +19,14 @@
     "./tailwind.config.ts": "./shared.tailwind.config.ts"
   },
   "engines": {
-    "node": ">= 20.0.0"
+    "node": ">= 22.0.0"
   },
   "scripts": {
     "clean": "bun scripts/clean.sh",
     "dev:library": "bun run --bun vite",
     "build:library": "bun run --bun vite build",
-    "dev:doc": "ladle serve --viteConfig ./.ladle/vite.config.js",
-    "build:doc": "ladle build --viteConfig ./.ladle/vite.config.js",
+    "dev:doc": "ladle serve",
+    "build:doc": "ladle build",
     "dev:parallel": "bun run scripts/parallel-dev.ts",
     "dev": "bun run clean && bun run dev:parallel",
     "lint": "eslint src .ladle",
@@ -43,22 +43,22 @@
     "@eslint/compat": "^1.2.4",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.17.0",
-    "@ladle/react": "^4.1.2",
+    "@ladle/react": "^5.0.0",
     "@react-aria/utils": "^3.26.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/babel__template": "^7.4.4",
     "@types/bun": "^1.1.14",
-    "@types/react": "^19.0.1",
+    "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
-    "@typescript-eslint/eslint-plugin": "^8.18.0",
-    "@typescript-eslint/parser": "^8.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
     "@vitejs/plugin-react": "^4.3.4",
     "ajv": "^8.17.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-react-hooks": "^5.1.0",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
@@ -66,11 +66,11 @@
     "react": "^19.0.0",
     "react-aria-components": "1.5.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^3.4.16",
+    "tailwindcss": "^3.4.17",
     "tailwindcss-react-aria-components": "1.2.0",
     "typescript": "^5.7.2",
-    "vite": "^6.0.3",
-    "vite-plugin-dts": "^4.3.0"
+    "vite": "^6.0.6",
+    "vite-plugin-dts": "^4.4.0"
   },
   "resolutions": {
     "**/semver": "^7.5.2"
