@@ -5,4 +5,6 @@ export default {
     width: { enabled: false },
     ladle: { enabled: false },
   },
+  viteConfig: '.ladle/vite.config.js',
+  expandStoryTree: true,
 };
