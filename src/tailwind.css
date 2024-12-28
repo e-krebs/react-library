@@ -72,10 +72,12 @@
   }
 
   body {
-    @apply bg-th text-th;
+    /* cf. https://github.com/tailwindlabs/tailwindcss/issues/15501 for comments below */
+    @apply bg-gray-50 dark:bg-gray-900; /* bg-th */
+    @apply text-gray-500 dark:text-gray-400; /* text-th */
     @apply selection:bg-primary selection:text-th-reversed;
     @apply text-base min-h-screen;
-    @apply fill-th;
+    @apply fill-gray-500 dark:fill-gray-400; /* fill-th */
     -webkit-tap-highlight-color: theme(--color-primary-500 / 0.2);
   }
 }
