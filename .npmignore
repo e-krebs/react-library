@@ -3,5 +3,5 @@
 !dist/**/*
 !LICENSE
 !README.md
-!*tailwind.config.ts
+!src/tailwind.css
 !src/assets/icons.svg
