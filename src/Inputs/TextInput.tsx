@@ -23,7 +23,7 @@ export const TextInput: FC<TextInputProps> = ({
   ...textFieldProps
 }) => (
   <TextField
-    className="group flex
+    className="group flex max-w-full
       data-[flow=row]:flex-row data-[flow=row]:space-x-2
       data-[flow=col]:flex-col data-[flow=col]:w-fit"
     {...textFieldProps}
