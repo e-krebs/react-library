@@ -60,7 +60,7 @@ export const NumberInput = ({
     data-flow={flow}
     data-border={border}
     data-width={width}
-    className="group flex flex-col data-[flow=row]:flex-row
+    className="group flex max-w-full flex-col data-[flow=row]:flex-row
       data-[flow=row]:space-x-2 data-[flow=col]:w-fit"
     {...numberFieldProps}
     isInvalid={numberFieldProps.isInvalid || !!errorMessage}
