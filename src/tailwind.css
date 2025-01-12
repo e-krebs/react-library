@@ -28,8 +28,8 @@
   --color-primary-900: var(--primary-900, var(--color-gray-900));
   --color-primary-950: var(--primary-950, var(--color-gray-950));
 
-  --spacing-icon: calc(var(--spacing) * 4);
-  --spacing-input: calc(var(--spacing) * 9);
+  --spacing-icon: --spacing(4);
+  --spacing-input: --spacing(9);
   --spacing-initial: initial;
 
   --leading: 0.25rem;
