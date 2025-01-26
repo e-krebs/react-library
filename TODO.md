@@ -12,7 +12,8 @@
   - [x] ~~document group/??? on newly themed components when/if relevant~~
   - [ ] document how to use icons svg sprite
 - [x] `Select`: don't rely on `errorMessage &&` but use custom `data-...` + `group-...` instead
-- [ ] update version
+- [ ] update version to 0.1.0
+- [ ] delete that file
 
 ## Tips
 
@@ -44,7 +45,3 @@
   - replace ~~`leading-9`~~ by `leading-th`
 - for **red** colors
   - use `*-error` & `*-error-dark` variants (for text, border & ring)
-
-## tools
-
-- run `bun run theme` to generate theme values from tailwindCss colors

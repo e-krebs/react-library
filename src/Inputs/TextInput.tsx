@@ -23,7 +23,7 @@ export const TextInput: FC<TextInputProps> = ({
   ...textFieldProps
 }) => (
   <TextField
-    className="group flex max-w-full
+    className="flex max-w-full
       data-[flow=row]:flex-row data-[flow=row]:space-x-2
       data-[flow=col]:flex-col data-[flow=col]:w-fit"
     {...textFieldProps}
@@ -32,30 +32,30 @@ export const TextInput: FC<TextInputProps> = ({
     data-width={width}
     isInvalid={textFieldProps.isInvalid || !!errorMessage}
   >
-    <Label className="leading-th group-invalid:selection:bg-error">{label}</Label>
+    <Label className="leading-th invalid:selection:bg-error">{label}</Label>
     <Input
       // rounded-none is necessary for iPad
       className="
         bg-th-light p-1
-        group-data-[width=xs]:w-12
-        group-data-[width=s]:w-20
-        group-data-[width=m]:w-28
-        group-data-[width=l]:w-44
-        group-data-[width=xl]:w-60
+        in-data-[width=xs]:w-12
+        in-data-[width=s]:w-20
+        in-data-[width=m]:w-28
+        in-data-[width=l]:w-44
+        in-data-[width=xl]:w-60
         disabled:cursor-not-allowed disabled:opacity-disabled
-        group-data-[border=rounded]:border
-        group-data-[border=bottom]:border-b
-        group-data-[border=bottom]:focus:border-b-transparent
-        group-data-[border=bottom]:focus:dark:border-b-transparent
-        group-data-[border=bottom]:invalid:focus:border-b-transparent
-        group-data-[border=bottom]:invalid:focus:dark:border-b-transparent
+        in-data-[border=rounded]:border
+        in-data-[border=bottom]:border-b
+        in-data-[border=bottom]:focus:border-b-transparent
+        in-data-[border=bottom]:dark:focus:border-b-transparent
+        in-data-[border=bottom]:invalid:focus:border-b-transparent
+        in-data-[border=bottom]:dark:invalid:focus:border-b-transparent
         border-th
         invalid:border-error
-        focus:border-transparent focus:dark:border-transparent
-        invalid:focus:border-transparent invalid:focus:dark:border-transparent
+        focus:border-transparent dark:focus:border-transparent
+        invalid:focus:border-transparent dark:invalid:focus:border-transparent
         rounded-md
-        group-data-[border=bottom]:rounded-none
-        focus:outline-none appearance-none focus:ring-2
+        in-data-[border=bottom]:rounded-none
+        focus:outline-hidden appearance-none focus:ring-2
         ring-offset-0
         ring-primary
         invalid:ring-error
@@ -64,7 +64,7 @@ export const TextInput: FC<TextInputProps> = ({
         invalid:selection:bg-error"
     />
     {description && (
-      <Text slot="description" className="leading-th group-invalid:bg-error">
+      <Text slot="description" className="leading-th in-invalid:bg-error">
         {description}
       </Text>
     )}
