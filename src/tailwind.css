@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
 @plugin "@tailwindcss/typography";
-@plugin "tailwindcss-react-aria-components";
 
 @theme {
   --color-gray-50: var(--color-zinc-50);
@@ -53,6 +52,11 @@
 
 @variant invalid (&:where([data-invalid="true"] *));
 @variant data-error (&:where([data-error="true"] *));
+
+/* react-aria-components variants */
+@variant disabled (&:where([data-disabled]));
+@variant selected (&:where([data-selected]));
+@variant focus (&:where([data-focused]));
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,

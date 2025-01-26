@@ -30,7 +30,6 @@
         "react-aria-components": "1.5.0",
         "react-dom": "^19.0.0",
         "tailwindcss": "^4.0.0",
-        "tailwindcss-react-aria-components": "1.2.0",
         "typescript": "^5.7.2",
         "vite": "^6.0.6",
         "vite-plugin-dts": "^4.4.0",
@@ -1578,8 +1577,6 @@
     "synckit": ["synckit@0.9.1", "", { "dependencies": { "@pkgr/core": "^0.1.0", "tslib": "^2.6.2" } }, "sha512-7gr8p9TQP6RAHusBOSLs46F4564ZrjV8xFmw5zCmgmhGUcw2hxsShhJ6CEiHQMgPDwAQ1fWHPM0ypc4RMAig4A=="],
 
     "tailwindcss": ["tailwindcss@4.0.0", "", {}, "sha512-ULRPI3A+e39T7pSaf1xoi58AqqJxVCLg8F/uM5A3FadUbnyDTgltVnXJvdkTjwCOGA6NazqHVcwPJC5h2vRYVQ=="],
-
-    "tailwindcss-react-aria-components": ["tailwindcss-react-aria-components@1.2.0", "", { "peerDependencies": { "tailwindcss": "*" } }, "sha512-ynlQIfAdoWAz0Og0dCe/d4QVE+L8Yuo6rtK9apdhehZZMoLC1GdwtnvLZyUyx+wHwnTjRuNtFPdN0DpPsPXJJg=="],
 
     "tapable": ["tapable@2.2.1", "", {}, "sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ=="],
 
