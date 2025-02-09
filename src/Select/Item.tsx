@@ -19,7 +19,7 @@ export const Item = <T extends Key>({
 }: PropsWithChildren<ItemProps<T>>) => (
   <ListBoxItem
     className="flex items-center pl-6 pr-3 py-1
-      cursor-pointer hover:outline-none
+      cursor-pointer hover:outline-hidden
       rounded-md
       text-th
       hover:text-primary

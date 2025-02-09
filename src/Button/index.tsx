@@ -21,7 +21,7 @@ export const Button: FC<ButtonProps> = ({
     data-variant={variant}
     className="inline-flex items-center h-input w-fit
       px-2 space-x-2 rounded-md
-      focus:outline-none focus:ring-2
+      focus:outline-hidden focus:ring-2
       ring-offset-2 ring-offset-th
       disabled:cursor-not-allowed disabled:opacity-disabled
       duration-150 motion-reduce:transition-none
@@ -46,8 +46,8 @@ export const Button: FC<ButtonProps> = ({
       hover:enabled:data-[variant=regular]:bg-primary/5
       hover:enabled:data-[variant=primary]:bg-primary/95
       hover:enabled:data-[variant=destructive]:bg-destructive/5
-      selection:data-[variant=primary]:bg-th-reversed
-      selection:data-[variant=destructive]:bg-error"
+      data-[variant=primary]:selection:bg-th-reversed
+      data-[variant=destructive]:selection:bg-error"
     {...props}
   >
     {IconStart !== undefined && <IconStart className="h-icon w-icon" />}

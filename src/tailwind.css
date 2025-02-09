@@ -1,137 +1,249 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-gray-50: var(--color-zinc-50);
+  --color-gray-100: var(--color-zinc-100);
+  --color-gray-200: var(--color-zinc-200);
+  --color-gray-300: var(--color-zinc-300);
+  --color-gray-400: var(--color-zinc-400);
+  --color-gray-500: var(--color-zinc-500);
+  --color-gray-600: var(--color-zinc-600);
+  --color-gray-700: var(--color-zinc-700);
+  --color-gray-800: var(--color-zinc-800);
+  --color-gray-900: var(--color-zinc-900);
+  --color-gray-950: var(--color-zinc-950);
+
+  --color-primary-50: var(--primary-50, var(--color-gray-50));
+  --color-primary-100: var(--primary-100, var(--color-gray-100));
+  --color-primary-200: var(--primary-200, var(--color-gray-200));
+  --color-primary-300: var(--primary-300, var(--color-gray-300));
+  --color-primary-400: var(--primary-400, var(--color-gray-400));
+  --color-primary-500: var(--primary-500, var(--color-gray-500));
+  --color-primary-600: var(--primary-600, var(--color-gray-600));
+  --color-primary-700: var(--primary-700, var(--color-gray-700));
+  --color-primary-800: var(--primary-800, var(--color-gray-800));
+  --color-primary-900: var(--primary-900, var(--color-gray-900));
+  --color-primary-950: var(--primary-950, var(--color-gray-950));
+
+  --spacing-icon: --spacing(4);
+  --spacing-input: --spacing(9);
+  --spacing-initial: initial;
+
+  --leading: 0.25rem;
+  --leading-th: calc(var(--leading) * 9);
+  --leading-th-input: calc(var(--leading) * 7);
+
+  --opacity-disabled: 0.4;
+
+  --animate-modal-grow: modal-grow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  @keyframes modal-grow {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+  }
+  
+  --animate-modal-shrink: modal-shrink 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  @keyframes modal-shrink {
+    0% { transform: scale(1), opacity: 1; }
+    100% { transform: scale(0), opacity: 0; }
+  }
+}
+
+@variant invalid (&:where([data-invalid="true"] *));
+@variant data-error (&:where([data-error="true"] *));
+
+/* react-aria-components variants */
+@variant disabled (&:where([data-disabled]));
+@variant selected (&:where([data-selected]));
+@variant focus (&:where([data-focused]));
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
   body {
     @apply bg-th text-th;
     @apply selection:bg-primary selection:text-th-reversed;
     @apply text-base min-h-screen;
     @apply fill-th;
-    @apply tap-highlight-primary;
+    -webkit-tap-highlight-color: theme(--color-primary-500 / 0.2);
   }
 }
 
-@layer utilities {
-  /* background-color classes */
-  .bg-th {
-    @apply bg-gray-50 dark:bg-gray-900;
-  }
-  .bg-th-reversed {
-    @apply bg-gray-900 dark:bg-gray-50;
-  }
-  .bg-primary {
-    @apply bg-primary-500 dark:bg-primary-400;
-  }
-  .bg-primary\/5 {
-    @apply bg-primary-500/5 dark:bg-primary-400/5;
-  }
-  .bg-primary\/95 {
-    @apply bg-primary-500/95 dark:bg-primary-400/95;
-  }
-  .bg-destructive,
-  .bg-error {
-    @apply bg-red-600 dark:bg-red-500;
-  }
-  .bg-destructive\/5 {
-    @apply bg-red-600/5 dark:bg-red-500/5;
-  }
-  .bg-th-light {
-    @apply bg-gray-100 dark:bg-gray-800;
-  }
-  .bg-th-hover {
-    @apply bg-gray-200 dark:bg-gray-700;
-  }
+/* background-color classes */
+@utility bg-th {
+  @apply bg-gray-50 dark:bg-gray-900;
+}
 
-  /* border-color classes */
-  .border-th {
-    @apply border-gray-700 dark:border-gray-300;
-  }
-  .border-primary {
-    @apply border-primary-500 dark:border-primary-400;
-  }
-  .border-destructive,
-  .border-error {
-    @apply border-red-600 dark:border-red-500;
-  }
-  .border-primary.bg-primary\/95 {
+@utility bg-th-reversed {
+  @apply bg-gray-900 dark:bg-gray-50;
+}
+
+@utility bg-primary {
+  @apply bg-primary-500 dark:bg-primary-400;
+}
+
+@utility bg-primary/5 {
+  @apply bg-primary-500/5 dark:bg-primary-400/5;
+}
+
+@utility bg-primary/95 {
+  @apply bg-primary-500/95 dark:bg-primary-400/95;
+  &.border-primary {
     @apply border-primary-500/95 dark:border-primary-400/95;
   }
-  .border-th-light {
-    @apply border-gray-400 dark:border-gray-500;
-  }
-  .border-th-bg {
-    @apply border-gray-50 dark:border-gray-900;
-  }
+}
 
-  /* text-color classes */
-  .text-th {
-    @apply text-gray-500 dark:text-gray-400;
-  }
-  .text-h1 {
-    @apply text-gray-900 dark:text-gray-50;
-  }
-  .text-primary {
-    @apply text-primary-500 dark:text-primary-400;
-  }
-  .text-destructive,
-  .text-error {
-    @apply text-red-600 dark:text-red-500;
-  }
-  .text-valid {
-    @apply text-green-600 dark:text-green-400;
-  }
-  .text-th-reversed {
-    @apply text-gray-50 dark:text-gray-900;
-  }
+@utility bg-destructive {
+  @apply bg-red-600 dark:bg-red-500;
+}
 
-  /* ring-color classes */
-  .ring-th {
-    @apply ring-gray-700 dark:ring-gray-300;
-  }
-  .ring-primary {
-    @apply ring-primary-500 dark:ring-primary-400;
-  }
-  .ring-destructive,
-  .ring-error {
-    @apply ring-red-600 dark:ring-red-500;
-  }
+@utility bg-error {
+  @apply bg-red-600 dark:bg-red-500;
+}
 
-  /* ring-offset-color classes */
-  .ring-offset-th {
-    @apply ring-offset-white dark:ring-offset-gray-900;
-  }
+@utility bg-destructive/5 {
+  @apply bg-red-600/5 dark:bg-red-500/5;
+}
 
-  /* outline-color classes */
-  .outline-primary {
-    @apply outline-primary-500 dark:outline-primary-400;
-  }
-  .outline-destructive,
-  .outline-error {
-    @apply outline-red-600 dark:outline-red-500;
-  }
+@utility bg-th-light {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
 
-  /* caret-color classes */
-  .caret-primary {
-    @apply caret-primary-500 dark:caret-primary-400;
-  }
-  .caret-destructive,
-  .caret-error {
-    @apply caret-red-600 dark:caret-red-500;
-  }
+@utility bg-th-hover {
+  @apply bg-gray-200 dark:bg-gray-700;
+}
 
-  /* stroke-color classes */
-  .stroke-th {
-    @apply stroke-white dark:stroke-gray-900;
-  }
+/* border-color classes */
+@utility border-th {
+  @apply border-gray-700 dark:border-gray-300;
+}
 
-  /* fill-color classes */
-  .fill-th {
-    @apply fill-gray-500 dark:fill-gray-400;
+@utility border-primary {
+  @apply border-primary-500 dark:border-primary-400;
+  &.bg-primary\/95 {
+    @apply border-primary-500/95 dark:border-primary-400/95;
   }
+}
 
-  /* shadow class */
-  .shadow-th {
-    @apply shadow-md dark:shadow-inner;
-  }
+@utility border-destructive {
+  @apply border-red-600 dark:border-red-500;
+}
+
+@utility border-error {
+  @apply border-red-600 dark:border-red-500;
+}
+
+@utility border-th-light {
+  @apply border-gray-400 dark:border-gray-500;
+}
+
+@utility border-th-bg {
+  @apply border-gray-50 dark:border-gray-900;
+}
+
+/* text-color classes */
+@utility text-th {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+@utility text-h1 {
+  @apply text-gray-900 dark:text-gray-50;
+}
+
+@utility text-primary {
+  @apply text-primary-500 dark:text-primary-400;
+}
+
+@utility text-destructive {
+  @apply text-red-600 dark:text-red-500;
+}
+
+@utility text-error {
+  @apply text-red-600 dark:text-red-500;
+}
+
+@utility text-valid {
+  @apply text-green-600 dark:text-green-400;
+}
+
+@utility text-th-reversed {
+  @apply text-gray-50 dark:text-gray-900;
+}
+
+/* ring-color classes */
+@utility ring-th {
+  @apply ring-gray-700 dark:ring-gray-300;
+}
+
+@utility ring-primary {
+  @apply ring-primary-500 dark:ring-primary-400;
+}
+
+@utility ring-destructive {
+  @apply ring-red-600 dark:ring-red-500;
+}
+
+@utility ring-error {
+  @apply ring-red-600 dark:ring-red-500;
+}
+
+/* ring-offset-color classes */
+@utility ring-offset-th {
+  @apply ring-offset-white dark:ring-offset-gray-900;
+}
+
+/* outline-color classes */
+@utility outline-primary {
+  @apply outline-primary-500 dark:outline-primary-400;
+}
+
+@utility outline-destructive {
+  @apply outline-red-600 dark:outline-red-500;
+}
+
+@utility outline-error {
+  @apply outline-red-600 dark:outline-red-500;
+}
+
+/* caret-color classes */
+@utility caret-primary {
+  @apply caret-primary-500 dark:caret-primary-400;
+}
+
+@utility caret-destructive {
+  @apply caret-red-600 dark:caret-red-500;
+}
+
+@utility caret-error {
+  @apply caret-red-600 dark:caret-red-500;
+}
+
+/* stroke-color classes */
+@utility stroke-th {
+  @apply stroke-white dark:stroke-gray-900;
+}
+
+/* fill-color classes */
+@utility fill-th {
+  @apply fill-gray-500 dark:fill-gray-400;
+}
+
+/* shadow class */
+@utility shadow-th {
+  @apply shadow-md dark:shadow-inner;
 }

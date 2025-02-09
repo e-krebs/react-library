@@ -4,110 +4,111 @@
   svg {
     display: initial;
   }
-  div[data-reach-dialog-overlay] {
-    @apply bg-gray-900/90;
-  }
-  div[data-reach-dialog-content] {
-    width: calc(100% - 42px);
-  }
-
-  div[role='dialog'] {
-    @apply shadow-th;
-  }
-
-  .ladle-wrapper {
-    @apply prose dark:prose-invert max-w-full;
-  }
-
-  .ladle-main {
-    @apply flex flex-col;
-  }
-
-  .ladle-aside {
-    @apply capitalize;
-  }
-
-  .ladle-aside,
-  .ladle-aside input {
-    @apply bg-[color:var(--ladle-bg-color-secondary)];
-  }
-
-  .ladle-addons {
-    @apply mt-8;
-  }
-
-  @media (min-width: 768px) {
-    .ladle-wrapper {
-      @apply pb-[4.5rem];
-    }
-
-    .ladle-addons {
-      @apply w-full p-4 m-0 bg-th border-t border-gray-300 dark:border-gray-700;
-    }
-
-    div[data-reach-dialog-content] {
-      @apply bottom-16 w-[auto];
-    }
-  }
-
-  body {
-    --ladle-main-padding-mobile: 2rem;
-  }
 
   body[data-theme='yellow'] {
-    --primary-50: 254 252 232; /* yellow-50 rgb values */
-    --primary-100: 254 249 195; /* yellow-100 rgb values */
-    --primary-200: 254 240 138; /* yellow-200 rgb values */
-    --primary-300: 253 224 71; /* yellow-300 rgb values */
-    --primary-400: 250 204 21; /* yellow-400 rgb values */
-    --primary-500: 234 179 8; /* yellow-500 rgb values */
-    --primary-600: 202 138 4; /* yellow-600 rgb values */
-    --primary-700: 161 98 7; /* yellow-700 rgb values */
-    --primary-800: 133 77 14; /* yellow-800 rgb values */
-    --primary-900: 113 63 18; /* yellow-900 rgb values */
-    --primary-950: 66 32 6; /* yellow-950 rgb values */
+    --color-primary-50: var(--color-yellow-50);
+    --color-primary-100: var(--color-yellow-100);
+    --color-primary-200: var(--color-yellow-200);
+    --color-primary-300: var(--color-yellow-300);
+    --color-primary-400: var(--color-yellow-400);
+    --color-primary-500: var(--color-yellow-500);
+    --color-primary-600: var(--color-yellow-600);
+    --color-primary-700: var(--color-yellow-700);
+    --color-primary-800: var(--color-yellow-800);
+    --color-primary-900: var(--color-yellow-900);
+    --color-primary-950: var(--color-yellow-950);
   }
 
   body[data-theme='blue'] {
-    --primary-50: 240 249 255; /* sky-50 rgb values */
-    --primary-100: 224 242 254; /* sky-100 rgb values */
-    --primary-200: 186 230 253; /* sky-200 rgb values */
-    --primary-300: 125 211 252; /* sky-300 rgb values */
-    --primary-400: 56 189 248; /* sky-400 rgb values */
-    --primary-500: 14 165 233; /* sky-500 rgb values */
-    --primary-600: 2 132 199; /* sky-600 rgb values */
-    --primary-700: 3 105 161; /* sky-700 rgb values */
-    --primary-800: 7 89 133; /* sky-800 rgb values */
-    --primary-900: 12 74 110; /* sky-900 rgb values */
-    --primary-950: 8 47 73; /* sky-950 rgb values */
+    --color-primary-50: var(--color-sky-50);
+    --color-primary-100: var(--color-sky-100);
+    --color-primary-200: var(--color-sky-200);
+    --color-primary-300: var(--color-sky-300);
+    --color-primary-400: var(--color-sky-400);
+    --color-primary-500: var(--color-sky-500);
+    --color-primary-600: var(--color-sky-600);
+    --color-primary-700: var(--color-sky-700);
+    --color-primary-800: var(--color-sky-800);
+    --color-primary-900: var(--color-sky-900);
+    --color-primary-950: var(--color-sky-950);
+  }
+}
+
+div[data-reach-dialog-overlay] {
+  @apply bg-gray-900/90;
+}
+div[data-reach-dialog-content] {
+  width: calc(100% - 42px);
+}
+
+div[role='dialog'] {
+  @apply shadow-th;
+}
+
+.ladle-wrapper {
+  @apply prose dark:prose-invert max-w-full;
+}
+
+.ladle-main {
+  @apply flex flex-col;
+}
+
+.ladle-aside {
+  @apply capitalize;
+}
+
+.ladle-aside,
+.ladle-aside input {
+  @apply bg-[color:var(--ladle-bg-color-secondary)];
+}
+
+.ladle-addons {
+  @apply mt-8;
+}
+
+@media (min-width: 768px) {
+  .ladle-wrapper {
+    @apply pb-[4.5rem];
   }
 
-  .ladle-controls-table select,
-  .ladle-controls-table input {
-    @apply bg-th;
+  .ladle-addons {
+    @apply w-full p-4 m-0 bg-th border-t border-gray-300 dark:border-gray-700;
   }
 
-  @media (prefers-color-scheme: dark) {
-    body {
-      --ladle-bg-color-primary: theme('colors.gray.900');
-      --ladle-bg-color-secondary: theme('colors.gray.800');
-      --ladle-color-primary: theme('colors.gray.400');
-      --ladle-color-hover: theme('colors.gray.200');
-      --ladle-color-accent: theme('colors.primary.400');
-    }
+  div[data-reach-dialog-content] {
+    @apply bottom-16 w-[auto];
+  }
+}
 
-    pre {
-      @apply !bg-gray-300;
-    }
+body {
+  --ladle-main-padding-mobile: 2rem;
+}
+
+.ladle-controls-table select,
+.ladle-controls-table input {
+  @apply bg-th;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --ladle-bg-color-primary: var(--color-gray-900);
+    --ladle-bg-color-secondary: var(--color-gray-800);
+    --ladle-color-primary: var(--color-gray-400);
+    --ladle-color-hover: var(--color-gray-200);
+    --ladle-color-accent: var(--color-primary-400);
   }
 
-  @media (prefers-color-scheme: light) {
-    body {
-      --ladle-bg-color-primary: theme('colors.gray.50');
-      --ladle-bg-color-secondary: theme('colors.gray.200');
-      --ladle-color-primary: theme('colors.gray.500');
-      --ladle-color-hover: theme('colors.gray.700');
-      --ladle-color-accent: theme('colors.primary.500');
-    }
+  pre {
+    @apply !bg-gray-300;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --ladle-bg-color-primary: var(--color-gray-50);
+    --ladle-bg-color-secondary: var(--color-gray-200);
+    --ladle-color-primary: var(--color-gray-500);
+    --ladle-color-hover: var(--color-gray-700);
+    --ladle-color-accent: var(--color-primary-500);
   }
 }
