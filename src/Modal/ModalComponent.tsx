@@ -168,7 +168,7 @@ export const ModalComponent: ModalComponentProps = forwardRef<ModalRef, PropsWit
                   transition-[box-shadow]
                   hover:enabled:bg-th-hover"
               >
-                <Icon id="x" />
+                <Icon id="x" className="size-6" />
               </ModalCloseButton>
             </header>
             {children}
